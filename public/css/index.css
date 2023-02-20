@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bodoni';
+    margin:0;    
+}
+/*Header*/
+header{
+    background-color: #91795B;
+}
+.logo{
+    width: 150px;
+    height: auto;
+}
+/*Main*/
+
+img{
+    width: 100%;
+    border: solid 1px #ebebeb;
+}
+/*footer*/
+footer{
+
+}
+.mediosPago{
+    width: 200px;
+    height: auto;
+}
