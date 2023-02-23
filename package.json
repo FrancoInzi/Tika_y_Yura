@@ -1,4 +1,24 @@
+
 {
+  "name": "tika-y-yura",
+  "version": "1.0.0",
+  "description": "<!--  Entregable: Wireframe digital o analógico de las siguientes secciones del sitio:\r ● Home\r ● Detalle de producto\r ● Carrito de compras\r ● Formulario de registro\r ● Formulario de login\r Tip: les recomendamos crear la carpeta wireframes para incluir este contenido.\r Entregable (Opcional): Boceto o diseño del sitio incluyendo.\r ● Logo\r ● Colores\r ● Tipografías\r Tip: les recomendamos crear la carpeta design para incluir este contenido.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrancoInzi/tika-y-yura"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancoInzi/tika-y-yura"
+  },
+  "homepage": "https://github.com/FrancoInzi/tika-y-yura",
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2",
