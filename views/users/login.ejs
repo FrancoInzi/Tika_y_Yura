@@ -1,15 +1,27 @@
-<main id="content">
-    <h1>Ingresá</h1>
-    <form>
-        <div class="formulario">
-            <input class="formBar" type="text" name="NombreUsuario" placeholder="Nombre de usuario">
-        </div>
-        <div class="formulario">
-            <input class="formBar" type="password" name="password" placeholder="Contraseña">
-        </div>
-        <div class="formulario">
-            <button type="submit">Enviar</button>
-            <button type="reset">Borrar</button>
-        </div>
-    </form>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div class="shadow">
+    <main id="content">
+        <form action="/login" method="POST" enctype="multipart/form-data">
+                <h1>Iniciar Sesión</h1>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Iniciar Sesión">
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>
+
+

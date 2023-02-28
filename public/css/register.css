@@ -1,48 +1,54 @@
-.todo{
-    flex-direction: column;
-    display: flex;
-    justify-content: space-around;
-    background-color:rgb(197, 187, 187);
-    border: solid 5px black;
-    box-sizing: border-box;
-};
-.body{
+*{
     background-color: #91795B;
 }
-.button{
-    background-color: black;
-    cursor: pointer;
-    border: none;
-    padding: 16px 32px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-    border-radius: 12px;
+form{
+    width: 300px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 17px 17px 30px rgb(0, 0, 0);
+  }
+.lugar{
+    background-color: #ffffff;
+    margin-bottom: 15px;
 }
-button::before{
-    content:"";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.shadow{
+    padding: 110px;
+    }
+  h1{
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, red, blue, deeppink, blue,
-    red, blue, deeppink, blue);
-    background-size: 800%;
-    border-radius: 10px;
-    filter: blur(8px);
-    animation: glowing  20s linear infinite;
-}
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    50%{
-        background-position: 400% 0;
-    }
-    100%{
-        background-position: 0 0;
-    }
-}
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: #ffffff;
+  }
+  
+  input[type="submit"]
+   {
+    width: 50%;
+    padding: 10px;
+    background-color: #04ff0c;
+    color: #fff;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    justify-content: center;
+    
+  }
