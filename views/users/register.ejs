@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/css/register.css">
+        <%- include ('../partials/head')%>
+        <title>Document</title>
+    </head>
+    <body>
+        <%- include ('../partials/header')%>
+        <div class="shadow"></div>
+        <main>
+            <form action="/login" method="POST" enctype="multipart/form-data">
+               
+                
+                    <h1>Crea tu cuenta</h1>
+                    <label>Nombre Completo</label>
+                    <input type="text" name="nombreyapellido" placeholder="Nombre y Apellido">
+          
+                    <label>Nombre de Usuario</label>
+                    <input type="text" name="nombreDeUsuario" placeholder="Nombre de Usuario">
+               
+                    <label>Correo Electronico</label>
+                    <input type="email" name="email" placeholder="Email">
+            
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" name="FechaDeNacimiento" class="lugar">
+                
+                    <label>Domicilio:</label>
+                    <select name="domicilio" class="lugar">
+                        <option value="">Buenos Aires</option>
+                        <option value="">Cordoba</option>
+                        <option value="">Mendoza</option>
+                        <option value="">Salta</option>
+                        <option value="">Tucuman</option>
+                        <option value="">Corrientes</option>
+                        <option value="">Rio Negro</option>
+                    </select>
+           
+                    <label>Contraseña</label>
+                    <input type="password" name="password" placeholder="Contraseña">
+               
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" name="password" placeholder="Confirmar Contraseña">
+                
+                
+                <input type="submit">
+            </form>
+        </main>
+    </div>
+        <%- include ('../partials/footer')%> 
+    </body>
+    </html>

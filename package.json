@@ -1,3 +1,4 @@
+
 {
   "name": "Tika y Yura",
   "version": "1.0.0",
@@ -12,6 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancoInzi/tika-y-yura"
+  },
+  "homepage": "https://github.com/FrancoInzi/tika-y-yura",
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2",
