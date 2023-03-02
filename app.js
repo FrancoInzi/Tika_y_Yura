@@ -6,7 +6,7 @@ const routerMain = require('./src/routes/main.js');
 
 const port = process.env.PORT || 3030
 
-const publicFolderPath = path.join(__dirname, './Public');
+const publicFolderPath = path.join(__dirname, './public');
 console.log(publicFolderPath);
 
 app.use(express.static(publicFolderPath) );

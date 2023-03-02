@@ -1,170 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/6a08be7fa5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@200&display=swap"
-        rel="stylesheet">
-    <title>Tika y Yura</title>
-</head>
-
-<body>
-    <header>
-        <section class="top-bar-container">
-            <div>
-                <p>VIVERO URBANO ESPECIALIZADO EN CÁCTUS Y SUCULENTAS </p>
-            </div>
-            <div>
-                <a href="Nosotros">Nosotros</a>
-                <a href="MI CUENTA">Mi cuenta</a>
-                <a href="https://www.instagram.com/tika.y.yura/?igshid=YmJhNjkzNzY%3D"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/Tika.y.Yura/"><i class="fab fa-facebook-square"></i></a>
-            </div>
-        </section>
-        <section class="navbar">
-            <nav>
-                <div>
-                    <a href="/"><img class="logo" src="/img/logo 44 cactus.jpg"></img></a>
-                    <div>
-                        <div class="burger">
-                            <i class="fas fa-bars"></i>
-                        </div>
-                        <h3>Productos</h3>
-
-                        <form id="form" class="buscador">
-                            <input type="text" id="query" name="keywords" placeholder="Buscar productos, marcas y más"
-                                class="buscador-input">
-                            <button type="submit"><i class="fas fa-search"></i> </button>    
-                        </form>
-                        <h3><i class="fas fa-shopping-cart"></i></h3>
-                        <h3>Ingreso</h3>
-                        <h3>registrar</h3>
-            </nav>
-        </section>
-    </header>
+  
+  <%- include('./partials/head',{css:"index", title:"Tika y Yura"}) %>
+  
+  <body class="body-index">
+    <%- include('./partials/header') %>
     <main>
-        <div >
-       
-            <h3>Cáctus</h3>
-            
-            <div > 
-              
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$6770</p>
-                <p >40% OFF</p>
-                
-                </br>
-                <p >cactus 1</p>
+      <div>
+        <h3>Cáctus</h3>
+          <div> 
+            <img src="/img/cactus1.jpg">
+            <div>          
+              <p>$6770</p>
+              <p>40% OFF</p>
+              <p>cactus 1</p>
               </div>
             </div>
-            <div >  
-              <img  src="/img/logo vectorizado.jpg">
-              <div >           
-                <p >$230.000</p>
-                <p >20% OFF </p>
-                
-                </br>
-                <p >cactus 2</p>
+            <div>  
+              <img src="/img/cactus2.jpg">
+              <div>           
+                <p>$230.000</p>
+                <p>20% OFF </p>
+                <p>cactus 2</p>
               </div>  
             </div>   
-            <div >   
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$70.500</p>
-                <p >10% OFF</p>
-                
-                </br>
-                <p >cactus 3</p>
+            <div>   
+              <img src="/img/cactus3.jpg">
+              <div>          
+                <p>$70.500</p>
+                <p>10% OFF</p>
+                <p>cactus 3</p>
               </div> 
             </div>
-            <div > 
-              <img  src="/img/logo vectorizado.jpg"> 
-              <div >          
-                <p >$23.300</p>
-                <p >5% OFF</p>
-                
-                </br>
+            <div> 
+              <img src="/img/cactus4.jpg"> 
+              <div>          
+                <p>$23.300</p>
+                <p>5% OFF</p>
                 <p >cactus 4</p>
               </div>
             </div>
-      
           </div>
-          <div >
+          <div>
             <h3 >Suculentas </h3>
-             <div >
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$6770</p>
-                <p >40% OFF</p>
-                
-                </br>
-                <p >Suculentas 1</p>
+            <div>
+              <img  src="/img/suculenta1.jpg">
+              <div>          
+                <p>$6770</p>
+                <p>40% OFF</p>
+                <p>Suculentas 1</p>
               </div>
-             </div> 
-             <div >
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$230.000</p>
-                <p >20% OFF</p>
-                
-                </br>
-                <p >Suculentas 2</p>
+            </div> 
+            <div>
+              <img  src="/img/suculenta2.jpg">
+              <div>          
+                <p>$230.000</p>
+                <p>20% OFF</p>
+                <p>Suculentas 2</p>
               </div>
-             </div> 
-             <div > 
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$70.500</p>
-                <p >10% OFF</p>
-                
-                </br>
+            </div> 
+            <div> 
+              <img  src="/img/suculenta3.jpg">
+              <div>          
+                <p>$70.500</p>
+                <p>10% OFF</p>
                 <p >Suculentas 3</p>
               </div>
-             </div> 
-             <div >
-              <img  src="/img/logo vectorizado.jpg">
-              <div >          
-                <p >$23.300</p>
-                <p >5% OFF</p>
-                
-                </br>
-                <p >Suculentas 4</p>
+            </div> 
+            <div>
+              <img src="/img/suculenta4.jpg">
+              <div>          
+                <p>$23.300</p>
+                <p>5% OFF</p>
+                <p>Suculentas 4</p>
               </div>
-             </div>
-            
-      
+            </div>
           </div> 
     </main>
     <footer>
-       <section>
+      <section>
         <h3>Navegación</h3>
-        <a href="Nosotros">Inicio</a>        
-        <a href="../views/product/productdetail.ejs">Productos</a>
-        <a href="../views/abautus.ejs">Nosotros</a>
-
-       </section>
-       <section>
+          <a href="Nosotros">Inicio</a>        
+          <a href="../views/product/productdetail.ejs">Productos</a>
+          <a href="../views/abautus.ejs">Nosotros</a>
+      </section>
+      <section>
         <h3>Medios de pago</h3>
         <img class="mediosPago" src="/img/medios de pago.jpeg">
-       </section>
-       <section>
+      </section>
+      <section>
         <h3>Contacto</h3>
-        <span><i class="fas fa-phone-alt"></i>+54 9 351 619-3975</span>
-        <span><i class="fas fa-envelope-open"></i> tika.y.yura@gmail.com</span>
-        <span><i class="fas fa-map-marker-alt"></i> Av. Santa Ana 2898, Córdoba, Córdoba. CP:5003</span>
-       </section>
-       <section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0065978186963!2d-64.223088!3d-31.413944299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298a3be4c5ea7%3A0x361bf93449a6b3c3!2sSta.%20Ana%202898%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1676918728814!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-       </section>
+          <span><i class="fas fa-phone-alt"></i>+54 9 351 619-3975</span>
+          <span><i class="fas fa-envelope-open"></i> tika.y.yura@gmail.com</span>
+          <span><i class="fas fa-map-marker-alt"></i> Av. Santa Ana 2898, Córdoba, Córdoba. CP:5003</span>
+      </section>
+      <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6810.01321741452!2d-64.223088!3d-31.413944000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298a3be4c5ea7%3A0x361bf93449a6b3c3!2sSta.%20Ana%202898%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1677676938411!5m2!1ses-419!2sar" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+
     </footer>
 </body>
 
