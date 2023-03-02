@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6a08be7fa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/createproduct.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@200&display=swap"
+        rel="stylesheet">
+    <title>Carrito de compras</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <h2>Crear nuevo producto</h2>
+        </div>
+        <div>
+
+            <form name="formulario" type="POST" enctype="multipart/formdata">
+                <div>
+                    <label for="name">Nombre del producto (4 to 60 characters):</label>
+                    </br>
+                </div>
+                <div>
+                    <input type="text" id="name" name="name" required minlength="4" maxlength="60" size="10">
+                    </br>
+                </div>
+                <div>
+                    <input type="file" name="imagen" />
+                    </br>
+                </div>
+                <div>
+                    <label for="review">Reseña del producto (4 to 150 characters):</label>
+                    <input type="text" id="name" name="name" required minlength="4" maxlength="150" size="10">
+                    </br>
+                </div>
+                <div>
+
+                    <label for="name">Descripción del producto (4 to 600 characters):</label>
+
+                    <input type="text" id="name" name="name" required minlength="4" maxlength="600" size="10">
+                </div>
+                <div>
+
+
+                    <label for="productos">Tipo</label>
+                    <select name="productos" id="Tipo">
+                        <option value="cactus">Cáctus</option>
+                        <option value="suculentas">Suculentas</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <input type="submit" value="Elegir" />
+                </div>
+                <div>
+
+
+
+                    <label for="valor">Valor</label>
+
+                    <input type="number" id="valor" name="valor" min="10" max="10000000">
+                </div>
+            </form>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
