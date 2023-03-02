@@ -2,11 +2,15 @@
     box-sizing: border-box;
 }
 
+
 .body-index {
+=======
+
     font-family: 'Bodoni';
     margin:0;    
 }
 /*Header*/
+
 .header-index{
     background-color: white;
     width: 100vw;
@@ -118,4 +122,4 @@ iframe {
     .burger-menu {
     display: none;
     }
-}
+    }
