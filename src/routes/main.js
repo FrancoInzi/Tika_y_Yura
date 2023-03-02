@@ -1,11 +1,13 @@
 
 const express = require('express');
-const {index, login, register, productDetail, productCart, createProduct, profile} = require('../controler/mainControler')
+const {index, aboutus, login, register, productDetail, productCart, createProduct, profile} = require('../controler/mainControler')
 
 const routerMain = express.Router();
 
 
 routerMain.get('/', index);
+
+routerMain.get('/aboutus', aboutus);
 
 routerMain.get('/users/login', login );
 

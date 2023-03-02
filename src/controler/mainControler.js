@@ -11,6 +11,9 @@ mainControler.use(express.static(publicFolderPath) );
 const index = (req,res) => {
     res.render('index.ejs');
 }
+const aboutus = (req,res) => {
+    res.render('aboutus.ejs');
+}
 const login = (req,res) => {
     res.render('users/login.ejs');
 }
@@ -32,6 +35,7 @@ const createProduct = (req,res) => {
 
 module.exports = {
     index,
+    aboutus,
     login,
     register,
     profile,
