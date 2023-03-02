@@ -4,7 +4,7 @@
 .shadow{
 padding: 250px;
 }
-form{
+.form-login{
     width: 300px;
     margin: 0 auto;
     padding: 85px;
@@ -14,7 +14,7 @@ form{
     background-color: #ffffff;
   }
   
-  h1{
+  .h1-inicio{
     text-align: center;
     background-color: #ffffff;
   }
