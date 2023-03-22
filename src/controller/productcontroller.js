@@ -8,39 +8,36 @@ console.log(publicFolderPath);
 
 mainControler.use(express.static(publicFolderPath) );
 
-const index = (req,res) => {
-    res.render('index.ejs');
+const allProduct = (req,res) => {
+    res.render('product/productDetail.ejs');
 }
-const aboutus = (req,res) => {
-    res.render('aboutus.ejs');
-}
-const login = (req,res) => {
-    res.render('users/login.ejs');
-}
-const register = (req,res) => {
-    res.render('users/register.ejs');
-}
-const profile = (req,res) => {
-    res.render('users/profile.ejs');
-}
+
 const productDetail = (req,res) => {
     res.render('product/productDetail.ejs');
 }
 const productCart = (req,res) => {
     res.render('product/productCart.ejs');
 }
-const createProduct = (req,res) => {
-    res.render('product/createProduct.ejs');
+const createProduct = (req, res) => {
+        res.render('product/createproduct.ejs')
+    },
+const saveProduct = (req, res) => {
+        res.send(req.body.){
+
+        }
+    }
+
+const editProduct = (req,res) => {
+    res.render('product/editproduct.ejs');
 }
 
 module.exports = {
-    index,
-    aboutus,
-    login,
-    register,
-    profile,
+    
     productDetail,
     productCart,
     createProduct,
+    editProduct,
+    saveProduct,
+    allProduct
     
 }
