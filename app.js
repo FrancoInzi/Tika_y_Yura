@@ -3,6 +3,8 @@ const path = require('path');
 const multer = require('multer');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const fs = require('fs');
+
 
 const app = express();
 const routerMain = require('./src/routes/main.js');
@@ -25,6 +27,11 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(methodOverride('_method'));
+
+//404
+app.use((req, res) =>{
+    res.status(404).render('not-found');
+})
 
 //Routes
 app.use(routerMain);
