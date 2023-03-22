@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const app = express();
 const routerMain = require('./src/routes/main.js');
@@ -16,6 +18,12 @@ app.set('view engine', 'ejs');
 app.use(express.static(publicFolderPath) );
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(session({
+    secret: "Nuestro mensaje secreto",
+    resave: false,
+	saveUninitialized: false,
+}));
+app.use(cookies());
 app.use(methodOverride('_method'));
 
 //Routes
