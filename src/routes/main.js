@@ -1,6 +1,6 @@
 
 const express = require('express');
-const {index, aboutus, login, register, productDetail, productCart, createProduct, profile} = require('../controller/mainController')
+const {index, aboutus} = require('../controller/mainController')
 
 
 const routerMain = express.Router();

@@ -10,36 +10,15 @@ console.log(publicFolderPath);
 
 mainController.use(express.static(publicFolderPath) );
 
-const allProduct = (req,res) => {
-    res.render('product/productDetail.ejs');
+const index = (req, res) =>{
+    res.render('/Product/main')
 }
-
-const productDetail = (req,res) => {
-    res.render('product/productDetail.ejs');
-}
-const productCart = (req,res) => {
-    res.render('product/productCart.ejs');
-}
-const createProduct = (req, res) => {
-        res.render('product/createproduct.ejs')
-    }
-const saveProduct = (req, res) => {
-        res.send(req.body)
-
-    
-    }
-
-const editProduct = (req,res) => {
-    res.render('product/editproduct.ejs');
+const aboutus = (req, res) => {
+    res.render('/Product/aboutus')
 }
 
 module.exports = {
-    
-    productDetail,
-    productCart,
-    createProduct,
-    editProduct,
-    saveProduct,
-    allProduct
+    index,
+    aboutus
     
 }
