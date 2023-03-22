@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
 
-
 const mainController = express();
 
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
-
 
 mainController.use(express.static(publicFolderPath) );
 
@@ -22,11 +20,11 @@ const productCart = (req,res) => {
 }
 const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
-    }
+    },
 const saveProduct = (req, res) => {
-        res.send(req.body)
+        res.send(req.body.){
 
-    
+        }
     }
 
 const editProduct = (req,res) => {
