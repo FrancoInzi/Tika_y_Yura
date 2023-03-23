@@ -29,12 +29,13 @@ app.use(cookies());
 app.use(methodOverride('_method'));
 
 //404
-app.use((req, res) =>{
-    res.status(404).render('not-found');
-})
+//app.use((req, res) =>{
+    //res.status(404).render('not-found');
+//});
 
 //Routes
 app.use(routerMain);
 
+app.set('views', path.join(__dirname, 'views'));
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));

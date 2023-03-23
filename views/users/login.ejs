@@ -15,10 +15,10 @@
 <body>
     <%- include('../partials/header') %>
     <main id="content">
-        <div class="shadow">
 
-        <form action="/login" method="POST" enctype="multipart/form-data">
-                <h1>Iniciar Sesión</h1>
+        <form class="form-login" action="/login" method="POST" enctype="multipart/form-data">
+                <h1 class="h1-inicio">Iniciar Sesión</h1>
+        
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Contraseña:</label>

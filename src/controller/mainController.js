@@ -11,10 +11,10 @@ console.log(publicFolderPath);
 mainController.use(express.static(publicFolderPath) );
 
 const index = (req, res) =>{
-    res.render('/Product/main')
+    res.render('index')
 }
 const aboutus = (req, res) => {
-    res.render('/Product/aboutus')
+    res.render('aboutus')
 }
 
 module.exports = {
