@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="/css/register.css">
-        <%- include ('../partials/head')%>
-        <title>Document</title>
-    </head>
+
+    <%- include('../partials/head',{css:"register", title:"Register"}) %>
     <body>
-        <%- include ('../partials/header')%>
-        <div class="shadow"></div>
+        <%- include('../partials/header') %>
         <main>
-            <form class="form-register" action="/login" method="POST" enctype="multipart/form-data">
+            <form action="/login" method="POST" enctype="multipart/form-data">
                
                 
                     <h1 class="h1-crear">Crea tu cuenta</h1>
