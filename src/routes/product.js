@@ -15,7 +15,7 @@ routerProduct.get('/product/createproduct',  createProduct);
 //routerProduct.post('/product/createproduct', savnpm sarteProduct);
 
 //Formulario de edición de productos
-routerProduct.get ('/products/:id/edit', )
+routerProduct.get ('/products/:id/edit', );
 //accion de edicion 
 routerProduct.put('/product/editproduct',  editProduct);
 
