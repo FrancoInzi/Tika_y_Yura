@@ -9,7 +9,7 @@ console.log(publicFolderPath);
 mainController.use(express.static(publicFolderPath) );
 
 const allProduct = (req,res) => {
-    res.render('product/productDetail.ejs');
+    res.render('product/allproducts.ejs');
 }
 
 const productDetail = (req,res) => {
@@ -23,6 +23,12 @@ const createProduct = (req, res) => {
 
 
     }
+    const saveProduct = (req, res) => {
+        return res.send({
+            body: req.body,
+            file: req.file
+        });
+    }    
 // const saveProduct = (req, res) => {
 //         res.send(req.body)
 
@@ -38,7 +44,7 @@ module.exports = {
     productCart,
     createProduct,
     editProduct,
-   //saveProduct,
+   saveProduct,
     allProduct
     
 }

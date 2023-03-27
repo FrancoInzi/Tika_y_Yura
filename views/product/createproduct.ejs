@@ -31,9 +31,18 @@
                     <input type="text" id="name" name="name" required minlength="4" maxlength="60" size="10">
                     </br>
                 </div>
-                <div>
-                    <input type="file" name="imagen" />
-                    </br>
+                <div class="form-group">
+                    <label><b>Imagen del producto</b></label>
+                    <input 
+                        type="file" 
+                        name="imagenProducto"
+                        class="form-control <%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
+                    >
+                    <% if (locals.errors && errors.imagenProducto) { %>
+                        <div class="text-danger">
+                            <%= errors.imagenProducto.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label for="review">Reseña del producto (4 to 150 characters):</label>
