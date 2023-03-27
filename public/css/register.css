@@ -1,7 +1,7 @@
 *{
     background-color: #91795B;
 }
-form{
+.form-register{
     width: 300px;
     margin: 0 auto;
     padding: 50px;
@@ -17,13 +17,13 @@ form{
 .shadow{
     padding: 110px;
     }
-  h1{
+.h1-crear{
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
   }
   
-  label {
+label{
     display: block;
     margin-bottom: 8px;
     background-color: #ffffff;
@@ -42,7 +42,7 @@ form{
   
   button[type="submit"]
    {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     background-color: #04ff0c;
     color: #fff;

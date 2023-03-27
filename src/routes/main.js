@@ -1,6 +1,8 @@
 
 const express = require('express');
+
 const {index, aboutus} = require('../controller/mainController');
+
 
 
 const routerMain = express.Router();

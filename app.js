@@ -31,7 +31,9 @@ app.use(cookies());
 app.use(methodOverride('_method'));
 
 
+
 //Routes
 app.use(routerMain, routerUsers);
+
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));
