@@ -20,12 +20,11 @@ const productCart = (req,res) => {
 }
 const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
-    },
-const saveProduct = (req, res) => {
-        res.send(req.body){
-
-        }
     }
+// const saveProduct = (req, res) => {
+//         res.send(req.body)
+
+//     }
 
 const editProduct = (req,res) => {
     res.render('product/editproduct.ejs');
@@ -37,7 +36,7 @@ module.exports = {
     productCart,
     createProduct,
     editProduct,
-    saveProduct,
+   //saveProduct,
     allProduct
     
 }
