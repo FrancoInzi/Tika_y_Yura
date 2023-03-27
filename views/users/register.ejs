@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="/css/register.css">
-        <%- include ('../partials/head')%>
-        <title>Document</title>
-    </head>
+
+    <%- include('../partials/head',{css:"register", title:"Register"}) %>
     <body>
-        <%- include ('../partials/header')%>
-        <div class="shadow"></div>
+        <%- include('../partials/header') %>
         <main>
-            <form action="/login" method="POST" enctype="multipart/form-data">
-               
+
+            <div class="shadow"></div>
+
+            <form method="POST" action="/users/register" enctype="multipart/form-data">
+
                 
-                    <h1>Crea tu cuenta</h1>
+                    <h1 class="h1-crear">Crea tu cuenta</h1>
                     <label>Nombre Completo</label>
                     <input type="text" name="nombreyapellido" placeholder="Nombre y Apellido">
           
@@ -35,6 +34,21 @@
                         <option value="">Corrientes</option>
                         <option value="">Rio Negro</option>
                     </select>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Imagen de perfil:</b></label>
+                            <input 
+                                type="file" 
+                                name="avatar"
+                                class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.avatar) { %>
+                                <div class="text-danger">
+                                    <%= errors.avatar.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
            
                     <label>Contraseña</label>
                     <input type="password" name="password" placeholder="Contraseña">
@@ -42,11 +56,10 @@
                     <label>Confirmar Contraseña</label>
                     <input type="password" name="password" placeholder="Confirmar Contraseña">
                 
-                
-                <input type="submit">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
             </form>
         </main>
     </div>
         <%- include ('../partials/footer')%> 
     </body>
-    </html>
+</html>

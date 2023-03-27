@@ -1,0 +1,138 @@
+* {    
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;   
+}
+body{
+    
+    font-family: syncopate, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;    
+}
+main{
+    width: 340px;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+h2{
+    background-color: #91795B;
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+}
+h3{
+    background-color: #91795B;
+    color: aliceblue;
+    text-align: center;
+}
+h4{
+    background-color: #91795B;
+    color: aliceblue;
+    text-align: center;
+}
+h5{
+    background-color: #91795B;
+    color: aliceblue;
+    text-align: center;
+}
+img{
+    width: 345px;
+    height: auto;
+}
+input{
+    height: 30px;
+    width: 80px;
+}
+.freeship{
+    color: green;
+}
+@media (min-width: 361px) {
+    main{
+        width: 100%;
+    }
+    .image{
+        width: 100%;
+    }
+    .buy{
+        border: black solid 1px; 
+    }
+    
+    
+    }
+@media (min-width: 769px) {
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    h4{
+        font-size: 18px;
+    }
+    p{
+        font-size: 16px;
+    }
+    img{
+        width: 100%;
+    }
+    .image{
+        width: 45%;
+    }
+    .info{
+        width: 45%;
+        height: 300px;
+    }
+    .buy{
+        width: 45%;
+        border: black solid 1px; 
+        position: absolute;
+        left: 45%;
+        top:50%;
+        
+        
+    }
+    
+    
+    }
+
+@media (min-width: 1280px) {
+    h2{
+        font-size: 38px;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h4{
+        font-size: 22px;
+        height: 82px;
+    }
+    p{
+        font-size: 17px;
+    }
+    img{
+        width: 100%;
+    }
+    .image{
+        width: 45%;
+    }
+    .info{
+        width: 45%;
+        height: 300px;
+    }
+    .buy{
+        width: 45%;
+        border: black solid 1px; 
+        position: absolute;
+        left: 45%;
+        top: 50%;
+        
+    }
+    .buy{
+        font-size: 20px;
+    }
+    select{
+        height: 35px;
+        width: 200px;    
+    }
+    
+}
