@@ -1,7 +1,8 @@
 
 const express = require('express');
-const path = require('path');
-const {index, aboutus} = require('../controller/mainController')
+
+const {index, aboutus} = require('../controller/mainController');
+
 
 
 const routerMain = express.Router();

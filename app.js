@@ -7,7 +7,9 @@ const fs = require('fs');
 
 
 const app = express();
-const routerMain = require('./src/routes/main.js');
+const routerMain = require('./src/routes/main');
+const routerProduct = require('./src/routes/product.js');
+const routerUsers = require('./src/routes/users.js');
 const methodOverride= require('method-override');
 
 const port = process.env.PORT || 3030
@@ -28,14 +30,10 @@ app.use(session({
 app.use(cookies());
 app.use(methodOverride('_method'));
 
-//404
-//app.use((req, res) =>{
-    //res.status(404).render('not-found');
-//});
+
 
 //Routes
-app.use(routerMain);
+app.use(routerMain, routerUsers);
 
-app.set('views', path.join(__dirname, 'views'));
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));
