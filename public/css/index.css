@@ -31,6 +31,7 @@
     width: 50%;
     color: white;
 }
+
 .right-text{
     text-align: right;
     padding: 20px;
@@ -96,7 +97,7 @@ article {
 }
 
 img {
-    width: 50%;
+    width: 25%;
 }
 
 /*Footer*/
@@ -107,15 +108,87 @@ footer{
     margin:auto;
 }
 
+.container-footer{
+    display: flex;
+}
+
+.info-footer {
+    text-align: left;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.info-footer h2 {
+    margin-top: 0px;
+    margin-bottom: -10px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.info-footer h4 {
+    color: white;
+    text-align: left;
+}
+
+.enlace-footer{
+    text-decoration: none;
+    color:white;
+    padding-left: 10px;
+}
+
+.info-contacto{
+    color: white;
+}
+
+.fa-credit-card{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+    display: block;
+    text-align: left;
+    transition: all 450ms;
+}
+
+.fa-seedling {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+    display: block;
+    text-align: left;
+    transition: all 450ms;
+}
+
+.fa-comment-dots{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+    display: block;
+    text-align: left;
+    transition: all 450ms;
+}
+
+.contacto {
+    padding: 10px;
+}
+
+.copyright {
+    display: block;
+    align-items: flex-end;
+    text-align: left;
+    margin-left: 25px;
+    color:white;
+}
+
 
 .mediosPago{
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 
 iframe {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
 }
 
 @media (min-width: 361px) {

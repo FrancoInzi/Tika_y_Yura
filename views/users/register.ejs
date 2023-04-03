@@ -6,10 +6,9 @@
         <%- include('../partials/header') %>
         <main>
 
-            <div class="shadow"></div>
+            <div class="shadow">
 
-            <form method="POST" action="/users/register" enctype="multipart/form-data">
-
+                <form method="POST" action="/users/register" enctype="multipart/form-data">
                 
                     <h1 class="h1-crear">Crea tu cuenta</h1>
                     <label>Nombre Completo</label>
@@ -37,11 +36,7 @@
                     <div class="col-md-6 my-1">
                         <div class="form-group">
                             <label><b>Imagen de perfil:</b></label>
-                            <input 
-                                type="file" 
-                                name="avatar"
-                                class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-                            >
+                            <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.avatar) { %>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg %>
@@ -56,10 +51,11 @@
                     <label>Confirmar Contraseña</label>
                     <input type="password" name="password" placeholder="Confirmar Contraseña">
                 
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </form>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+            
+                </form>
+            </div>
         </main>
-    </div>
         <%- include ('../partials/footer')%> 
     </body>
 </html>
