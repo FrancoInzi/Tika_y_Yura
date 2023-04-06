@@ -21,7 +21,6 @@ const productCart = (req,res) => {
 const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
 
-
     }
     const saveProduct = (req, res) => {
         return res.send({

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head',{css:"createproduct", title:"Crear Producto"}) %>
+<%- include('../partials/head',{css:"createproduct", title:"Crear Producto"}) %>
 </head>
 
 <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
     <main>
         <div>
             <h2>Crear nuevo producto</h2>
         </div>
         <div>
-
             <form name="formulario" type="POST" enctype="multipart/formdata">
                 <div>
                     <label for="name">Nombre del producto (4 to 60 characters):</label>
@@ -23,11 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label><b>Imagen del producto</b></label>
-                    <input 
-                        type="file" 
-                        name="imagenProducto"
-                        class="form-control <%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
-                    >
+                    <input type="file" name="imagenProducto" class="form-control <%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>">
                     <% if (locals.errors && errors.imagenProducto) { %>
                         <div class="text-danger">
                             <%= errors.imagenProducto.msg %>
@@ -40,37 +35,27 @@
                     </br>
                 </div>
                 <div>
-
                     <label for="name">Descripción del producto (4 to 600 characters):</label>
-
                     <input type="text" id="name" name="name" required minlength="4" maxlength="600" size="10">
                 </div>
                 <div>
-
-
                     <label for="productos">Tipo</label>
                     <select name="productos" id="Tipo">
                         <option value="cactus">Cáctus</option>
                         <option value="suculentas">Suculentas</option>
                         <option value="otros">Otros</option>
                     </select>
-                    <input type="submit" value="Elegir" />
+                    <input type="submit" value="Elegir">
                 </div>
                 <div>
-
-
-
                     <label for="valor">Valor</label>
-
                     <input type="number" id="valor" name="valor" min="10" max="10000000">
                 </div>
-                    <input type="submit" value="Aceptar" />
+                    <input type="submit" value="Aceptar">
             </form>
-      
         </div>
-
     </main>
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 
 </html>
