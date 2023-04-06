@@ -5,28 +5,43 @@ const userController = express();
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
 
-userController.use(express.static(publicFolderPath) );
+userController.use(express.static(publicFolderPath));
 
-const login = (req, res) =>{
-    res.render('users/login');
-}
-const register = (req, res) => {
-    res.render('users/register');
-}
-const saveUser = (req, res) => {
-    return res.send({
-        body: req.body,
-        file: req.file
-    });
+//video 1h
+
+const controller = {
+    register: (req, res) => {
+        return res.render('/register.ejs');
+    },
+    processRegister: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('/register.ejs', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
+        return res.send('ok, las validaciones se pasaron y no tienes errores');
+    },
+
+    login: (req, res) => {
+        return res.render('users/login');
+    },
+    register: (req, res) => {
+        return res.render('users/register');
+    },
+    profile: (req, res) => {
+        return res.render('users/profile');
+    },
+    saveUser: (req, res) => {
+        return res.send({
+            body: req.body,
+            file: req.file
+        });
+    },
 }
 
-const profile = (req, res) => {
-    res.render('users/profile');
-}
 
-module.exports = {
-    login,
-    register,
-    saveUser,
-    profile
-}
+module.exports = controller;
