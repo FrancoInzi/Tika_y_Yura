@@ -33,7 +33,7 @@ app.use(methodOverride('_method'));
 
 
 //Routes
-app.use(routerMain, routerUsers);
+app.use(routerMain, routerUsers, routerProduct);
 
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));
