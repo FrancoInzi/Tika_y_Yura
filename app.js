@@ -14,13 +14,15 @@ const methodOverride= require('method-override');
 
 const port = process.env.PORT || 3030
 
-const publicFolderPath = path.join(__dirname, './public');
+const publicFolderPath = path.join(__dirname, 'public');
 console.log(publicFolderPath);
 
-//Configuraciones
+//Template Engine
 app.set('view engine', 'ejs');
-app.use(express.static(publicFolderPath) );
-app.use(express.urlencoded({ extended: false}));
+
+//Configuraciones
+app.use(express.static('public') );
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({
     secret: "Nuestro mensaje secreto",
@@ -33,7 +35,7 @@ app.use(methodOverride('_method'));
 
 
 //Routes
-app.use(routerMain, routerUsers);
+app.use(routerMain, routerUsers, routerProduct);
 
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));

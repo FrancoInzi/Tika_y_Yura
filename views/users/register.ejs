@@ -6,25 +6,63 @@
         <%- include('../partials/header') %>
         <main>
 
-            <div class="shadow"></div>
+            <div class="shadow">
 
-            <form method="POST" action="/users/register" enctype="multipart/form-data">
-
+                <form method="POST" action="/users/register" enctype="multipart/form-data">
                 
                     <h1 class="h1-crear">Crea tu cuenta</h1>
-                    <label>Nombre Completo</label>
-                    <input type="text" name="nombreyapellido" placeholder="Nombre y Apellido">
-          
-                    <label>Nombre de Usuario</label>
-                    <input type="text" name="nombreDeUsuario" placeholder="Nombre de Usuario">
-               
-                    <label>Correo Electronico</label>
-                    <input type="email" name="email" placeholder="Email">
-            
-                    <label>Fecha de nacimiento</label>
-                    <input type="date" name="FechaDeNacimiento" class="lugar">
+                    <label class="label-usrs">Nombre Completo</label>
+                    <input 
+                        type="text" 
+                        name="nombreyapellido" 
+                        placeholder="Nombre y Apellido"
+                        class="form-control <%= locals.errors && errors.nombreyapellido ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.nombreyapellido) { %>
+                            <div class="text-danger">
+                                <%= errors.nombreyapellido.msg %>
+                            </div>
+                        <% } %>
+
+                    <label class="label-usrs">Nombre de Usuario</label>
+                    <input 
+                        type="text" 
+                        name="nombreDeUsuario" 
+                        placeholder="Nombre de Usuario"
+                        class="form-control <%= locals.errors && errors.nombreDeUsuario ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.nombreDeUsuario) { %>
+                            <div class="text-danger">
+                                <%= errors.nombreDeUsuario.msg %>
+                            </div>
+                        <% } %>
+
+                    <label class="label-usrs">Correo Electronico</label>
+                    <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+
+                    <label class="label-usrs">Fecha de nacimiento</label>
+                    <input 
+                        type="date" 
+                        name="FechaDeNacimiento" 
+                        class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.FechaDeNacimiento) { %>
+                            <div class="text-danger">
+                                <%= errors.FechaDeNacimiento.msg %>
+                            </div>
+                        <% } %>
                 
-                    <label>Domicilio:</label>
+                    <label class="label-usrs">Domicilio:</label>
                     <select name="domicilio" class="lugar">
                         <option value="">Buenos Aires</option>
                         <option value="">Cordoba</option>
@@ -34,14 +72,11 @@
                         <option value="">Corrientes</option>
                         <option value="">Rio Negro</option>
                     </select>
+
                     <div class="col-md-6 my-1">
                         <div class="form-group">
-                            <label><b>Imagen de perfil:</b></label>
-                            <input 
-                                type="file" 
-                                name="avatar"
-                                class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-                            >
+                            <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                            <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.avatar) { %>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg %>
@@ -50,16 +85,37 @@
                         </div>
                     </div>
            
-                    <label>Contraseña</label>
-                    <input type="password" name="password" placeholder="Contraseña">
-               
-                    <label>Confirmar Contraseña</label>
-                    <input type="password" name="password" placeholder="Confirmar Contraseña">
+                    <label class="label-usrs">Contraseña</label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Contraseña"
+                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+
+                    <label class="label-usrs">Confirmar Contraseña</label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Confirmar Contraseña"
+                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                        <% } %>
                 
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </form>
+                    <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
+            
+                </form>
+            </div>
         </main>
-    </div>
         <%- include ('../partials/footer')%> 
     </body>
 </html>

@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;   
+}
+.all{
+    margin: 0px;
+    padding: 0px;
+}
+.bigbox{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1%;
+    padding: 1%;
+    
+}
+.smallbox{
+    width: 160px;
+    padding: 10px;
+    
+}
+.data{
+    font-size: 15px;
+}
+.img{
+    width: 160px;
+    height: 175px;
+    
+    
+}
+.title{
+    display: block;
+    flex-wrap: nowrap;
+    text-align: center;
+    font-size: 35px;
+    padding: 0%;
+    margin: 0%;
+    background-color: #91795B;
+    color: white;
+    border: solid black 1px;
+}
