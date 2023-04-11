@@ -29,7 +29,7 @@ routerProduct.get('/product/createproduct',  createProduct);
 //routerProduct.post('/product/createproduct', savnpm sarteProduct);
 routerProduct.post('/product/createproduct', upload.single("imagenProducto"), saveProduct );
 //Formulario de edición de productos
-routerProduct.get ('/products/:id/edit', )
+routerProduct.get ('/products/:id/edit', );
 //accion de edicion 
 routerProduct.put('/product/editproduct',  editProduct);
 

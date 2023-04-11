@@ -1,6 +1,7 @@
 const express = require('express');
 const routerUsers = express.Router();
 const multer = require('multer');
+
 const path = require ('path');
 const controller = require('../controller/usersController');
 
@@ -30,9 +31,11 @@ body('avatar').custom((value, {req }) => {
 })
 ]
 
+
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'./public/img/users'));
+        cb(null, path.join(__dirname,'../../public/img/users'));
     },
     filename: (req, file, cb) => {
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
@@ -48,5 +51,6 @@ routerUsers.get('/users/register', controller.register );
 routerUsers.post('/users/register', upload.single('avatar'), controller.saveUser );
 
 routerUsers.get('/users/profile/:id', controller.profile);
+
 
 module.exports = routerUsers;
