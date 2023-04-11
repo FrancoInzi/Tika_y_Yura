@@ -2,12 +2,10 @@
   box-sizing: border-box;
 }
 
-main{
-    background-color: #91795B;
-}
-
-.shadow{
-  padding: 250px;
+#content{
+  width: 340px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .form-login{
@@ -25,20 +23,26 @@ main{
   background-color: #ffffff;
 }
   
-label {
+.form-usr {
   display: block;
   margin-bottom: 5px;
   background-color: #ffffff;
+  font-size: 25px;
 }
-  
-input[type="text"],
-input[type="password"] {
+.shadow{
+  margin-bottom: 22px;
+  font-size: 20px;
+}
+.input-usr[type="text"],
+.input-usr[type="password"] {
   width: 100%;
-  padding: 0px;
-  margin-bottom: 15px;
+  height: 35px;
+  padding : 15px;
+  margin-bottom: 50px;
   border: 1px solid #000000;
   border-radius: 3px;
   background-color: #ffffff;
+  
 }
   
 input[type="submit"] {
