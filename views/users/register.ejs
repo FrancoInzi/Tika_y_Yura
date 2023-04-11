@@ -11,7 +11,7 @@
                 <form method="POST" action="/users/register" enctype="multipart/form-data">
                 
                     <h1 class="h1-crear">Crea tu cuenta</h1>
-                    <label>Nombre Completo</label>
+                    <label class="label-usrs">Nombre Completo</label>
                     <input 
                         type="text" 
                         name="nombreyapellido" 
@@ -24,7 +24,7 @@
                             </div>
                         <% } %>
 
-                    <label>Nombre de Usuario</label>
+                    <label class="label-usrs">Nombre de Usuario</label>
                     <input 
                         type="text" 
                         name="nombreDeUsuario" 
@@ -37,7 +37,7 @@
                             </div>
                         <% } %>
 
-                    <label>Correo Electronico</label>
+                    <label class="label-usrs">Correo Electronico</label>
                     <input 
                             type="email" 
                             name="email" 
@@ -50,7 +50,7 @@
                                 </div>
                             <% } %>
 
-                    <label>Fecha de nacimiento</label>
+                    <label class="label-usrs">Fecha de nacimiento</label>
                     <input 
                         type="date" 
                         name="FechaDeNacimiento" 
@@ -62,7 +62,7 @@
                             </div>
                         <% } %>
                 
-                    <label>Domicilio:</label>
+                    <label class="label-usrs">Domicilio:</label>
                     <select name="domicilio" class="lugar">
                         <option value="">Buenos Aires</option>
                         <option value="">Cordoba</option>
@@ -75,7 +75,7 @@
 
                     <div class="col-md-6 my-1">
                         <div class="form-group">
-                            <label><b>Imagen de perfil:</b></label>
+                            <label class="label-usrs"><b>Imagen de perfil:</b></label>
                             <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.avatar) { %>
                                 <div class="text-danger">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
            
-                    <label>Contraseña</label>
+                    <label class="label-usrs">Contraseña</label>
                     <input 
                         type="password" 
                         name="password" 
@@ -98,7 +98,7 @@
                                 </div>
                             <% } %>
 
-                    <label>Confirmar Contraseña</label>
+                    <label class="label-usrs">Confirmar Contraseña</label>
                     <input 
                         type="password" 
                         name="password" 
@@ -111,7 +111,7 @@
                             </div>
                         <% } %>
                 
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
             
                 </form>
             </div>
