@@ -1,5 +1,9 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+
+const json = fs.readFileSync(path.join(__dirname, '../database/products.json'), 'utf-8');
+const products = JSON.parse(json)
 
 const mainController = express();
 
@@ -13,14 +17,20 @@ const allProduct = (req,res) => {
 }
 
 const productDetail = (req,res) => {
-    res.render('product/productDetail.ejs');
+    const id = Number(req.params.id);
+    for (let i = o; i < products.length; i++){
+           if (products[i].id === id){ 
+              return res.render('productdetail', {product: products[i]})
+           }
+    }
+    
 }
+//atrapar error
 const productCart = (req,res) => {
     res.render('product/productCart.ejs');
 }
 const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
-
 
     }
     const saveProduct = (req, res) => {

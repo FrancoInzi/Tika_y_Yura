@@ -14,11 +14,11 @@ main{
 .content{
     display: flex;
 }
-section{    
+.section{    
     border: black solid 1px;
     width: 48%;
 }
-p{
+.p{
     line-height: 20px;
     border: dotted gray 1px;
 }
