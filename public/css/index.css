@@ -26,16 +26,18 @@
 
 .left-text{
     font-size: 80%;
-    text-align: left;
-    padding: 10px;
+    text-align: center;
+    padding: 20px;
     width: 50%;
     color: white;
+    display: flex;
 }
 
 .right-text{
-    text-align: right;
+    text-align: center;
     padding: 20px;
     width: 50%;
+    display: flex;
 }
 
 .redirect {
@@ -73,8 +75,8 @@
     height: auto;
     border: solid 1px #ebebeb;
 }
-
-.burger-menu {
+.shop i{
+    
     display: inline-block;
     background-color: #91795B;
     color: white;
@@ -82,6 +84,20 @@
     border-radius: 8px;
     font-weight: bold;
     margin: auto;
+}
+
+.burger {
+    display: inline-block;
+    background-color: #91795B;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: auto;
+   
+}
+.wslinks{
+    display: none;
 }
 
 /*Main*/

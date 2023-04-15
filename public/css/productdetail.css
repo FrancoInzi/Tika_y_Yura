@@ -10,11 +10,12 @@ body{
     font-weight: 600;
     color: black;    
 }
-main{
+.main{
     width: 340px;
     display: flex;
     flex-wrap: wrap;
-   
+   margin: 0px;
+   padding: 0px;
 }
 h2{
     background-color: #91795B;
@@ -26,11 +27,15 @@ h3{
     background-color: #91795B;
     color: aliceblue;
     text-align: center;
+    font-size: 25px;
 }
 h4{
     background-color: #91795B;
     color: aliceblue;
     text-align: center;
+}
+h4.carac{
+   background-color:  black;
 }
 h5{
     background-color: #91795B;
@@ -47,6 +52,9 @@ input{
 }
 .freeship{
     color: green;
+}
+.buy {
+    width: 360px
 }
 @media (min-width: 361px) {
     main{

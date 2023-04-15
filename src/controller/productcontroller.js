@@ -15,17 +15,27 @@ mainController.use(express.static(publicFolderPath) );
 const allProduct = (req,res) => {
     res.render('product/allproducts.ejs');
 }
+const getProductDetail = (req, res) =>{
+     const {id} = req.params;
+     const product = product.find (e => e.id == id);
+     if (product){
+        res.send (product);
+     } else{
+        res.send ('notfound')
+     }
+
+}
 
 const productDetail = (req,res) => {
     const id = Number(req.params.id);
-    for (let i = o; i < products.length; i++){
+    for (let i = 0; i < products.length; i++){
            if (products[i].id === id){ 
-              return res.render('productdetail', {product: products[i]})
+              return res.render('./product/productdetail.ejs', {product: products[i]})
            }
     }
     
 }
-//atrapar error
+//atrapar error!
 const productCart = (req,res) => {
     res.render('product/productCart.ejs');
 }
@@ -55,6 +65,7 @@ module.exports = {
     createProduct,
     editProduct,
    saveProduct,
-    allProduct
+    allProduct,
+    getProductDetail
     
 }

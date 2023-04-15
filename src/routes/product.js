@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require ('path');
-const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct} = require('../controller/productcontroller');
+const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct, getProductDetail} = require('../controller/productcontroller');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
