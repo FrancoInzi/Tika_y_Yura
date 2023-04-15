@@ -15,16 +15,16 @@ mainController.use(express.static(publicFolderPath) );
 const allProduct = (req,res) => {
     res.render('product/allproducts.ejs');
 }
-// const getProductDetail = (req, res) =>{
-//      const {id} = req.params;
-//      const product = product.find (e => e.id == id);
-//      if (product){
-//         res.send (product);
-//      } else{
-//         res.send ('notfound')
-//      }
+const getProductDetail = (req, res) =>{
+     const {id} = req.params;
+     const product = product.find (e => e.id == id);
+     if (product){
+        res.send (product);
+     } else{
+        res.send ('notfound')
+     }
 
-// }
+}
 
 const productDetail = (req,res) => {
     const id = Number(req.params.id);
