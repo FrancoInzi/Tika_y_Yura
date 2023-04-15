@@ -9,21 +9,14 @@
 
     <main>
         <div class="image">
-            <h2>AEONIUM NOBILE</h2>
-            <h3>$2000</h3>
-            <img src="/img/logo vectorizado.jpg">
+            <h2>Nombre <%= product.name%></h2>
+            <h2>Nombre científico: <%= product.other_name%></h2>
+            <h3>precio <%= product.price%></h3>
+            <img src="<%= product.image%>">
         </div>
         <div class="info">
-            <h4>Aeonium de roseta solitaria, llega a tamaño grande de adulto.
-                Las flores son de color rojo</h4>
-            <p>Aeonium es un genero de plantas suculentas endemico de las Islas Canarias principalmente.
-                Epoca de crecimiento: otoño, invierno y primavera.
-                Proteger de las heladas en invierno, y del sol muy fuerte del verano.
-
-                Importante: Las plantas se envian a raiz desnuda, sin tierra ni maceta.
-
-                Cada planta es única, puede cambiar un poco su tamaño, forma y color segun las épocas del año y donde se
-                cultivan.</p>
+            <h4><%= product.description%></h4>
+            <p><%= product.features%></p>
         </div>
         <div class="buy">
             <label for="unidades">Cantidad</label>
