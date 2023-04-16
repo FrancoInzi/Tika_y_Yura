@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require ('path');
-const productController = require('../controller/productcontroller');
+const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct, getProductDetail} = require('../controller/productcontroller');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, newFilename);
+        cb(null, fileName);
     }
 }); 
 

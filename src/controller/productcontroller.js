@@ -1,7 +1,11 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const productController = express();
+
+const json = fs.readFileSync(path.join(__dirname, '../database/products.json'), 'utf-8');
+const products = JSON.parse(json)
+
+const mainController = express();
 
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
@@ -13,15 +17,34 @@ const productos = JSON.parse( archivojson);
 
 const controller = {
 
-    allProduct: (req, res) => {
-        res.render('product/allproducts.ejs');
-    },
+const allProduct = (req,res) => {
+    res.render('product/allproducts.ejs');
+}
+const getProductDetail = (req, res) =>{
+     const {id} = req.params;
+     const product = product.find (e => e.id == id);
+     if (product){
+        res.send (product);
+     } else{
+        res.send ('notfound')
+     }
 
-    productCart: (req, res) => {
-        res.render('product/productcart.ejs');
-    },
+}
 
-    createProduct: (req, res) => {
+const productDetail = (req,res) => {
+    const id = Number(req.params.id);
+    for (let i = 0; i < products.length; i++){
+           if (products[i].id === id){ 
+              return res.render('./product/productdetail.ejs', {product: products[i]})
+           }
+    }
+    
+}
+//atrapar error!
+const productCart = (req,res) => {
+    res.render('product/productCart.ejs');
+}
+const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
 
     },
@@ -39,14 +62,16 @@ const controller = {
         
         let productToEdit = productos[id];
 
-        res.render("productToEdit", {productToEdit: productToEdit});
-
-        //res.render('product/editproduct.ejs');
-    },
-
-    deleteProduct: (req, res) => {
-        res.render('product/productdetail.ejs');
-    }
+module.exports = {
+    
+    productDetail,
+    productCart,
+    createProduct,
+    editProduct,
+   saveProduct,
+    allProduct,
+    getProductDetail
+    
 }
 
 module.exports = controller;
