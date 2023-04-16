@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require ('path');
-const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct} = require('../controller/productcontroller');
+const productController = require('../controller/productcontroller');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -18,26 +18,33 @@ const upload = multer({ storage });
 
 
 const routerProduct = express.Router();
+
 //Listado de productos
-routerProduct.get('/product/allproducts',  allProduct);
+routerProduct.get('/product/allproducts',  productController.allProduct);
 
-routerProduct.get('/product/productdetail/:id',  productDetail);
+//Formulario de creacion de producto
+routerProduct.get('/product/createproduct',  productController.reateProduct);
 
-routerProduct.get('/product/productcart',  productCart);
+//Detalle de un producto particular
+routerProduct.get('/product/productdetail/:id',  productController.productDetail);
 
 //Acción de creación (a donde se envía el formulario)
-routerProduct.get('/product/createproduct',  createProduct);
-//routerProduct.post('/product/createproduct', savnpm sarteProduct);
-routerProduct.post('/product/createproduct', upload.single("imagenProducto"), saveProduct );
+routerProduct.post('/product/createproduct', upload.single("imagenProducto"), productController.saveProduct );
+
 //Formulario de edición de productos
-routerProduct.get ('/products/:id/edit', );
+routerProduct.get ('/product/productedit/:id/', productController.editProduct);
+
 //accion de edicion 
-routerProduct.put('/product/editproduct',  editProduct);
+//routerProduct.put('/product/editproduct/:id',  productController.editProduct);
+
+routerProduct.put('/product/editproduct/:id', function(req, res){
+    res.send("yendingggggggg");
+}),
 
 //Acción de borrado
-routerProduct.delete('/products/:id', );
+routerProduct.delete('/product/productdetail/:id', productController.deleteProduct);
 
-
+routerProduct.get('/product/productcart',  productController.productCart);
 
 
 module.exports= routerProduct;

@@ -1,49 +1,52 @@
 const express = require('express');
 const path = require('path');
-
-const mainController = express();
+const fs = require('fs');
+const productController = express();
 
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
 
-mainController.use(express.static(publicFolderPath) );
+productController.use(express.static(publicFolderPath));
 
-const allProduct = (req,res) => {
-    res.render('product/allproducts.ejs');
-}
+const archivojson = fs.readFileSync('/products.json', 'utf-8');
+const productos = JSON.parse( archivojson);
 
-const productDetail = (req,res) => {
-    res.render('product/productDetail.ejs');
-}
-const productCart = (req,res) => {
-    res.render('product/productCart.ejs');
-}
-const createProduct = (req, res) => {
+const controller = {
+
+    allProduct: (req, res) => {
+        res.render('product/allproducts.ejs');
+    },
+
+    productCart: (req, res) => {
+        res.render('product/productcart.ejs');
+    },
+
+    createProduct: (req, res) => {
         res.render('product/createproduct.ejs')
 
-    }
-    const saveProduct = (req, res) => {
+    },
+
+    saveProduct: (req, res) => {
         return res.send({
             body: req.body,
             file: req.file
         });
-    }    
-// const saveProduct = (req, res) => {
-//         res.send(req.body)
+        //res.redirect();
+    },
 
-//     }
+    editProduct: (req, res) => {
+        let id = req.params.id;
+        
+        let productToEdit = productos[id];
 
-const editProduct = (req,res) => {
-    res.render('product/editproduct.ejs');
+        res.render("productToEdit", {productToEdit: productToEdit});
+
+        //res.render('product/editproduct.ejs');
+    },
+
+    deleteProduct: (req, res) => {
+        res.render('product/productdetail.ejs');
+    }
 }
 
-module.exports = {
-    
-    productDetail,
-    productCart,
-    createProduct,
-    editProduct,
-   saveProduct,
-    allProduct
-    
-}
+module.exports = controller;
