@@ -45,6 +45,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+
 routerUsers.get('/users/login',controller.login);
 
 routerUsers.get('/users/register', controller.register );
@@ -54,3 +55,6 @@ routerUsers.get('/users/profile/:id', controller.profile);
 
 
 module.exports = routerUsers;
+
+
+
