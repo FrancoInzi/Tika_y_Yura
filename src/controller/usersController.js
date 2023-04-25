@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const userController = express();
 
+
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
 
