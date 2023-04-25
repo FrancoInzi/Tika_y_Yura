@@ -64,7 +64,7 @@ module.exports = {
     productCart,
     createProduct,
     editProduct,
-   saveProduct,
+    saveProduct,
     allProduct,
     getProductDetail
     
