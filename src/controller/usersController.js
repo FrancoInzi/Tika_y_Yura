@@ -1,6 +1,10 @@
+//hash
+const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
+const User = require('../models/user');
 const userController = express();
+
 
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
@@ -22,18 +26,30 @@ const controller = {
                 oldData: req.body
             });
         }
+    //nuevo 2h
+let userToCreate = {
+    ...req.body,
+    password: bcryptjs.hashSync(req.body.password, 10),
+    avatar:  req.file.filename
+}
 
-        return res.send('ok, las validaciones se pasaron y no tienes errores');
+        User.create(userToCreate);
+        return res.send('ok, se guardo el usuario');
     },
 
     login: (req, res) => {
-        return res.render('users/login');
+       res.render('users/login');
     },
     register: (req, res) => {
-        return res.render('users/register');
+        res.render('users/register');
     },
-    profile: (req, res) => {
-        return res.render('users/profile');
+    profile: (req,res) => {
+        const id = Number(req.params.id);
+        for (let i = 0; i < User.length; i++){
+               if (User[i].id === id){ 
+                  return res.render('users/profile.ejs', {user: User[i]})
+               }
+        }
     },
     saveUser: (req, res) => {
         return res.send({

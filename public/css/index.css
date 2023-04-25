@@ -35,8 +35,7 @@
 
 .right-text{
     text-align: center;
-    padding: 20px;
-    width: 50%;
+    padding: 30px;
     display: flex;
 }
 
@@ -94,8 +93,8 @@
     border-radius: 8px;
     font-weight: bold;
     margin: auto;
-   
 }
+
 .wslinks{
     display: none;
 }
@@ -209,7 +208,7 @@ iframe {
 
 @media (min-width: 361px) {
     
-    .burger-menu {
+    .burger {
     display: none;
     }
     }
@@ -218,4 +217,13 @@ iframe {
     .container-footer{
         display: flex;
     }
+
+    .wslinks{
+        display: flex;
+    }
+
+    .burger{
+        display: none;
+    }
 }
+

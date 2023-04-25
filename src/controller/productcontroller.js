@@ -1,28 +1,29 @@
+const { validationResult } = require('express-validator');
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
 const json = fs.readFileSync(path.join(__dirname, '../database/products.json'), 'utf-8');
-const products = JSON.parse(json)
+const products = JSON.parse(json);
 
-const mainController = express();
+const productController = express();
 
 const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
 
-mainController.use(express.static(publicFolderPath) );
+productController.use(express.static(publicFolderPath) );
 
 const allProduct = (req,res) => {
     res.render('product/allproducts.ejs');
 }
 const getProductDetail = (req, res) =>{
-     const {id} = req.params;
-     const product = product.find (e => e.id == id);
-     if (product){
+    const {id} = req.params;
+    const product = product.find (e => e.id == id);
+    if (product){
         res.send (product);
-     } else{
+    } else{
         res.send ('notfound')
-     }
+    }
 
 }
 
@@ -39,20 +40,22 @@ const productDetail = (req,res) => {
 const productCart = (req,res) => {
     res.render('product/productCart.ejs');
 }
+
 const createProduct = (req, res) => {
         res.render('product/createproduct.ejs')
+}
 
-    }
-    const saveProduct = (req, res) => {
-        return res.send({
-            body: req.body,
-            file: req.file
+const saveProduct = (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+        return res.render('product/createproduct.ejs', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
         });
-    }    
-// const saveProduct = (req, res) => {
-//         res.send(req.body)
+    }
+    return res.send('ok, las validaciones se pasaron y no tienes errores');
+}    
 
-//     }
 
 const editProduct = (req,res) => {
     res.render('product/editproduct.ejs');
@@ -64,7 +67,7 @@ module.exports = {
     productCart,
     createProduct,
     editProduct,
-   saveProduct,
+    saveProduct,
     allProduct,
     getProductDetail
     
