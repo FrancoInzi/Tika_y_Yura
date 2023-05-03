@@ -21,4 +21,4 @@
 *   Santino Russo: De Buenos Aires, Argentina. Tiene 18 años y es estudiante.
 *   Franco Inzirillo: Es oriundo de Mendoza, Argentina. Tiene 30 años y es comunicador social y delivery.
 *   María Guadalupe Rodriguez Frosi: Tiene 33 años, es de Cordoba, Argentina. Es Tecnica Universitaria en Industrias Alimentarias.
-*   Edwar Reyes: Es oriundo de Colombia.
+

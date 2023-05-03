@@ -3,13 +3,13 @@
 
 <%- include('./partials/head',{css:"aboutus", title:"Sobre Nosotros"}) %>
 
-<body>
+<body class="body-aboutus">
     <%- include('./partials/header') %>
-    <main>
-        <section>
+    <main class="main-aboutus">
+        <div>
             <article>
-                <h3>¿Quiénes somos?</h3>
-                <img src="/img/granjera.jpg">
+                <h3 class="titulo-aboutus">¿Quiénes somos?</h3>
+                <img class="img-aboutus" src="/img/granjera.jpg">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores perspiciatis facere dignissimos
                     magni, aliquam molestiae sit mollitia vel harum, fuga unde expedita officiis et, similique obcaecati
                     architecto ipsa ipsum ea.</p>
@@ -35,7 +35,7 @@
                 <label for="name">Dejanos una duda, consuilta o sugerencia:</label>
                 <input class="commentbox" type="text" id="msj" name="mensaje" required minlength="4" maxlength="500" size="20">
             </article>
-        </section>
+        </div>
     </main>
     <%- include('./partials/footer') %>
 </body>
