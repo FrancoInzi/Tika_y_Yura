@@ -37,3 +37,16 @@
     color: white;
     border: solid black 1px;
 }
+@media (min-width: 361px){    
+     .data {
+        font-weight: bold;
+     }
+}
+@media (min-width: 769px){
+
+}
+@media (min-width: 1280px){
+    .smallbox{
+        margin-left: 100px;
+    }
+}
