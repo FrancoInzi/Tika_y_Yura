@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.banner{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
 .body-index {
     font-family: 'Bodoni';
     margin:0;    
@@ -30,12 +35,14 @@
     width: 50%;
     color: white;
     display: flex;
+    width: 160px;
 }
 
 .right-text{
     text-align: center;
     padding: 10px;
     display: flex;
+    width: 200px;
 }
 
 .redirect {
@@ -114,6 +121,7 @@ main{
     flex-wrap: wrap;
 }
 
+
 .titulares {
     font-size: 24px;
     color: #666;
@@ -153,22 +161,26 @@ article {
 }
 
 
+
 /*Footer*/
 footer{
     background-color:#91795B;
     width: 100%;
     max-width: 1200px;
     margin:auto;
+    
+    
 }
 
 .container-footer{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .info-footer {
     text-align: left;
     padding: 0 10px;
-    width: 100%;
+    width: 340px;
 }
 
 .info-footer h2 {
@@ -232,6 +244,7 @@ footer{
     color:white;
 }
 
+
 .mediosPago{
     width: 150px;
     height: auto;
@@ -245,21 +258,68 @@ iframe {
 
 @media (min-width: 361px) {
     
-    .burger {
-    display: none;
+    .wslinks a{
+        text-decoration: none;
+        font-weight: bold;
     }
     }
 
 @media (min-width: 769px) {
-    .container-footer{
-        display: flex;
-    }
-
     .wslinks{
         display: flex;
     }
+    .burger {
+    display: none;
+    }
+    .container-footer{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .logo{
+        width: 100px;
+    }
+    .options{
+        width: 600px;
+    }
+    .options-container{
+        margin: 0px;
+        padding: 0px;
+        width: 760px;
+    }
+
+    
 
     .burger{
         display: none;
     }
 }
+@media (min-width: 1280px) {
+    
+    
+    
+    .logo{
+        width: 300px;
+    }
+    .options{
+        width: 800px;
+    }
+    .options-container{
+        margin: 0px 50px 0px 82px ;
+        padding: 0px;
+        width: 1200px;
+    }
+    .right-text{
+        
+        width: 250px;
+    }
+    .left-text{
+        width: 250px;
+    }
+    
+
+    .burger{
+        display: none;
+    }
+}
+
+
