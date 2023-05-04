@@ -4,42 +4,44 @@
     box-sizing: border-box;   
 }
 main{
-    
+    margin: 50px 0px 50px 0px;
     font-family: syncopate, sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: black;  
     display: block;  
+   
 }
 .content{
-    display: flex;
+    display: block;
+   
 }
 .section{    
-    border: black solid 1px;
-    width: 48%;
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
+
 .p{
-    line-height: 20px;
+    width: 60px;
     border: dotted gray 1px;
+    font-size: 12px;
+    text-align: center;
 }
-.blank{
-    color: white;
-    height: 53px;
-}
-h2{
+
+.h2{
     background-color: #91795B;
     color: aliceblue;
     text-align: center;
     font-size: 30px;
+    margin-bottom: 25px;
 }
-img{
-    height: 50px;
-    width: 50px;
-}
+
 .buton{
+  margin-top: 25px;
   position: relative;
   left: 15%;
-  width: 100%;
   border: white;
   
 }
@@ -48,21 +50,31 @@ img{
     text-align: center;
     background-color:  green;
     color: white;
-    width: 250px;
+    width: 180px;
     height: 45px;
+    font-size: 18px;
 }
 
 @media (min-width: 769px) {   
+    .content{           
+        width: 600px;
+        margin: 25px;
+        
+    }
+    .section {
+       width: 500px;
+    }
     img{
         width: 100px;
         height: 100px;
     }     
-    h2{
+    .h2{
         font-size: 35px;
     }
-    p{
-        font-size: 16px;
+    .p{
+        font-size: 18px;
         line-height: 24px;
+        width: 80px;
     }
     .buton{
         left: 30%;
@@ -76,6 +88,10 @@ img{
     }
     }
 @media (min-width: 1280px) { 
+    main{
+        margin: 50px auto 50px auto;
+        
+    }
     img{
         width: 200px;
         height: 200px;
@@ -87,4 +103,14 @@ img{
         
         height: 203px;
     }    
+    .content{
+        width: 900px;
+        align-items: center;
+    }
+    .section{
+        width: 800px;
+    }
+    .p {
+        width: 150px;
+    }
 }

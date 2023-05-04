@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('../partials/head',{css:"productdetail", title:"Detalle del Producto"}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="main">
+                <section class="section">
+                    <div class="product">
+                        <h2 class="name"> <%= product.name%>
+                        </h2>
+                        <img class="img" src="/img/cactus1.jpg">
+                        <h4 class="">Nombre científico: <%= product.other_name%>
+                        </h4>
+                        <h3 class="">precio <%= product.price%>
+                        </h3>
+                        
+                    </div>
+                    <div class="info">
+                        <h4 class="carac">Descripción</h4>
+                        <p class="text">
+                            <%= product.description%>
+                        </p>
+                        <h4 class="carac">Características</h4>
+                        <p class="text">
+                            <%= product.features%>
+                        </p>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="buy">
+                        <label for="unidades">Cantidad</label>
+
+                        <input type="number" id="unidades" name="cantidad" min="1" max="100">
+                        <input type="submit" value="Comprar" />
+                        <h5 class="discount">Pagando en efectivo 10% de descuento</h4>
+                            <p class="freeship">Envío grátis a partir de 10 unidades</p>
+                            <h5>También podes llevarlo en cuotas</h4>
+                                <form action="#">
+                                    <label for="cuotas">Cuotas</label>
+                                    <select name="cuotas" id="cuotas">
+                                        <option value="3">3 cuotas de $700</option>
+                                        <option value="6">6 cuotas de $400</option>
+                                        <option value="12">12 cuotas de $220</option>
+
+                                    </select>
+                                    <input type="submit" value="Comprar" />
+                                </form>
+                                <h5><a href="">Ver otros medios de pago</a></h4>
+
+                    </div>
+                </section>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
