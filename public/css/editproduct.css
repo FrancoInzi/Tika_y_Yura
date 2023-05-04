@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;   
+}
+.main{
+    display: block;
+    font-family: 'Bodoni';
+    border-radius: solid 2px black;
+    margin: 0%;
+    padding: 0%;
+}
+.div1{
+    background-color: #91795B;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.title{
+   padding-top: 10px;
+}
+.form{
+    
+    font-family: 'Bodoni';
+}
+.form label{
+    font-weight: bold;
+}
+.form input{
+    width: 200px;
+    height: auto;
+    margin-left: 25px;
+    text-align: center;
+    padding: 10px;
+}
+.form form div{
+    margin-top: 10px;
+}
+.form #type {
+  width: 80px;
+}
+.form .button-accept{
+    align-items: center;
+    width: max-content;
+    margin-left: 40%;
+}
+.button-accept{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    background-color: green;
+    
+    
+}
+.delete{
+    margin-top: 50px;
+}
+.delete-buton{
+    width: 100px;
+    align-items: end;
+}
+@media (min-width: 769px) {
+      
+  .div1{
+    width: 100%;
+  }
+  .form{
+    
+    width: 600px;
+    margin-left: 60px;
+  }
+  .form form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .form input{
+    width: 500px;
+    height: 80px;
+  }
+  .form #name {
+    height: auto;
+    width: 350px;
+  }
+  .form #type{
+    width: 100px;
+    height: auto;
+  }
+  .value{
+    width: 800px;
+  }
+  .form #valor{
+   width: 200px;
+   height: auto;
+  }
+  .form .button-accept{
+    width: 150px;
+    height: auto;
+  }
+  .delete{
+    margin-left: 60px;
+  }
+  
+}
+@media (min-width: 1280px) { 
+    .main{
+        margin-left: 6%;
+        width: 1280px;
+    }
+    .form{
+        margin-left: 10%;
+    }
+    .delete{
+        margin-left: 80%;
+        margin-bottom: 25px;
+    }
+}
