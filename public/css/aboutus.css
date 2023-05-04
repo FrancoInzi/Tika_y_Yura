@@ -4,8 +4,7 @@
 
 .body-aboutus {
     font-family: 'Bodoni';
-    margin:0;   
-    text-align: center; 
+    margin:0;    
 }
 
 .main-aboutus{
@@ -14,65 +13,26 @@
     margin: auto;
 }
 
-.img-aboutus{
-    width: 80%;
-    border: solid 5px #91795B;
-    
+.container-aboutus {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    margin-top: -4px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
-.queries .commentbox{
-    width: 70%;
-    height: 100px;
-}
-.queries input{
-    width: 50%;
+
+
+.img-aboutus {
+    width: 350px;
+    border-radius: 5px;
+    float: left;
 
 }
-.titulo-aboutus{
-   font-family: 'montserrat' ;
-   font-weight: 1500;
-   font-size: 20px;
-}
-@media (min-width: 361px){
-    .queries .commentbox{
-        width: 60%;
-        height: 150px;
-    }
-    .titulo-aboutus{
-        
-        font-size: 24px;
-    }
-    
-}
-@media (min-width: 769px){
-    .queries .commentbox{
-        width: 55%;
-        height: 200px;
-    }
-    .queries input{
-        width: 40%;
-        line-height: 22px;
-    
-    }
-    .titulo-aboutus{
-        font-size: 30px;
-    }
-   
-    
-}
-@media (min-width: 1280px){
-    .queries .commentbox{
-        width: 50%;
-        height: 300px;
-    }
-    .queries input{
-        width: 35%;
-        line-height: 25px;
-    }
-    .titulo-aboutus{
-        font-size: 36px;
-    }
-    .img-aboutus {
-        width: 50%;
-    }
-    
+
+.texto-aboutus {
+    text-align: justify;
+    padding: 20px;
+
 }
