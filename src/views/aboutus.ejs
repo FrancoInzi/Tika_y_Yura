@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head',{css:"aboutus", title:"Sobre Nosotros"}) %>
+
+<body class="body-aboutus">
+    <%- include('./partials/header') %>
+    <main class="main-aboutus">
+        <div class="container-aboutus">
+            <div>
+                <article>
+                    <h3 class="titulo-aboutus">¿Quiénes somos?</h3>
+                    <img class="img-aboutus" src="\img\aboutus\IMG_20211009_162912533_HDR.jpg">
+                </article>
+                <article class="texto-aboutus">
+                    <p>Tika y Yura nace hace 5 años en la ciudad de Córdoba, provincia de Córdoba, Argentina. Somos una empresa familiar que iniciamos con el amor por las plantas y todo lo que ellas nos aportan.</p>
+                    <p>Siempre nos gustaron las plantas, pero en especial, los cactus y las suculentas. Así fue como comenzamos a cultivarlas y multiplicarlas en casa, animádonos a entrar en este gran mundo que nos estaba esperando. De pronto y sin darnos cuenta, tuvimos la oportunidad de emprender y hacer lo que mas nos gusta que es estar entre plantas, cactus y suculentas.</p>
+                </article>
+           </div>
+            <div class="">
+                <h3>Dudas o consultas</h3>
+                <label for="name">Nombre y apellido:</label>
+                <br>
+                <input type="text" id="name" name="name" required minlength="4" maxlength="50" size="15">
+                </br>
+                <label for="name">Email:</label>
+                <br>
+                <input type="text" id="mail" name="email" required minlength="4" maxlength="50" size="20">
+                </br>
+                <label for="name">Dejanos una duda, consulta o sugerencia:</label>
+                <br>
+                <input class="commentbox" type="text" id="msj" name="mensaje" required minlength="4" maxlength="500" size="20">
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

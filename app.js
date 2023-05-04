@@ -19,6 +19,7 @@ console.log(publicFolderPath);
 
 //Template Engine
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/src/views'));
 
 //Configuraciones
 app.use(express.static('public') );
