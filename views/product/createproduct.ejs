@@ -8,11 +8,11 @@
     <body>
         <%- include('../partials/header') %>
 
-            <main>
-                <div>
-                    <h2>Crear nuevo producto</h2>
+            <main class="main">
+                <div class="div1">
+                    <h2 class="title">Crear nuevo producto</h2>
                 </div>
-                <div>
+                <div class="form">
                     <form name="formulario" method="POST" action="/product/createproduct" enctype="multipart/form-data">
                         <div>
                             <label for="name">Nombre del producto (4 to 60 characters):</label>
@@ -74,7 +74,7 @@
                                 <option value="suculentas">Suculentas</option>
                                 <option value="otros">Otros</option>
                             </select>
-                            <input type="submit" value="Elegir" class="form-control">
+                            <input type="submit" value="Elegir" class="type-buton">
                         </div>
                         <div>
                             <label for="valor">Valor $</label>
@@ -87,7 +87,7 @@
                                     </div>
                                     <% } %>
                         </div>
-                        <input type="submit" value="Aceptar">
+                        <input class="button-accept" type="submit" value="Aceptar">
                     </form>
                 </div>
             </main>
