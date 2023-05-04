@@ -2,76 +2,37 @@
     box-sizing: border-box;
 }
 
-body {
+.body-aboutus {
     font-family: 'Bodoni';
-    margin:0;   
-    text-align: center; 
+    margin:0;    
 }
-article{
-    border: black solid 1px;
+
+.main-aboutus{
+    background-color: white;
+    width: 100vw;
+    margin: auto;
 }
-img{
-    width: 80%;
-    border: solid 5px #91795B;
-    
+
+.container-aboutus {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    margin-top: -4px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
-.queries .commentbox{
-    width: 70%;
-    height: 100px;
-}
-.queries input{
-    width: 50%;
+
+
+.img-aboutus {
+    width: 350px;
+    border-radius: 5px;
+    float: left;
 
 }
-h3{
-   font-family: 'montserrat' ;
-   font-weight: 1500;
-   font-size: 20px;
-}
-@media (min-width: 361px){
-    .queries .commentbox{
-        width: 60%;
-        height: 150px;
-    }
-    h3{
-        
-        font-size: 24px;
-     }
-    
-}
-@media (min-width: 769px){
-    .queries .commentbox{
-        width: 55%;
-        height: 200px;
-    }
-    .queries input{
-        width: 40%;
-        line-height: 22px;
-    
-    }
-    h3{
-        
-        font-size: 30px;
-     }
-   
-    
-}
-@media (min-width: 1280px){
-    .queries .commentbox{
-        width: 50%;
-        height: 300px;
-    }
-    .queries input{
-        width: 35%;
-        line-height: 25px;
-    
-    }
-    h3{
-        
-        font-size: 36px;
-     }
-     img {
-         width: 50%;
-     }
-    
+
+.texto-aboutus {
+    text-align: justify;
+    padding: 20px;
+
 }
