@@ -7,7 +7,8 @@
     border-radius: solid 2px black;
     margin: 0%;
     padding: 0%;
-}
+    max-width: 1200px;
+    }
 .div1{
     background-color: #91795B;
     height: 50px;

@@ -1,6 +1,9 @@
 *{
   
 }
+.corp{
+  max-width: 1000px;
+}
 .form-register{
     width: 300px;
     margin: 0 auto;

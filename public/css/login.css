@@ -2,11 +2,9 @@
   box-sizing: border-box;
 }
 
-/* #content{
-  width: 340px;
-  margin: 0px;
-  padding: 0px;
-} */
+ #content{
+  max-width: 800px;
+} 
 
 .form-login{
   width: 300px;
