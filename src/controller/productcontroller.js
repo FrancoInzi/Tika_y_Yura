@@ -14,8 +14,9 @@ console.log(publicFolderPath);
 
 productController.use(express.static(publicFolderPath) );
 
-const allProduct = (req,res) => {
-    res.render('product/allproducts.ejs');
+const allProducts = (req,res) => {
+    res.render('product/allproducts.ejs', {'allProducts':products});
+    //res.send(products)
 }
 const getProductDetail = (req, res) =>{
     const {id} = req.params;
@@ -71,7 +72,7 @@ module.exports = {
     createProduct,
     editProduct,
     saveProduct,
-    allProduct,
+    allProducts,
     getProductDetail
     
 }

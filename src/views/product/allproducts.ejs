@@ -6,77 +6,20 @@
     <body class="all">
         <%- include('../partials/header') %>
             <main class="corp">
-                <h3 class="title">Cáctus</h3>
+                <h3 class="title">Nuestros productos</h3>
                 <div class="bigbox">
-
+                    <% for(let i=0; i< allProducts.length; i++){%>
                     <div class="smallbox">
-                        <img class="img" src="/img/cactus1.jpg">
+                        <a href="/product/productdetail/<%= allProducts[i].id %>">
+                            <img class="img" src="<%= allProducts[i].img %>">
+                        </a>
                         <div class="data">
-                            <p>$6770</p>
-                            <p>40% OFF</p>
-                            <p>cactus 1</p>
+                            <p class="name"> <%= allProducts[i].name %></p>
+                            <p class="value">Precio: <%= allProducts[i].price %></p>
+                            <p>Nombre científico: <%= allProducts[i].other_name %></p>                            
                         </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/cactus2.jpg">
-                        <div class="data">
-                            <p>$230.000</p>
-                            <p>20% OFF </p>
-                            <p>cactus 2</p>
-                        </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/cactus3.jpg">
-                        <div class="data">
-                            <p>$70.500</p>
-                            <p>10% OFF</p>
-                            <p>cactus 3</p>
-                        </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/cactus4.jpg">
-                        <div class="data">
-                            <p>$23.300</p>
-                            <p>5% OFF</p>
-                            <p>cactus 4</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="title">Suculentas </h3>
-                <div class="bigbox">
-
-                    <div class="smallbox">
-                        <img class="img" src="/img/suculenta1.jpg">
-                        <div class="data">
-                            <p>$6770</p>
-                            <p>40% OFF</p>
-                            <p>Suculentas 1</p>
-                        </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/suculenta2.jpg">
-                        <div class="data">
-                            <p>$230.000</p>
-                            <p>20% OFF</p>
-                            <p>Suculentas 2</p>
-                        </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/suculenta3.jpg">
-                        <div class="data">
-                            <p>$70.500</p>
-                            <p>10% OFF</p>
-                            <p>Suculentas 3</p>
-                        </div>
-                    </div>
-                    <div class="smallbox">
-                        <img class="img" src="/img/suculenta4.jpg">
-                        <div class="data">
-                            <p>$23.300</p>
-                            <p>5% OFF</p>
-                            <p>Suculentas 4</p>
-                        </div>
-                    </div>
+                    </div> 
+                    <%}%>                  
                 </div>
 
             </main>

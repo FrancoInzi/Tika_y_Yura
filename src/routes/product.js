@@ -3,7 +3,7 @@ const {validationResult} = require('express-validator');
 const routerProduct = express.Router();
 const multer = require('multer');
 const path = require ('path');
-const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct, getProductDetail} = require('../controller/productcontroller');
+const { productDetail, productCart, createProduct, editProduct, allProducts, saveProduct, getProductDetail} = require('../controller/productcontroller');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -46,7 +46,7 @@ body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 
 
 //Listado de productos
-routerProduct.get('/product/allproducts',  allProduct);
+routerProduct.get('/product/allproducts',  allProducts);
 
 //Detalle de un producto particular
 routerProduct.get('/product/productdetail/:id',  productDetail);
