@@ -42,7 +42,7 @@ body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 const routerProduct = express.Router();
 
 //Listado de productos
-routerProduct.get('/product/allproducts',  allProducts);
+routerProduct.get('/product/allproducts', allProducts);
 
 //Formulario de creacion de producto
 routerProduct.get('/product/createproduct', createProduct);
