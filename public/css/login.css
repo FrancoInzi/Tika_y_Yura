@@ -2,11 +2,21 @@
   box-sizing: border-box;
 }
 
+.body-index {
+  font-family: 'Bodoni';
+  margin:0;    
+}
 /* #content{
   width: 340px;
   margin: 0px;
   padding: 0px;
 } */
+
+.content{
+  background-color: white;
+  width: 100vw;
+  margin: auto;
+}
 
 .form-login{
   width: 300px;
@@ -23,7 +33,7 @@ h1{
 }
   
 .form-usr {
-  display: block;
+  display: flex;
   margin-bottom: 7px;
   background-color: #fdffff;
   font-size: 24px;
