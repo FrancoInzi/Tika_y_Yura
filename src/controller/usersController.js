@@ -2,7 +2,9 @@
 const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
-const User = require('../models/user');
+const db = require("../database/models");
+const User = require('../database/models/user');
+
 const userController = express();
 
 

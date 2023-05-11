@@ -1,4 +1,5 @@
 const express = require('express');
+const routerProduct = express.Router();
 const multer = require('multer');
 const path = require ('path');
 const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct, getProductDetail} = require('../controller/productcontroller');
@@ -39,29 +40,23 @@ body('productos').notEmpty().withMessage('Seleccione una característica'),
 body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 ];
 
-const routerProduct = express.Router();
+
 
 //Listado de productos
 routerProduct.get('/product/allproducts',  allProduct);
 
-//Formulario de creacion de producto
-routerProduct.get('/product/createproduct', createProduct);
-
 //Detalle de un producto particular
 routerProduct.get('/product/productdetail/:id',  productDetail);
 
+//Formulario de creacion de producto
+routerProduct.get('/product/createproduct', createProduct);
 //Acción de creación (a donde se envía el formulario)
 routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
 
 //Formulario de edición de productos
 routerProduct.get ('/product/productedit/:id/', editProduct);
-
-//accion de edicion 
-//routerProduct.put('/product/editproduct/:id',  productController.editProduct);
-
-routerProduct.put('/product/editproduct/:id', function(req, res){
-    res.send("yendingggggggg");
-}),
+//accion de edicion
+routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"), saveProduct),
 
 //Acción de borrado
 //routerProduct.delete('/product/productdetail/:id', deleteProduct);
