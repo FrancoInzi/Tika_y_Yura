@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 
-/* #content{
-  width: 340px;
+#content{
+  width: 340px; 
   margin: 0px;
   padding: 0px;
-} */
+} 
 
 .form-login{
   width: 300px;
