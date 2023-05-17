@@ -6,13 +6,15 @@ const { productDetail, productCart, createProduct, editProduct, allProducts, sav
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'./public/img/products'));
+        let folder = path.join(__dirname,'../../public/img/products');
+        cb(null, folder);
     },
     filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
+        let fileName= "product-" + Date.now() + path.extname(file.originalname)
+        //let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null, fileName);
     }
-}); 
+});
 
 const upload = multer({ storage });
 

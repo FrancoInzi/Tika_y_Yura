@@ -1,6 +1,41 @@
 *{
-  
+  box-sizing: border-box;
 }
+
+.body-index {
+  font-family: 'Bodoni';
+  margin:0;    
+}
+
+.main-register{
+  background-color: white;
+  width: 100vw;
+  margin: auto;
+}
+
+.container-main {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  padding: 50px;
+  display: block;
+}
+
+.form-register{
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  border: 1px solid #030000;
+  border-radius: 5px;
+  background-color: #fdffff;
+  box-shadow: 17px 17px 30px rgb(2, 2, 2);
+}
+
+.lugar{
+  background-color: #fdffff;
+  margin-bottom: 15px;
+}
+<<<<<<< HEAD
 .corp{
   max-width: 1000px;
 }
@@ -19,40 +54,43 @@
 }
 .shadow{
     padding: 55px;
+=======
+>>>>>>> c2d115e4b8e709c1428dad3c86c9144b3fc6f80c
 
-    }
 .h1-crear{
-    text-align: center;
-    background-color: #ffffff;
-    padding: 11px;
-  }
+  text-align: center;
+  background-color: #ffffff;
+  padding: 11px;
+}
   
 .label-usrs{
-    display: block;
-    margin-bottom: 9px;
-    background-color: #feffff;
-  }
+  display: block;
+  margin-bottom: 9px;
+  background-color: #feffff;
+}
   
-  .form-control[type="text"],
-  .form-control[type="email"],
-  .form-control[type="password"] {
-    width: 100%;
-    padding: 11px;
-    margin-bottom: 22px;
-    border: 1px solid #020200;
-    border-radius: 3px;
-    background-color: #f5f5f5;
-  }
+.form-control[type="text"],
+.form-control[type="email"],
+.form-control[type="password"] {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 22px;
+  border: 1px solid #020200;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+}
   
-  .button-usr[type="submit"]
-   {
-    width: 100%;
-    padding: 13px;
-    background-color: #05ff0c;
-    color: #001000;
-    border: 1px solid #010000;
-    border-radius: 3px;
-    cursor: pointer;
-    justify-content: center;
-    
-  }
+.button-usr[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  background-color: #05ff0c;
+  color: #001000;
+  border: 1px solid #010000;
+  border-radius: 3px;
+  cursor: pointer;
+  
+}
+
+.text-danger{
+  color: red;
+}
