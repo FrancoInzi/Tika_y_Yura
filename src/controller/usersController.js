@@ -29,13 +29,13 @@ const controller = {
             });
         }
     //nuevo 2h
-let userToCreate = {
+    let userToCreate = {
     ...req.body,
     password: bcryptjs.hashSync(req.body.password, 10),
     avatar:  req.file.filename
-}
+    }
 
-        User.create(userToCreate);
+    User.create(userToCreate);
         return res.send('ok, se guardo el usuario');
     },
 
@@ -54,10 +54,17 @@ let userToCreate = {
         }
     },
     saveUser: (req, res) => {
-        return res.send({
-            body: req.body,
-            file: req.file
-        });
+    //lo que sigue es del video de validacion multer clase 29
+    //     let imageFile = req.file;
+    //     if(imageFile !== undefined){
+    //         //Se guardara la informacion de la persona en nuestra db.
+    //         //imageFile.filename nos dara el nombre de la imagen que se almaceno en nuestro servidor.
+    //     }
+    // return res.send('No enviste ninguna imagen');
+        // return res.send({
+        //     body: req.body,
+        //     file: req.file
+        // });
     },
 }
 

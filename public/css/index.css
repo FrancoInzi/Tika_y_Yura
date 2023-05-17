@@ -156,7 +156,6 @@ article {
 /*Footer*/
 footer{
     background-color:#91795B;
-    width: 100%;
     max-width: 1200px;
     margin:auto;
 }
@@ -248,7 +247,7 @@ iframe {
     .burger {
     display: none;
     }
-    }
+}
 
 @media (min-width: 769px) {
     .container-footer{
