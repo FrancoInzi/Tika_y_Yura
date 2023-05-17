@@ -63,13 +63,13 @@
                 
                     <label class="label-usrs">Domicilio:</label>
                     <select name="domicilio" class="lugar">
-                        <option value="">Buenos Aires</option>
-                        <option value="">Cordoba</option>
-                        <option value="">Mendoza</option>
-                        <option value="">Salta</option>
-                        <option value="">Tucuman</option>
-                        <option value="">Corrientes</option>
-                        <option value="">Rio Negro</option>
+                        <option value="1">Buenos Aires</option>
+                        <option value="2">Cordoba</option>
+                        <option value="3">Mendoza</option>
+                        <option value="4">Salta</option>
+                        <option value="5">Tucuman</option>
+                        <option value="6">Corrientes</option>
+                        <option value="7">Rio Negro</option>
                     </select>
 
                     <div class="col-md-6 my-1">
@@ -100,7 +100,7 @@
                     <label class="label-usrs">Confirmar Contraseña</label>
                     <input 
                         type="password" 
-                        name="password" 
+                        name="passwordConfirm" 
                         placeholder="Confirmar Contraseña"
                         class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                         >

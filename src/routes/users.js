@@ -1,20 +1,23 @@
 const express = require('express');
+const {validationResult} = require('express-validator');
 const routerUsers = express.Router();
-const multer = require('multer');
+
 
 const path = require ('path');
 const controller = require('../controller/usersController');
 
-//video 1h
+
+
 const { body } = require('express-validator');
+const fileUpload = require('../midelwares/multerMidelwares');
 
 const validations = [
-body('fullName').notEmpty().withMessage('Tienes que escribir un nombre'),
+body('nombreyapellido').notEmpty().withMessage('Tienes que escribir un nombre'),
 body('email')
 .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
 .isEmail().withMessage('Debes escribir un formato de correo valido'),
 body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-body('country').notEmpty().withMessage('Tienes que escribir un pais'),
+body('domicilio').notEmpty().withMessage('Tienes que escribir un pais'),
 body('avatar').custom((value, {req }) => {
     let file = req.file;
     let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -31,25 +34,11 @@ body('avatar').custom((value, {req }) => {
 })
 ]
 
-
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'../../public/img/users'));
-    },
-    filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-        cb(null, fileName);
-    }
-});
-
-const upload = multer({ storage });
-
-
 routerUsers.get('/users/login',controller.login);
+routerUsers.post('/users/login',  controller.postLogin );
 
 routerUsers.get('/users/register', controller.register );
-routerUsers.post('/users/register', upload.single('avatar'), controller.saveUser );
+routerUsers.post('/users/register', fileUpload.single('avatar'), validations, controller.processRegister );
 
 routerUsers.get('/users/profile/:id', controller.profile);
 

@@ -88,5 +88,16 @@
         "Img": "https://robohash.org/temporeperferendisvoluptatem.jpg?size=50x50&set=set1",
         "ip_address": "137.202.165.150",
         "password": "wzHMTQ"
+    },
+    {
+        "id": 11,
+        "nombreyapellido": "Franco",
+        "nombreDeUsuario": "FrancoInzi",
+        "email": "mail@mail.com",
+        "FechaDeNacimiento": "2023-05-11",
+        "domicilio": "4",
+        "password": "$2a$10$/RxkQUVdw.DVwOL00pltoekT0b4S8NhRCeaORekiV2ObYwHhsIphO",
+        "passwordConfirm": "1234",
+        "avatar": "1684205295489_img.jpg"
     }
 ]
