@@ -169,7 +169,6 @@ article {
 /*Footer*/
 footer{
     background-color:#91795B;
-    width: 100%;
     max-width: 1200px;
     margin:auto;
     
@@ -266,7 +265,7 @@ iframe {
         text-decoration: none;
         font-weight: bold;
     }
-    }
+}
 
 @media (min-width: 769px) {
     .wslinks{

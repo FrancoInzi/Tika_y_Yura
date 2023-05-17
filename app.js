@@ -5,8 +5,8 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const fs = require('fs');
 
-
 const app = express();
+
 const routerMain = require('./src/routes/main');
 const routerProduct = require('./src/routes/product.js');
 const routerUsers = require('./src/routes/users.js');
@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/src/views'));
 
 //Configuraciones
-app.use(express.static('public') );
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({
