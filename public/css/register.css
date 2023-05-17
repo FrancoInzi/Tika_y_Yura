@@ -35,6 +35,27 @@
   background-color: #fdffff;
   margin-bottom: 15px;
 }
+<<<<<<< HEAD
+.corp{
+  max-width: 1000px;
+}
+.form-register{
+    width: 300px;
+    margin: 0 auto;
+    padding: 54px;
+    border: 1px solid #030000;
+    border-radius: 5px;
+    background-color: #fdffff;
+    box-shadow: 17px 17px 30px rgb(3, 3, 3);
+  }
+.lugar{
+    background-color: #fdffff;
+    margin-bottom: 15px;
+}
+.shadow{
+    padding: 55px;
+=======
+>>>>>>> c2d115e4b8e709c1428dad3c86c9144b3fc6f80c
 
 .h1-crear{
   text-align: center;

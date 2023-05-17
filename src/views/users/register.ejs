@@ -53,32 +53,30 @@
                                     <%= errors.email.msg %>
                                 </div>
                             <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Fecha de nacimiento</b></label>
-                    <div>
-                        <input 
-                            type="date" 
-                            name="FechaDeNacimiento" 
-                            class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
-                            >
-                            <% if (locals.errors && errors.FechaDeNacimiento) { %>
-                                <div class="text-danger">
-                                    <%= errors.FechaDeNacimiento.msg %>
-                                </div>
-                            <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Domicilio:</b></label>
-                    <div>
-                        <select name="domicilio" class="lugar">
-                            <option value="">Buenos Aires</option>
-                            <option value="">Cordoba</option>
-                            <option value="">Mendoza</option>
-                            <option value="">Salta</option>
-                            <option value="">Tucuman</option>
-                            <option value="">Corrientes</option>
-                            <option value="">Rio Negro</option>
-                        </select>
-                    </div>
+
+                    <label class="label-usrs">Fecha de nacimiento</label>
+                    <input 
+                        type="date" 
+                        name="FechaDeNacimiento" 
+                        class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.FechaDeNacimiento) { %>
+                            <div class="text-danger">
+                                <%= errors.FechaDeNacimiento.msg %>
+                            </div>
+                        <% } %>
+                
+                    <label class="label-usrs">Domicilio:</label>
+                    <select name="domicilio" class="lugar">
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Salta">Salta</option>
+                        <option value="Tucuman">Tucuman</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Rio Negro">Rio Negro</option>
+                    </select>
+
                     <div class="col-md-6 my-1">
                         <label class="label-usrs"><b>Imagen de perfil:</b></label>
                         <div class="form-group">
@@ -105,22 +103,20 @@
                                     <%= errors.password.msg %>
                                 </div>
                             <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Confirmar Contraseña</b></label>
-                    <div>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Confirmar Contraseña"
-                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.password) { %>
-                                <div class="text-danger">
-                                    <%= errors.password.msg %>
-                                </div>
-                            <% } %>
-                    </div>
+
+                    <label class="label-usrs">Confirmar Contraseña</label>
+                    <input 
+                        type="password" 
+                        name="passwordConfirm" 
+                        placeholder="Confirmar Contraseña"
+                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                        <% } %>
+                
                     <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
             
                 </form>
