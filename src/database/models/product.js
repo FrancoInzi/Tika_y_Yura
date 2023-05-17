@@ -1,3 +1,5 @@
+const macetas = require("./macetas");
+
 module.exports= function (sequelize, dataTypes){
     let alias = "Productos";
 
@@ -32,7 +34,7 @@ module.exports= function (sequelize, dataTypes){
     }
 
     let config = {
-        tableName: "prducts",
+        tableName: "products",
         timestamps: false
 
     }
@@ -40,17 +42,9 @@ module.exports= function (sequelize, dataTypes){
     let Productos = sequelize.define(alias, cols, config);
 
     Productos.associate = function(models) {
-        Productos.belongsTo(models.Usuarios, {
-            as:"",
-            foreignKey:""
-        });
-    
-        Productos.belongsToMany(models, {
-            as:"",
-            through:"",
-            foreignKey:"",
-            otherKey:"",
-            timestamps: false
+        Localidad.belongsTo(models.Productos, {
+            as:"Productos",
+            foreignKey:"maceta_id"
         });
     }
     return Productos;
