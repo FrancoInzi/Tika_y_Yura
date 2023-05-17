@@ -2,17 +2,19 @@ const express = require('express');
 const routerProduct = express.Router();
 const multer = require('multer');
 const path = require ('path');
-const { productDetail, productCart, createProduct, editProduct, allProduct, saveProduct, getProductDetail} = require('../controller/productcontroller');
+const { productDetail, productCart, createProduct, editProduct, allProducts, saveProduct, getProductDetail} = require('../controller/productcontroller');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'./public/img/products'));
+        let folder = path.join(__dirname,'../../public/img/products');
+        cb(null, folder);
     },
     filename: (req, file, cb) => {
-        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
+        let fileName= "product-" + Date.now() + path.extname(file.originalname)
+        //let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null, fileName);
     }
-}); 
+});
 
 const upload = multer({ storage });
 
@@ -43,7 +45,7 @@ body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 
 
 //Listado de productos
-routerProduct.get('/product/allproducts',  allProduct);
+routerProduct.get('/product/allproducts', allProducts);
 
 //Detalle de un producto particular
 routerProduct.get('/product/productdetail/:id',  productDetail);

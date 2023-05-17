@@ -88,9 +88,9 @@ module.exports= function (sequelize, dataTypes){
     let Usuarios = sequelize.define(alias, cols, config);
 
     Usuarios.associate = function(models) {
-        Usuarios.hasMany(models.Productos, {
-            as:"",
-            foreignKey:""
+        Usuarios.belongsTo(models.Domicilio, {
+            as:"Domicilio",
+            foreignKey:"domicilio_id"
         });
     }
 
