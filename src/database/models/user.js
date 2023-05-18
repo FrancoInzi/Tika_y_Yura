@@ -55,27 +55,24 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
         first_name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         last_name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         email: {
-            type: dataTypes.EMAIL,
+            type: dataTypes.STRING(32),
         },
         Img: {
-            type: dataTypes.STRNG,
-        },
-        ip_address: {
-            type: dataTypes.STRING,
-        },
+            type: dataTypes.STRING(100),
+        },        
         password: {
-            type: dataTypes.EMAIL,
+            type: dataTypes.STRING(100),
         }
     }
 
@@ -96,6 +93,4 @@ module.exports= function (sequelize, dataTypes){
 
     return Usuarios;
 }
-
-
 

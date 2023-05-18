@@ -1,27 +1,27 @@
-module.exports= function (sequelize, dataTypes){
+module.exports = function (sequelize, dataTypes) {
     let alias = "Domicilio";
 
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
 
         calle: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         altura: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
         },
 
         piso: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
         },
 
         departamento: {
-            type: dataTypes.STRING,
+            type: dataTypes.BIGINT(10),
         },
     }
 
@@ -33,18 +33,16 @@ module.exports= function (sequelize, dataTypes){
 
     let Domicilio = sequelize.define(alias, cols, config);
 
-    Domicilio.associate = function(models) {
+    Domicilio.associate = function (models) {
         Domicilio.belongsTo(models.Usuarios, {
-            as:"Usuarios",
-            foreignKey:"fk_usuario_domicilio"
+            as: "Usuarios",
+            foreignKey: "domicilio_id"
+        });
+        Domicilio.belongsTo(models.Localidad, {
+            as: "Domicilio",
+            foreignKey: "localidad_id"
         });
 
-        Domicilio.associate = function(models) {
-            Domicilio.belongsTo(models.Localidad, {
-                as:"Domicilio",
-                foreignKey:"localidad_id"
-            });
-        }
     }
 
     return Domicilio;

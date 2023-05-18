@@ -3,21 +3,21 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
 
         provincia: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         localidad: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         ciudad: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         }
 
     }
@@ -33,7 +33,7 @@ module.exports= function (sequelize, dataTypes){
     Localidad.associate = function(models) {
         Localidad.belongsTo(models.Domicilio, {
             as:"Localidad",
-            foreignKey:"fk_domicilio_localidad"
+            foreignKey:"localidad_id"
         });
     }
 

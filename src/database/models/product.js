@@ -5,17 +5,17 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
 
         name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         other_name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         description: {
@@ -23,13 +23,13 @@ module.exports= function (sequelize, dataTypes){
         },
 
         features: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         price: {
-            type: dataTypes.NUMBER,
+            type: dataTypes.DECIMAL(3,1),
         },
         image:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         }
     }
 
@@ -42,7 +42,7 @@ module.exports= function (sequelize, dataTypes){
     let Productos = sequelize.define(alias, cols, config);
 
     Productos.associate = function(models) {
-        Localidad.belongsTo(models.Productos, {
+        Productos.belongsTo(models.Macetas, {
             as:"Productos",
             foreignKey:"maceta_id"
         });
