@@ -19,7 +19,15 @@
                             </br>
                         </div>
                         <div>
-                            <input type="text" id="name" name="name" required minlength="4" maxlength="60" size="10">
+                            <input type="text" id="name" name="name" value="<%= producto.name%>" required >
+                            </br>
+                        </div>
+                        <div>
+                            <label for="name">Nombre científico:</label>
+                            </br>
+                        </div>
+                        <div>
+                            <input type="text" id="name" name="other_name" value="<%= producto.other_name%>" required >
                             </br>
                         </div>
                         <div>
@@ -29,14 +37,14 @@
                         </div>
                         <div>
                             <label for="review">Reseña del producto (4 to 150 characters):</label>
-                            <input type="text" id="review" name="name" required minlength="4" maxlength="150" size="10">
+                            <input type="text" id="review" name="review" value="<%= producto.review%>" required minlength="4" maxlength="150" size="10">
                             </br>
                         </div>
                         <div>
 
-                            <label for="name">Descripción del producto (4 to 600 characters):</label>
+                            <label for="description">Descripción del producto (4 to 600 characters):</label>
 
-                            <input type="text" id="description" name="name" required minlength="4" maxlength="600" size="10">
+                            <input type="text" id="description" name="description" value="<%= producto.description%>" required minlength="4" maxlength="600" size="10">
                         </div>
                         <div>
 
@@ -53,7 +61,7 @@
                         <div class="value">
                             <label for="valor">Valor</label>
 
-                            <input type="number" id="valor" name="valor" min="10" max="10000000">
+                            <input type="number" id="valor" name="valor" value="<%= producto.valor%>" min="10" max="10000000">
                         </div>
                         <input class="button-accept" type="submit" value="Aceptar" />
                     </form>
