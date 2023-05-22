@@ -13,9 +13,9 @@
                         <h2 class="name"> <%= product.name%>
                         </h2>
                         <img class="img" src="<%= product.image%>">
-                        <h4 class="">Nombre científico: <%= product.other_name%>
+                        <h4>Nombre científico: <%= product.other_name%>
                         </h4>
-                        <h3 class="">precio <%= product.price%>
+                        <h3>precio <%= product.price%>
                         </h3>
                         
                     </div>
@@ -49,9 +49,9 @@
                                     </select>
                                     <input type="submit" value="Comprar" />
                                 </form>
-                                <h5><a href="">Ver otros medios de pago</a></h4>
+                                <h5><a href="/product/editproduct/<%=product.id%>">Editar Producto</a></h5>
 
-                    </div>
+                    </div>                    
                 </section>
             </main>
             <%- include('../partials/footer') %>

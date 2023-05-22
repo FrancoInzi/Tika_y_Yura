@@ -8,39 +8,39 @@
                 <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
                     <h1 class="h1-crear">Crea tu cuenta</h1>
 
-                    <label class="label-usrs"><b>Nombre Completo</b></label>
+                    <label class="label-usrs"><b>Nombre</b></label>
                     <div>
                         <input 
                             type="text" 
-                            name="fullName" 
-                            placeholder="Nombre y Apellido"
-                            class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                            name="first_name" 
+                            placeholder="Nombre"
+                            class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
                             >
                             <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.fullName) { %>
+                            <% if (locals.errors && errors.first_name) { %>
                                 <div class="text-danger">
-                                    <%= errors.fullName.msg %>
+                                    <%= errors.first_name.msg %>
                                 </div>
                             <% } %>
                         
                     </div>
-                    <label class="label-usrs"><b>Nombre de Usuario</b></label>
+                    <label class="label-usrs"><b>Apellido</b></label>
                     <div>
                         <input 
                             type="text" 
-                            name="nombreDeUsuario" 
-                            placeholder="Nombre de Usuario"
-                            class="form-control <%= locals.errors && errors.nombreDeUsuario ? 'is-invalid' : null %>"
+                            name="last_name" 
+                            placeholder="Apellido"
+                            class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
                             >
                             <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.nombreDeUsuario) { %>
+                            <% if (locals.errors && errors.last_name) { %>
                                 <div class="text-danger">
-                                    <%= errors.nombreDeUsuario.msg %>
+                                    <%= errors.last_name.msg %>
                                 </div>
                             <% } %>
                     </div>
                     <label class="label-usrs"><b>Correo Electronico</b></label>
-                    <div>
+                    
                         <input 
                             type="email" 
                             name="email" 
@@ -53,29 +53,45 @@
                                     <%= errors.email.msg %>
                                 </div>
                             <% } %>
-
-                    <label class="label-usrs">Fecha de nacimiento</label>
-                    <input 
-                        type="date" 
-                        name="FechaDeNacimiento" 
-                        class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.FechaDeNacimiento) { %>
-                            <div class="text-danger">
-                                <%= errors.FechaDeNacimiento.msg %>
-                            </div>
-                        <% } %>
+                   
                 
                     <label class="label-usrs">Domicilio:</label>
                     <select name="domicilio" class="lugar">
-                        <option value="Buenos Aires">Buenos Aires</option>
-                        <option value="Cordoba">Cordoba</option>
-                        <option value="Mendoza">Mendoza</option>
-                        <option value="Salta">Salta</option>
-                        <option value="Tucuman">Tucuman</option>
-                        <option value="Corrientes">Corrientes</option>
-                        <option value="Rio Negro">Rio Negro</option>
+                        <option value="">Elige una provincia</option>
+                        <option value="1">Cordoba</option>
+                        <option value="2">Mendoza</option>
+                        <option value="3">Buenos Aires</option>
+                        
                     </select>
+                    <label class="label-usrs"><b>Calle</b></label>
+                    
+                        <input 
+                            type="text" 
+                            name="calle" 
+                            placeholder="calle"
+                            class="form-control <%= locals.errors && errors.calle ? 'is-invalid' : null %>"
+                            >
+                            <i class="fas fa-times-circle"></i>
+                            <% if (locals.errors && errors.calle) { %>
+                                <div class="text-danger">
+                                    <%= errors.calle.msg %>
+                                </div>
+                            <% } %>
+                     
+                            <label class="label-usrs"><b>Altura</b></label>
+                    
+                            <input 
+                                type="text" 
+                                name="altura" 
+                                placeholder="altura"
+                                class="form-control <%= locals.errors && errors.altura ? 'is-invalid' : null %>"
+                                >
+                                <i class="fas fa-times-circle"></i>
+                                <% if (locals.errors && errors.altura) { %>
+                                    <div class="text-danger">
+                                        <%= errors.altura.msg %>
+                                    </div>
+                                <% } %>        
 
                     <div class="col-md-6 my-1">
                         <label class="label-usrs"><b>Imagen de perfil:</b></label>

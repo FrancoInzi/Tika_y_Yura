@@ -62,6 +62,9 @@
     width: 100px;
     align-items: end;
 }
+.text-danger{
+  color: red;
+}
 @media (min-width: 769px) {
       
   .div1{

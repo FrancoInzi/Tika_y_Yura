@@ -99,5 +99,16 @@
         "password": "$2a$10$/RxkQUVdw.DVwOL00pltoekT0b4S8NhRCeaORekiV2ObYwHhsIphO",
         "passwordConfirm": "1234",
         "avatar": "1684205295489_img.jpg"
+    },
+    {
+        "id": 12,
+        "fullName": "Franco Inzirillo Farias",
+        "nombreDeUsuario": "FrancoInzi",
+        "email": "prueba2@mail.com",
+        "FechaDeNacimiento": "2023-05-19",
+        "domicilio": "Mendoza",
+        "password": "$2a$10$yc/GRy/GtRq3nWaoCw49Melsmxn/Fs2XefVUVep8zg4QjzrAoDTES",
+        "passwordConfirm": "1234",
+        "avatar": "1684297694094_img.jpg"
     }
 ]
