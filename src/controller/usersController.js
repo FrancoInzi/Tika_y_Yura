@@ -1,11 +1,11 @@
 const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
-const db = require("../database/models");
+const db = require("../database/models/");
 const User = require('../database/models/user');
-const modelUser = require('../database/models/Usermodel');
+const modelUser = require('../database/Usermodel');
 const { error } = require('console');
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const userController = express();
 
@@ -31,13 +31,12 @@ const controller = {
             }
         }
     },
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
 
         const {
-            nombreyapellido,
-            nombreDeUsuario,
+            first_name,
+            last_name,
             email,
-            FechaDeNacimiento,
             domicilio,
             password
         } = req.body;
@@ -53,22 +52,35 @@ const controller = {
         console.log(resultValidation)
         if (resultValidation.isEmpty()) {
             console.log('pasé')
-            const userExist = modelUser.findByField('email', email)
+            const userExist = await db.Usuarios.findOne({
+                where: {
+                    email
+                }
+            })
             if (userExist) {
                 res.send('El usuario ya se encuentra registrado');
             } else {
+                const domicilio = await db.Domicilio.create({
+                    calle: req.body.calle,
+                    altura: req.body.altura,
+                    localidad_id: Number(req.body.domicilio)
+                })
                 const userToCreate = {
-                    ...req.body,
+                    first_name,
+                    last_name,
+                    email,
+                    domicilio_id: domicilio.id,
                     password: bcryptjs.hashSync(password, 10),
-                    avatar: req.file.filename
+                    Img: req.file.filename
                 }
-                modelUser.create(userToCreate);
-                return res.send('ok, se guardo el usuario');
+                const user = await db.Usuarios.create(userToCreate);
+                return res.redirect('/')
             }
-        }else{
+
+        } else {
             res.render('users/register', {
                 'error': resultValidation.array(),
-                'prev':  req.body
+                'prev': req.body
             })
         }
 
@@ -79,27 +91,27 @@ const controller = {
 
     postLogin: (req, res) => {
         const {
-            email, 
+            email,
             password
-        }=req.body;
+        } = req.body;
 
         const errors = validationResult(req);
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             const userLogin = modelUser.findByField('email', email);
-            if(userLogin){
+            if (userLogin) {
                 const passwd = bcryptjs.compareSync(password, userLogin.password)
-                if(passwd){
+                if (passwd) {
                     req.session.userLogged = userLogin;
                     res.send('Bienvenido' + userLogin.email);
-                }else{
+                } else {
                     return res.send('credenciales inválidas')
                 }
             }
             res.send('mail inexistente')
-        }else{
+        } else {
             res.render('users/login', {
                 'errors': errors.array(),
-                'prev':  req.body
+                'prev': req.body
             })
         }
 
