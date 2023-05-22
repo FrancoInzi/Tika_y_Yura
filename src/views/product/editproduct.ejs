@@ -13,13 +13,13 @@
                 </div>
                 <div class="form">
 
-                    <form action="/product/editproduct/:id?_method=PUT" name="formulario" method="POST" enctype="multipart/formdata">
+                    <form action="/product/editproduct/<%= product.id%>" name="formulario" method="POST" enctype="multipart/formdata">
                         <div>
-                            <label for="name">Renombrar producto (4 to 60 characters):</label>
+                            <label for="name">Renombrar producto:</label>
                             </br>
                         </div>
                         <div>
-                            <input type="text" id="name" name="name" value="<%= producto.name%>" required >
+                            <input type="text" id="name" name="name" value="<%= product.name%>" required >
                             </br>
                         </div>
                         <div>
@@ -27,50 +27,52 @@
                             </br>
                         </div>
                         <div>
-                            <input type="text" id="name" name="other_name" value="<%= producto.other_name%>" required >
+                            <input type="text" id="name" name="other_name" value="<%= product.other_name%>" required >
                             </br>
                         </div>
                         <div>
                             <label for="img">Subir una imagen</label>
-                            <input type="file" name="imagen" />
+                            <input type="file" name="imagenProducto" />
                             </br>
                         </div>
                         <div>
-                            <label for="review">Reseña del producto (4 to 150 characters):</label>
-                            <input type="text" id="review" name="review" value="<%= producto.review%>" required minlength="4" maxlength="150" size="10">
+                            <label for="review">Reseña del producto:</label>
+                            <input type="text" id="review" name="review" value="<%= product.features %>" required minlength="4" maxlength="150" size="10">
                             </br>
                         </div>
                         <div>
 
-                            <label for="description">Descripción del producto (4 to 600 characters):</label>
+                            <label for="description">Descripción del producto:</label>
 
-                            <input type="text" id="description" name="description" value="<%= producto.description%>" required minlength="4" maxlength="600" size="10">
+                            <input type="text" id="description" name="description" value="<%= product.description%>" required minlength="4" maxlength="600" size="10">
                         </div>
                         <div>
-
-
-                            <label for="productos">Tipo</label>
-                            <select name="productos" id="Tipo">
-                                <option value="cactus">Cáctus</option>
-                                <option value="suculentas">Suculentas</option>
-                                <option value="otros">Otros</option>
+                            <label for="maceta">Maceta</label>
+                            <select name="maceta" id="tipo" class="form-control <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.maceta : null %>">
+                                <% if (locals.errors && errors.maceta) { %>
+                                    <div class="text-danger">
+                                        <%= errors.maceta.msg %>
+                                    </div>
+                                    <% } %>
+                                <option value="1">Cerámica</option>
+                                <option value="2">Plastico</option>
+                                <option value="3">Plastico blando</option>
                             </select>
-                            <input id="type" type="submit" value="Elegir" />
-                        </div>
+                            
                     
                         <div class="value">
                             <label for="valor">Valor</label>
 
-                            <input type="number" id="valor" name="valor" value="<%= producto.valor%>" min="10" max="10000000">
+                            <input type="number" id="valor" name="valor" value="<%= product.price%>" min="10" max="10000000">
                         </div>
                         <input class="button-accept" type="submit" value="Aceptar" />
                     </form>
 
                 </div>
-                <div class="delete">
-                    <label for="borrar">Eliminar este producto</label>
-                    <input class="delete-buton" type="submit" value="Borrar" />
-                </div>
+                <form action="/product/editproduct/<%= product.id%>" name="formulario" method="POST" enctype="multipart/formdata">                   
+                    <button type="submit" >Eliminar este producto</button>
+                  </form>
 
             </main>
             <%- include('../partials/footer') %>
