@@ -28,6 +28,7 @@
                                 <% } %>
                                     </br>
                         </div>
+                    </br>
                         <div>
                             <label for="other_name">Nombre científico:</label>
                             </br>
@@ -67,11 +68,11 @@
                         </div>
                         <div>
                             <label for="description">Descripción del producto (4 to 600 characters):</label>
-                            <input type="text" id="description" name="descripcion" class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.descripcion : null %>">
-                            <% if (locals.errors && errors.descripcion) { %>
+                            <input type="text" id="description" name="description" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.description : null %>">
+                            <% if (locals.errors && errors.description) { %>
                                 <div class="text-danger">
-                                    <%= errors.descripcion.msg %>
+                                    <%= errors.description.msg %>
                                 </div>
                                 <% } %>
                         </div>
@@ -88,7 +89,7 @@
                                 <option value="2">Plastico</option>
                                 <option value="3">Plastico blando</option>
                             </select>
-                            <input type="submit" value="Elegir" class="type-buton">
+                            
                         </div>
                         <div>
                             <label for="valor">Valor $</label>
@@ -103,7 +104,7 @@
                         </div>
                         <input class="button-accept" type="submit" value="Aceptar">
                     </form>
-                </div>
+                </div>                
             </main>
             <%- include('../partials/footer') %>
     </body>

@@ -10,8 +10,8 @@ const storage = multer.diskStorage({
         cb(null, folder);
     },
     filename: (req, file, cb) => {
-        let fileName= "product-" + Date.now() + path.extname(file.originalname)
-        //let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
+        //let fileName = "product-" + Date.now() + path.extname(file.originalname)
+        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null, fileName);
     }
 });
@@ -37,8 +37,7 @@ body('imagenProducto').custom((value, {req }) => {
     return true;
 }),
 body('review').notEmpty().withMessage('Debe escribir una reseña del producto'),
-body('descripcion').notEmpty().withMessage('Complete aquí la descripción del producto'),
-body('productos').notEmpty().withMessage('Seleccione una característica'),
+body('description').notEmpty().withMessage('Complete aquí la descripción del producto'),
 body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 ];
 
@@ -56,9 +55,9 @@ routerProduct.get('/product/createproduct', createProduct);
 routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
 
 //Formulario de edición de productos
-routerProduct.get ('/product/productedit/:id/', editProduct);
+routerProduct.get ('/product/editproduct/:id', editProduct);
 //accion de edicion
-routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"), saveProduct),
+routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"), updateProduct),
 
 //Acción de borrado
 routerProduct.delete('/product/editproduct/:id', deleteProduct);
