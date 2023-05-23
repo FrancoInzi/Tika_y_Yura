@@ -15,18 +15,28 @@
 <body>
     <%- include('../partials/header') %>
     <main class="content">
-        <div class="shadow">
-            <form action="/users/login" method="POST" enctype="multipart/form-data">
-                <h1  class="inicio">Iniciar Sesión</h1>
-                <label class="form-usr"  for="username">Usuario:</label>
-                <input  class="input-usr"  type="text" id="username" name="username" required>
-                <label  class="form-usr"   for="password">Contraseña:</label>
-                <input  class="input-usr"  type="password" id="password" name="password" required>
-                <input  class="input-usr"  type="submit" value="Iniciar Sesión">
-            
-            </form>
+        <div class="container-login">
+            <div class="shadow">
+                <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
+                    <h1  class="inicio">Iniciar Sesión</h1>
+                    <label class="form-usr"  for="username">Usuario:</label>
+                    <input  class="input-usr"  type="text" id="email" name="email" value="<%= locals.oldData ? oldData.username : null %> ">
+                    <% if (locals.errors && errors.username) { %>
+
+                        <div class="text-danger">
+                            <%= errors.username.msg  %>
+                        </div>
+        
+                    <% } %>
+                    <label  class="form-usr"   for="password">Contraseña:</label>
+                    <input  class="input-usr"  type="password" id="password" name="password" required>
+                    <input  class="input-usr"  type="submit" value="Iniciar Sesión">
+                
+                </form>
+            </div>
         </div>
     </main>
+    <script src="../../../public/js/login.js"></script>
     <%- include('../partials/footer') %>
 </body>
 
