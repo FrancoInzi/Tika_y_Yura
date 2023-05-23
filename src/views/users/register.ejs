@@ -12,32 +12,29 @@
                     <div>
                         <input 
                             type="text" 
-                            name="fullName" 
+                            name="first_name" 
                             placeholder="Nombre y Apellido"
-                            class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.fullName) { %>
-                                <div class="text-danger">
-                                    <%= errors.fullName.msg %>
-                                </div>
-                            <% } %>
-                        
+                            class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.first_name) { %>
+                            <div class="text-danger">
+                                <%= errors.first_name.msg %>
+                            </div>
+                        <% } %>
                     </div>
-                    <label class="label-usrs"><b>Nombre de Usuario</b></label>
+                    <label class="label-usrs"><b>Apellido</b></label>
                     <div>
                         <input 
                             type="text" 
-                            name="nombreDeUsuario" 
-                            placeholder="Nombre de Usuario"
-                            class="form-control <%= locals.errors && errors.nombreDeUsuario ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.nombreDeUsuario) { %>
-                                <div class="text-danger">
-                                    <%= errors.nombreDeUsuario.msg %>
-                                </div>
-                            <% } %>
+                            name="last_name" 
+                            placeholder="Apellido"
+                            class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.last_name) { %>
+                            <div class="text-danger">
+                                <%= errors.last_name.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <label class="label-usrs"><b>Correo Electronico</b></label>
                     <div>
@@ -46,13 +43,12 @@
                             name="email" 
                             placeholder="Email"
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.email) { %>
-                                <div class="text-danger">
-                                    <%= errors.email.msg %>
-                                </div>
-                            <% } %>
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <label class="label-usrs"><b>Fecha de nacimiento</b></label>
                     <div>
@@ -60,12 +56,12 @@
                             type="date" 
                             name="FechaDeNacimiento" 
                             class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
-                            >
-                            <% if (locals.errors && errors.FechaDeNacimiento) { %>
-                                <div class="text-danger">
-                                    <%= errors.FechaDeNacimiento.msg %>
-                                </div>
-                            <% } %>
+                        >
+                        <% if (locals.errors && errors.FechaDeNacimiento) { %>
+                            <div class="text-danger">
+                                <%= errors.FechaDeNacimiento.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <label class="label-usrs"><b>Domicilio:</b></label>
                     <div>
@@ -79,17 +75,15 @@
                             <option value="">Rio Negro</option>
                         </select>
                     </div>
-                    <div class="col-md-6 my-1">
-                        <label class="label-usrs"><b>Imagen de perfil:</b></label>
-                        <div class="form-group">
-                            <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.avatar) { %>
-                                <div class="text-danger">
-                                    <%= errors.avatar.msg %>
-                                </div>
-                            <% } %>
-                        </div>
+                    <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                    <div class="form-group">
+                        <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                        >
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text-danger">
+                                <%= errors.avatar.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <label class="label-usrs"><b>Contraseña</b></label>
                     <div>
@@ -98,13 +92,12 @@
                             name="password" 
                             placeholder="Contraseña"
                             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.password) { %>
-                                <div class="text-danger">
-                                    <%= errors.password.msg %>
-                                </div>
-                            <% } %>
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <label class="label-usrs"><b>Confirmar Contraseña</b></label>
                     <div>
@@ -113,16 +106,14 @@
                             name="password" 
                             placeholder="Confirmar Contraseña"
                             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                            >
-                            <i class="fas fa-times-circle"></i>
-                            <% if (locals.errors && errors.password) { %>
-                                <div class="text-danger">
-                                    <%= errors.password.msg %>
-                                </div>
-                            <% } %>
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
-            
                 </form>
             </div>
         </main>

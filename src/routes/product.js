@@ -1,4 +1,5 @@
 const express = require('express');
+const {validationResult} = require('express-validator');
 const routerProduct = express.Router();
 const multer = require('multer');
 const path = require ('path');
