@@ -19,12 +19,12 @@
             <div class="shadow">
                 <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
                     <h1  class="inicio">Iniciar Sesión</h1>
-                    <label class="form-usr"  for="username">Usuario:</label>
-                    <input  class="input-usr"  type="text" id="email" name="email" value="<%= locals.oldData ? oldData.username : null %> ">
-                    <% if (locals.errors && errors.username) { %>
+                    <label class="form-usr"  for="email">Email:</label>
+                    <input  class="input-usr"  type="email" id="email" name="email" value="<%= locals.oldData ? oldData.email : null %> ">
+                    <% if (locals.errors && errors.email) { %>
 
                         <div class="text-danger">
-                            <%= errors.username.msg  %>
+                            <%= errors.email.msg  %>
                         </div>
         
                     <% } %>

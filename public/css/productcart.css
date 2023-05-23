@@ -10,7 +10,7 @@ main{
     font-weight: 600;
     color: black;  
     display: block;  
-   
+    max-width: 1000px;
 }
 .content{
     display: block;

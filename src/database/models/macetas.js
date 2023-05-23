@@ -3,21 +3,21 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
             primaryKey: true,
             autoIncrement: true
         },
 
         tipo: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
 
         tamaño: {
-            type: dataTypes.INTERGER,
+            type: dataTypes.BIGINT(10),
         },
 
         color: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING(100)
         },
 
     }
@@ -31,9 +31,9 @@ module.exports= function (sequelize, dataTypes){
     let Macetas = sequelize.define(alias, cols, config);
 
     Macetas.associate = function(models) {
-        Macetas.hasMany(models, {
+        Macetas.hasMany(models.Productos, {
             as:"Productos",
-            foreignKey:"fk_producto_maceta"
+            foreignKey:"maceta_id"
         });
     }
     

@@ -8,19 +8,20 @@
                 <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
                     <h1 class="h1-crear">Crea tu cuenta</h1>
 
-                    <label class="label-usrs"><b>Nombre Completo</b></label>
+                    <label class="label-usrs"><b>Nombre</b></label>
                     <div>
                         <input 
                             type="text" 
                             name="first_name" 
-                            placeholder="Nombre y Apellido"
+                            placeholder="Nombre"
                             class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.first_name) { %>
-                            <div class="text-danger">
-                                <%= errors.first_name.msg %>
-                            </div>
-                        <% } %>
+                            >
+                            <% if (locals.errors && errors.first_name) { %>
+                                <div class="text-danger">
+                                    <%= errors.first_name.msg %>
+                                </div>
+                            <% } %>
+                        
                     </div>
                     <label class="label-usrs"><b>Apellido</b></label>
                     <div>
@@ -29,61 +30,74 @@
                             name="last_name" 
                             placeholder="Apellido"
                             class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.last_name) { %>
-                            <div class="text-danger">
-                                <%= errors.last_name.msg %>
-                            </div>
-                        <% } %>
+                            >
+                            <% if (locals.errors && errors.last_name) { %>
+                                <div class="text-danger">
+                                    <%= errors.last_name.msg %>
+                                </div>
+                            <% } %>
                     </div>
                     <label class="label-usrs"><b>Correo Electronico</b></label>
-                    <div>
+                    
                         <input 
                             type="email" 
                             name="email" 
                             placeholder="Email"
                             class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.email) { %>
-                            <div class="text-danger">
-                                <%= errors.email.msg %>
-                            </div>
-                        <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Fecha de nacimiento</b></label>
-                    <div>
+                            >
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                   
+                
+                    <label class="label-usrs">Domicilio:</label>
+                    <select name="domicilio" class="lugar">
+                        <option value="">Elige una provincia</option>
+                        <option value="1">Cordoba</option>
+                        <option value="2">Mendoza</option>
+                        <option value="3">Buenos Aires</option>
+                        
+                    </select>
+                    <label class="label-usrs"><b>Calle</b></label>
+                    
                         <input 
-                            type="date" 
-                            name="FechaDeNacimiento" 
-                            class="form-control <%= locals.errors && errors.FechaDeNacimiento ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.FechaDeNacimiento) { %>
-                            <div class="text-danger">
-                                <%= errors.FechaDeNacimiento.msg %>
-                            </div>
-                        <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Domicilio:</b></label>
-                    <div>
-                        <select name="domicilio" class="lugar">
-                            <option value="">Buenos Aires</option>
-                            <option value="">Cordoba</option>
-                            <option value="">Mendoza</option>
-                            <option value="">Salta</option>
-                            <option value="">Tucuman</option>
-                            <option value="">Corrientes</option>
-                            <option value="">Rio Negro</option>
-                        </select>
-                    </div>
-                    <label class="label-usrs"><b>Imagen de perfil:</b></label>
-                    <div class="form-group">
-                        <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div class="text-danger">
-                                <%= errors.avatar.msg %>
-                            </div>
-                        <% } %>
+                            type="text" 
+                            name="calle" 
+                            placeholder="calle"
+                            class="form-control <%= locals.errors && errors.calle ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.calle) { %>
+                                <div class="text-danger">
+                                    <%= errors.calle.msg %>
+                                </div>
+                            <% } %>
+                     
+                            <label class="label-usrs"><b>Altura</b></label>
+                    
+                            <input 
+                                type="text" 
+                                name="altura" 
+                                placeholder="altura"
+                                class="form-control <%= locals.errors && errors.altura ? 'is-invalid' : null %>"
+                                >
+                                <% if (locals.errors && errors.altura) { %>
+                                    <div class="text-danger">
+                                        <%= errors.altura.msg %>
+                                    </div>
+                                <% } %>        
+
+                    <div class="col-md-6 my-1">
+                        <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                        <div class="form-group">
+                            <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+                            <% if (locals.errors && errors.avatar) { %>
+                                <div class="text-danger">
+                                    <%= errors.avatar.msg %>
+                                </div>
+                            <% } %>
+                        </div>
                     </div>
                     <label class="label-usrs"><b>Contraseña</b></label>
                     <div>
@@ -92,27 +106,26 @@
                             name="password" 
                             placeholder="Contraseña"
                             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                            >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+
+                    <label class="label-usrs">Confirmar Contraseña</label>
+                    <input 
+                        type="password" 
+                        name="passwordConfirm" 
+                        placeholder="Confirmar Contraseña"
+                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                         >
                         <% if (locals.errors && errors.password) { %>
                             <div class="text-danger">
                                 <%= errors.password.msg %>
                             </div>
                         <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Confirmar Contraseña</b></label>
-                    <div>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Confirmar Contraseña"
-                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.password) { %>
-                            <div class="text-danger">
-                                <%= errors.password.msg %>
-                            </div>
-                        <% } %>
-                    </div>
+                
                     <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
                 </form>
             </div>

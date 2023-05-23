@@ -1,4 +1,4 @@
-let input = document.querySelector("#username");
+let input = document.querySelector("#email");
 let span = document.querySelector("#showP");
 
 span.addEventListener("click",() =>{
