@@ -70,7 +70,9 @@ const updateProduct = async (req, res) => {
         other_name: req.body.other_name,
         description: req.body.description,
         features: req.body.review,
+
         price: req.body.valor,        
+
     }
     if (req.file){
         obj['image'] = req.file.filename
