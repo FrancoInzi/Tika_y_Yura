@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "first_name": "Xenos",
+        "last_name": "Richardt",
+        "email": "xrichardt0@scribd.com",
+        "Img": "https://robohash.org/quiseiusquibusdam.jpg?size=50x50&set=set1",
+        "ip_address": "233.190.221.3",
+        "password": "F4CGwuil"
+    },
+    {
+        "id": 2,
+        "first_name": "Kelsi",
+        "last_name": "Christian",
+        "email": "kchristian1@miitbeian.gov.cn",
+        "Img": "https://robohash.org/debitistemporapossimus.jpg?size=50x50&set=set1",
+        "ip_address": "179.150.192.64",
+        "password": "v9foun"
+    },
+    {
+        "id": 3,
+        "first_name": "Perla",
+        "last_name": "McAvin",
+        "email": "pmcavin2@vinaora.com",
+        "Img": "https://robohash.org/etsedneque.jpg?size=50x50&set=set1",
+        "ip_address": "194.248.233.59",
+        "password": "p6TSYoTt"
+    },
+    {
+        "id": 4,
+        "first_name": "Petr",
+        "last_name": "Bengefield",
+        "email": "pbengefield3@topsy.com",
+        "Img": "https://robohash.org/nesciuntquodvoluptas.jpg?size=50x50&set=set1",
+        "ip_address": "248.27.73.155",
+        "password": "4YRBRmv"
+    },
+    {
+        "id": 5,
+        "first_name": "Paten",
+        "last_name": "Jillions",
+        "email": "pjillions4@illinois.edu",
+        "Img": "https://robohash.org/magnievenieta.jpg?size=50x50&set=set1",
+        "ip_address": "216.217.4.14",
+        "password": "yCiTgBxGQ"
+    },
+    {
+        "id": 6,
+        "first_name": "Rorie",
+        "last_name": "Parades",
+        "email": "rparades5@nih.gov",
+        "Img": "https://robohash.org/quaeratnihilquia.jpg?size=50x50&set=set1",
+        "ip_address": "94.12.111.63",
+        "password": "Zq6A2L"
+    },
+    {
+        "id": 7,
+        "first_name": "Thorpe",
+        "last_name": "Rainey",
+        "email": "trainey6@npr.org",
+        "Img": "https://robohash.org/evenietetnostrum.jpg?size=50x50&set=set1",
+        "ip_address": "46.103.53.105",
+        "password": "PnM6AulNm"
+    },
+    {
+        "id": 8,
+        "first_name": "Molly",
+        "last_name": "Laskey",
+        "email": "mlaskey7@hibu.com",
+        "Img": "https://robohash.org/autvoluptasearum.jpg?size=50x50&set=set1",
+        "ip_address": "240.166.141.145",
+        "password": "eugI5NJpVZ6"
+    },
+    {
+        "id": 9,
+        "first_name": "Olia",
+        "last_name": "Johananov",
+        "email": "ojohananov8@nifty.com",
+        "Img": "https://robohash.org/maximereprehenderitut.jpg?size=50x50&set=set1",
+        "ip_address": "51.201.47.86",
+        "password": "Rqhdw25"
+    },
+    {
+        "id": 10,
+        "first_name": "Halette",
+        "last_name": "Shales",
+        "email": "hshales9@canalblog.com",
+        "Img": "https://robohash.org/temporeperferendisvoluptatem.jpg?size=50x50&set=set1",
+        "ip_address": "137.202.165.150",
+        "password": "wzHMTQ"
+    },
+    {
+        "id": 11,
+        "nombreyapellido": "Franco",
+        "nombreDeUsuario": "FrancoInzi",
+        "email": "mail@mail.com",
+        "FechaDeNacimiento": "2023-05-11",
+        "domicilio": "4",
+        "password": "$2a$10$/RxkQUVdw.DVwOL00pltoekT0b4S8NhRCeaORekiV2ObYwHhsIphO",
+        "passwordConfirm": "1234",
+        "avatar": "1684205295489_img.jpg"
+    },
+    {
+        "id": 12,
+        "fullName": "Franco Inzirillo Farias",
+        "nombreDeUsuario": "FrancoInzi",
+        "email": "prueba2@mail.com",
+        "FechaDeNacimiento": "2023-05-19",
+        "domicilio": "Mendoza",
+        "password": "$2a$10$yc/GRy/GtRq3nWaoCw49Melsmxn/Fs2XefVUVep8zg4QjzrAoDTES",
+        "passwordConfirm": "1234",
+        "avatar": "1684297694094_img.jpg"
+    }
+]

@@ -38,5 +38,10 @@ app.use(methodOverride('_method'));
 //Routes
 app.use(routerMain, routerUsers, routerProduct);
 
+//APIS 
+const productsRouter = require('./API/routesApi/productAPI' );
+app.use(productsRouter);
+const usersRoutes = require('./API/routesApi/usersAPI');
+app.use(usersRoutes);
 
 app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));
