@@ -7,11 +7,9 @@ const { productDetail, productCart, createProduct, editProduct, allProducts, sav
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        let folder = path.join(__dirname,'../../public/img/products');
-        cb(null, folder);
+        cb(null, path.join(__dirname,'../../public/img/products'));
     },
     filename: (req, file, cb) => {
-        //let fileName = "product-" + Date.now() + path.extname(file.originalname)
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null, fileName);
     }

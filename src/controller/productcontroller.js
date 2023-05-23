@@ -50,7 +50,7 @@ const saveProduct = async (req, res) => {
         description: req.body.description,
         features: req.body.review,
         price: req.body.valor,
-        image: req.body.imagenProducto,
+        image: req.file.filename,
         maceta_id: Number(req.body.maceta)
     });
     return res.redirect('/product/productdetail/' + product.id)
@@ -65,21 +65,25 @@ const editProduct = (req, res) => {
 
 const updateProduct = async (req, res) => {
     console.log(req.body);
-    const product = await db.Productos.update({
+    let obj = {
         name: req.body.name,
         other_name: req.body.other_name,
         description: req.body.description,
         features: req.body.review,
         price: req.body.valor,
-        image: req.body.imagenProducto
-    }, {
+        
+    }
+    if (req.file){
+        obj['image'] = req.file.filename
+    };
+    const product = await db.Productos.update(obj,{
         where: { id: req.params.id }
     });
-    return res.redirect('/product/productdetail/' + product.id)
+    return res.redirect('/product/productdetail/' + req.params.id)
     //return res.send('el producto ha sido editado exitosamente')
 }
 const deleteProduct = async (req, res) => {
-    db.product.destroy({
+    db.Productos.destroy({
         include:[{association: 'Productos'}],
         where: {
             id: req.params.id
