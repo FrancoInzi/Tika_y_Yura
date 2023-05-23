@@ -70,13 +70,13 @@ const updateProduct = async (req, res) => {
         other_name: req.body.other_name,
         description: req.body.description,
         features: req.body.review,
-        price: req.body.valor,
-        
+        price: req.body.valor,        
     }
     if (req.file){
         obj['image'] = req.file.filename
     };
     const product = await db.Productos.update(obj,{
+
         where: { id: req.params.id }
     });
     return res.redirect('/product/productdetail/' + req.params.id)
@@ -90,7 +90,7 @@ const deleteProduct = async (req, res) => {
         }
     })
     return res.redirect('/product/allproducts')
-  };
+};
   
 
 

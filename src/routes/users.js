@@ -14,9 +14,7 @@ const fileUpload = require('../midelwares/multerMidelwares');
 const validations = [
 body('first_name').notEmpty().withMessage('Tienes que escribir un nombre'),
 body('last_name').notEmpty().withMessage('Tienes que escribir un apellido'),
-body('email')
-.notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
-.isEmail().withMessage('Debes escribir un formato de correo valido'),
+body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').bail().isEmail().withMessage('Debes escribir un formato de correo valido'),
 body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
 body('domicilio').notEmpty().withMessage('Tienes que selecionar un provincias'),
 body('avatar').custom((value, {req }) => {

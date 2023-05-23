@@ -24,14 +24,24 @@
   margin: auto;
 }
 
+.container-login {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  padding: 50px;
+  display: block;
+}
+
+
 .form-login{
-  width: 300px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: auto;
   padding: 85px;
   border: 1px solid #000000;
   border-radius: 5px;
   box-shadow: 18px 19px 30px rgb(0, 0, 0);
-  background-color: #ffdfff;
+  background-color: white;
+  box-shadow: 17px 17px 30px rgb(2, 2, 2);
 }
   
 h1{
@@ -44,10 +54,7 @@ h1{
   background-color: #fdffff;
   font-size: 24px;
 }
-.shadow{
-  margin-bottom: 22px;
-  font-size: 20px;
-}
+
 .input-usr[type="text"],
 .input-usr[type="password"] {
   width: 100%;
@@ -63,7 +70,7 @@ h1{
 input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #2eca29;
+  background-color: #91795B ;
   color: #ffffff;
   border: 1px solid #0f0000;
   border-radius: 3px;

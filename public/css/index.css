@@ -114,6 +114,10 @@ main{
     flex-wrap: wrap;
 }
 
+.banner{
+    width:100%;
+}
+
 .titulares {
     font-size: 24px;
     color: #666;
