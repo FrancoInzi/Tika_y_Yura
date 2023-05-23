@@ -35,22 +35,6 @@
   background-color: #fdffff;
   margin-bottom: 15px;
 }
-.corp{
-  max-width: 1000px;
-}
-.form-register{
-    width: 300px;
-    margin: 0 auto;
-    padding: 54px;
-    border: 1px solid #030000;
-    border-radius: 5px;
-    background-color: #fdffff;
-    box-shadow: 17px 17px 30px rgb(3, 3, 3);
-  }
-.lugar{
-    background-color: #fdffff;
-    margin-bottom: 15px;
-}
 
 .h1-crear{
   text-align: center;
@@ -78,8 +62,8 @@
 .button-usr[type="submit"] {
   width: 100%;
   padding: 13px;
-  background-color: #05ff0c;
-  color: #001000;
+  background-color: #91795B;
+  color: #ffffff;
   border: 1px solid #010000;
   border-radius: 3px;
   cursor: pointer;

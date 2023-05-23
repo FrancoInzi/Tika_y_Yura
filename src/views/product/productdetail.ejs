@@ -10,9 +10,12 @@
             <main class="main">
                 <section class="section">
                     <div class="product">
-                        <h2 class="name"> <%= product.name%>
-                        </h2>                       
-                        <img class="img" src="/img/products/<%=product.image%>">
+
+
+                        <h2 class="name"> <%= product.name%></h2>
+                        <img class="img" src="/img/products/<%= product.image%>">
+
+
                         <h4>Nombre científico: <%= product.other_name%>
                         </h4>
                         <h3>precio <%= product.price%>
