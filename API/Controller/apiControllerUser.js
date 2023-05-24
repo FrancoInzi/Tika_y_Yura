@@ -1,5 +1,5 @@
 //apiController
-const DB = require('../database/models/user');
+const DB = require('../../src/database/models');
 
 // const Op = DB.Sequelize.Op;
 
