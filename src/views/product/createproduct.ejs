@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<%- include('../partials/head',{css:"createproduct", title:"Crear Producto"}) %>
-    </head>
-
+    <%- include('../partials/head',{css:"createproduct", title:"Crear Producto"}) %>
     <body>
         <%- include('../partials/header') %>
-
-            <main class="main">
+        <main class="main-createproduct">
+            <div class="container-createproduct">
                 <div class="div1">
                     <h2 class="title">Crear nuevo producto</h2>
                 </div>
                 <div class="form">
-                    <form name="formulario" method="POST" action="/product/createproduct" enctype="multipart/form-data">
+                    <form name="formulario" id ="form" method="POST" action="/product/createproduct" enctype="multipart/form-data">
+                        
                         <div>
                             <label for="name">Nombre del producto (4 to 60 characters):</label>
-                            </br>
                         </div>
                         <div>
-                            <input type="text" id="name" name="name" class="form-control"
-                                value="<%= locals.oldData ? oldData.name : null %>">
+                            <input type="text" id="name" name="name" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.name : null %>" autocomplete="off">
                             <% if (locals.errors && errors.name) { %>
                                 <div class="text-danger">
                                     <%= errors.name.msg %>
                                 </div>
-                                <% } %>
-                                    </br>
+                            <% } %>
                         </div>
-                    </br>
+
                         <div>
-                            <label for="other_name">Nombre científico:</label>
-                            </br>
+                            <label for="other_name"><b>Nombre científico:</b></label>
                         </div>
                         <div>
-                            <input type="text" id="name" name="other_name" class="form-control"
+                            <input type="text" id="other_name" name="other_name" class="form-control <%= locals.errors && errors.review ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.other_name : null %>">
                             <% if (locals.errors && errors.other_name) { %>
                                 <div class="text-danger">
                                     <%= errors.other_name.msg %>
                                 </div>
-                                <% } %>
-                                    </br>
+                            <% } %>
                         </div>
-                        <div class="form-group">
+
+                        <div >
                             <label><b>Imagen del producto</b></label>
+                        </div>
+                        <div>
                             <input type="file" name="imagenProducto"
                                 class="form-control <%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.imagenProducto : null %>">
@@ -52,10 +48,13 @@
                                 <div class="text-danger">
                                     <%= errors.imagenProducto.msg %>
                                 </div>
-                                <% } %>
+                            <% } %>
                         </div>
+
                         <div>
                             <label for="review">Reseña del producto (4 to 150 characters):</label>
+                        </div>
+                        <div>
                             <input type="text" id="review" name="review"
                                 class="form-control <%= locals.errors && errors.review ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.review : null %>">
@@ -63,50 +62,61 @@
                                 <div class="text-danger">
                                     <%= errors.review.msg %>
                                 </div>
-                                <% } %>
-                                </br>
+                            <% } %>
                         </div>
+                        
                         <div>
                             <label for="description">Descripción del producto (4 to 600 characters):</label>
+                        </div>
+                        <div>
                             <input type="text" id="description" name="description" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
                             value="<%= locals.oldData ? oldData.description : null %>">
                             <% if (locals.errors && errors.description) { %>
                                 <div class="text-danger">
                                     <%= errors.description.msg %>
                                 </div>
-                                <% } %>
+                            <% } %>
+                            
                         </div>
                         <div>
-                            <label for="maceta">Maceta</label>
+                            <label>Maceta</label>
+                        </div>
+                        <div>
                             <select name="maceta" id="tipo" class="form-control <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.maceta : null %>">
-                                <% if (locals.errors && errors.maceta) { %>
-                                    <div class="text-danger">
-                                        <%= errors.maceta.msg %>
-                                    </div>
-                                    <% } %>
+                            <% if (locals.errors && errors.maceta) { %>
+                                <div class="text-danger">
+                                    <%= errors.maceta.msg %>
+                                </div>
+                            <% } %>
                                 <option value="1">Cerámica</option>
                                 <option value="2">Plastico</option>
                                 <option value="3">Plastico blando</option>
                             </select>
-                            
                         </div>
+
                         <div>
                             <label for="valor">Valor $</label>
+                        </div>
+                        <div>
                             <input type="number" id="valor" name="valor" min="10" max="10000000"
                                 class="form-control <%= locals.errors && errors.valor ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.valor : null %>">
-                                <% if (locals.errors && errors.valor) { %>
-                                    <div class="text-danger">
-                                        <%= errors.valor.msg %>
-                                    </div>
-                                    <% } %>
+                            <% if (locals.errors && errors.valor) { %>
+                                <div class="text-danger">
+                                    <%= errors.valor.msg %>
+                                </div>
+                            <% } %>
                         </div>
+
+                        <ul class="errors"></ul>
                         <input class="button-accept" type="submit" value="Aceptar">
                     </form>
-                </div>                
-            </main>
-            <%- include('../partials/footer') %>
+                </div>
+                <script src="/js/createProductForm.js" ></script>                
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
     </body>
 
 </html>

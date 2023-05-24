@@ -21,6 +21,7 @@ const { body } = require('express-validator');
 
 const validations = [
 body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
+body('other_name').notEmpty().withMessage('Tienes que escribir un nombre científico'),
 body('imagenProducto').custom((value, {req }) => {
     let file = req.file;
     let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -35,8 +36,8 @@ body('imagenProducto').custom((value, {req }) => {
     }
     return true;
 }),
-body('review').notEmpty().withMessage('Debe escribir una reseña del producto'),
 body('description').notEmpty().withMessage('Complete aquí la descripción del producto'),
+body('review').notEmpty().withMessage('Debe escribir una reseña del producto'),
 body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 ];
 
@@ -51,12 +52,12 @@ routerProduct.get('/product/productdetail/:id',  productDetail);
 //Formulario de creacion de producto
 routerProduct.get('/product/createproduct', createProduct);
 //Acción de creación (a donde se envía el formulario)
-routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
+//routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
 
 //Formulario de edición de productos
 routerProduct.get ('/product/editproduct/:id', editProduct);
 //accion de edicion
-routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"), updateProduct),
+routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"),validations, updateProduct),
 
 //Acción de borrado
 routerProduct.delete('/product/editproduct/:id', deleteProduct);
