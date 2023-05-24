@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    display: block;
+    border-radius: solid 2px black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Bodoni';
+}
+.section{
+    border: solid 1px rgb(0, 0, 0);
+    margin: 0 auto;
+    padding: 0;
+}
+.name{
+    font-size: 25px;
+    background-color: #91795B;
+    color: aliceblue;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
+.img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    max-width: 200px;
+    justify-content: center;
+}
+
+@media (min-width: 769px){
+  .img{
+    max-width: 500px;
+  }
+}
+@media (min-width: 1280px){
+   .main{
+    margin: 0 auto;
+    max-width: 1000px;
+   }
+    .section{
+    display: flex;
+    border: none;
+   }
+   .product{
+    width: 1200px;
+   }
+   .info {
+    width: 400px;
+    padding-top: 120px;
+   }
+   .name{
+    display: block;
+   }
+   
+}

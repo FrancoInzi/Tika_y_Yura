@@ -23,6 +23,9 @@ module.exports = function (sequelize, dataTypes) {
         departamento: {
             type: dataTypes.BIGINT(10),
         },
+        localidad_id: {
+            type: dataTypes.BIGINT(11)
+        }
     }
 
     let config = {
@@ -34,12 +37,12 @@ module.exports = function (sequelize, dataTypes) {
     let Domicilio = sequelize.define(alias, cols, config);
 
     Domicilio.associate = function (models) {
-        Domicilio.belongsTo(models.Usuarios, {
+        Domicilio.hasOne(models.Usuarios, {
             as: "Usuarios",
             foreignKey: "domicilio_id"
         });
         Domicilio.belongsTo(models.Localidad, {
-            as: "Domicilio",
+            as: "Localidad",
             foreignKey: "localidad_id"
         });
 

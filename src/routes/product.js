@@ -52,12 +52,12 @@ routerProduct.get('/product/productdetail/:id',  productDetail);
 //Formulario de creacion de producto
 routerProduct.get('/product/createproduct', createProduct);
 //Acción de creación (a donde se envía el formulario)
-routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
+//routerProduct.post('/product/createproduct', upload.single("imagenProducto"), validations,  saveProduct);
 
 //Formulario de edición de productos
 routerProduct.get ('/product/editproduct/:id', editProduct);
 //accion de edicion
-routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"), updateProduct),
+routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"),validations, updateProduct),
 
 //Acción de borrado
 routerProduct.delete('/product/editproduct/:id', deleteProduct);

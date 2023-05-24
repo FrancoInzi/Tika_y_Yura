@@ -31,7 +31,7 @@ module.exports= function (sequelize, dataTypes){
     let Localidad = sequelize.define(alias, cols, config);
 
     Localidad.associate = function(models) {
-        Localidad.belongsTo(models.Domicilio, {
+        Localidad.hasMany(models.Domicilio, {
             as:"Localidad",
             foreignKey:"localidad_id"
         });
