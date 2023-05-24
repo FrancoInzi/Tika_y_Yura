@@ -118,6 +118,7 @@ const controller = {
 
             if (userToLogin) {
 
+
                 const passwordIsTrue = bcryptjs.compareSync(req.body.password, userToLogin.password);
                 console.log(userToLogin.password)
                 console.log(req.body.password)
@@ -181,6 +182,8 @@ const controller = {
         })
         return res.redirect('/')
     }
+
+
 }
 
 
