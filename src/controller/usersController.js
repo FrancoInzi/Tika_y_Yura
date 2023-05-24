@@ -90,6 +90,7 @@ const controller = {
 
 
     postLogin: (req, res) => {
+        console.log(req.body);
         const {
             email,
             password

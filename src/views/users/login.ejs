@@ -15,32 +15,32 @@
 <body>
     <%- include('../partials/header') %>
     <main class="content">
-
-
         <div class="container-login">
             <div class="shadow">
                 <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
                     <h1  class="inicio">Iniciar Sesión</h1>
-                    <label class="form-usr"  for="email">Email:</label>
-                    <input  class="input-usr"  type="email" id="email" name="email" value="<%= locals.oldData ? oldData.email : null %> ">
-                    <% if (locals.errors && errors.email) { %>
-
+                    <label class="form-usr">Correo Electronico</label>
+                    <input type="email" name="email" placeholder="Email" class="input-usr <%= locals.errors && errors.email ? 'is-invalid' : null %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
+                    <label  class="form-usr" for="password">Contraseña:</label>
+                    <input  class="input-usr <%= locals.oldData ? oldData.password : null %> "  type="password" id="password" name="password" placeholder="Ingrese aquí su contraseña">
+                    <% if (locals.errors && errors.password) { %>
                         <div class="text-danger">
-                            <%= errors.email.msg  %>
+                            <%= errors.password.msg  %>
                         </div>
-        
                     <% } %>
-                    <label  class="form-usr"   for="password">Contraseña:</label>
-                    <input  class="input-usr"  type="password" id="password" name="password" required>
                     <input  class="input-usr"  type="submit" value="Iniciar Sesión">
-                
                 </form>
             </div>
 
 
         </div>
     </main>
-    <script src="../../../public/js/login.js"></script>
+    
     <%- include('../partials/footer') %>
 </body>
 
