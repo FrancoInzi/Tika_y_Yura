@@ -21,6 +21,7 @@ const { body } = require('express-validator');
 
 const validations = [
 body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
+body('other_name').notEmpty().withMessage('Tienes que escribir un nombre científico'),
 body('imagenProducto').custom((value, {req }) => {
     let file = req.file;
     let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -35,8 +36,8 @@ body('imagenProducto').custom((value, {req }) => {
     }
     return true;
 }),
-body('review').notEmpty().withMessage('Debe escribir una reseña del producto'),
 body('description').notEmpty().withMessage('Complete aquí la descripción del producto'),
+body('review').notEmpty().withMessage('Debe escribir una reseña del producto'),
 body('valor').notEmpty().withMessage('Introduzca un valor para su planta')
 ];
 

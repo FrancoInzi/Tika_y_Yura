@@ -72,12 +72,17 @@
   .form form {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
   }
   .form input{
     width: 500px;
     height: 80px;
   }
   .form #name {
+    height: auto;
+    width: 350px;
+  }
+  .form #other_name {
     height: auto;
     width: 350px;
   }
