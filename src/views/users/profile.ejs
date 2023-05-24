@@ -3,25 +3,19 @@
     <%- include('../partials/head',{css:"profile", title:"Perfil"}) %>
 <body>
     <%- include('../partials/header') %>
-    <main >
-                <section>
-                    <div>
+    <main class="main" >
+                <section class="section">
+                    <div class="">
 
 
-                        <h2> <%= users.first_name%> <%= users.last_name%></h2>
-                        <img src="/img/users/<%= users.img%>">
+                        <h2 class="name"> <%= users.first_name%> <%= users.last_name%></h2>
+                        <img class="img" src="/img/users/<%= users.Img%>">
 
 
-                        <h4>Email <%= users.email%>
+                        <h4 class="info">Email: <%= users.email%>
                         </h4>
-                        <h3>Domicilio: <%= domicilio.calle%>
-                        </h3>
-                        <p>
-                            <%= domicilio.altura%>
-                        </p>
-                        <p>
-                            <%= localidad.provincia%>
-                        </p>        
+                        <h5><a href="/users/edituser/<%=users.id%>">Editar usuario</a></h5>
+                        
                         
                 </section>
                

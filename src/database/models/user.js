@@ -73,6 +73,9 @@ module.exports= function (sequelize, dataTypes){
         },        
         password: {
             type: dataTypes.STRING(100),
+        },
+        domicilio_id: {
+            type: dataTypes.BIGINT(11)
         }
     }
 
@@ -85,9 +88,9 @@ module.exports= function (sequelize, dataTypes){
     let Usuarios = sequelize.define(alias, cols, config);
 
     Usuarios.associate = function(models) {
-        Usuarios.belongsTo(models.Domicilio, {
+        Usuarios.hasOne(models.Domicilio, {
             as:"Domicilio",
-            foreignKey:"domicilio_id"
+            foreignKey:"id"
         });
     }
 

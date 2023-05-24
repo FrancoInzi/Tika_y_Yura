@@ -63,8 +63,7 @@ const editProduct = (req, res) => {
 }
 
 
-const updateProduct = async (req, res) => {
-    console.log(req.body);
+const updateProduct = async (req, res) => {    
     let obj = {
         name: req.body.name,
         other_name: req.body.other_name,
@@ -73,8 +72,10 @@ const updateProduct = async (req, res) => {
 
         price: req.body.valor,        
 
-    }
+    } 
+    console.log(req.file)
     if (req.file){
+        
         obj['image'] = req.file.filename
     };
     const product = await db.Productos.update(obj,{

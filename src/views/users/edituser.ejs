@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('../partials/head',{css:"edituser", title:"Editar suarioo"}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="main">
+                <div class="div1">
+                    <h2 class="title">Editar Usuario</h2>
+                </div>
+                <div class="form">
+
+                    <form action="/users/edituser/<%= users.id%>" name="formulario" method="POST"
+                        enctype="multipart/formdata">
+                        <label class="label-usrs"><b>Nombre</b></label>
+                        <div>
+                            <input type="text" name="first_name" value="<%= users.first_name%>" class="form-control">
+                        </div>
+                        <label class="label-usrs"><b>Apellido</b></label>
+                        <div>
+                            <input type="text" name="last_name" value="<%= users.last_name%>" class="form-control">
+
+                        </div>
+                        <label class="label-usrs"><b>Correo Electronico</b></label>
+
+                        <input type="email" name="email" value="<%= users.email%>" class="form-control">
+
+
+
+                        <label class="label-usrs">Domicilio:</label>
+                        <select name="domicilio" class="lugar">
+                            <option value="">Elige una provincia</option>
+                            <option value="1">Cordoba</option>
+                            <option value="2">Mendoza</option>
+                            <option value="3">Buenos Aires</option>
+
+                        </select>
+                        <label class="label-usrs"><b>Calle</b></label>
+
+                        <input type="text" name="calle" value="<%= users.Domicilio.calle%>" class="form-control">
+
+
+                        <label class="label-usrs"><b>Altura</b></label>
+
+                        <input type="text" name="altura" value="<%= users.Domicilio.altura%>" class="form-control">
+
+
+                        <div class="col-md-6 my-1">
+                            <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                            <div class="form-group">
+                                <input type="file" name="avatar" class="form-control">
+
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary button-usr">Actualizar</button>
+                    </form>
+
+                </div>
+                <form action="/users/edituser/<%= users.id%>?_method=DELETE" name="formulario" method="POST"
+                    enctype="multipart/formdata">
+                    <button type="submit">Eliminar este usuario</button>
+                </form>
+
+            </main>
+            <%- include('../partials/footer') %>
