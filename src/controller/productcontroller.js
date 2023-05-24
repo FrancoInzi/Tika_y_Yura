@@ -20,8 +20,8 @@ const allProducts = (req, res) => {
 
 }
 
-const productDetail = (req, res) => {
-    db.Productos.findByPk(req.params.id)
+const productDetail = async(req, res) => {
+    await db.Productos.findByPk(req.params.id)
         .then(function (product) { res.render('product/productdetail.ejs', { product }); })
 
 

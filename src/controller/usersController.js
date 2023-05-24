@@ -23,13 +23,15 @@ const controller = {
     register: (req, res) => {
         res.render('users/register');
     },
+    // profile: (req, res) => {
+    //     db.Usuarios.findByPk(req.params.id)
+    //     .then(function (users) { res.render('users/profile.ejs', { users }); })
+
+    // },
     profile: (req, res) => {
-        const id = Number(req.params.id);
-        for (let i = 0; i < User.length; i++) {
-            if (User[i].id === id) {
-                return res.render('users/profile.ejs', { user: User[i] })
-            }
-        }
+        db.Usuarios.findByPk(req.params.id)
+        .then(function (users) { res.render('users/profile.ejs', { users }); })
+
     },
     processRegister: async (req, res) => {
 
@@ -89,34 +91,42 @@ const controller = {
     },
 
 
-    postLogin: (req, res) => {
-        console.log(req.body);
-        const {
-            email,
-            password
-        } = req.body;
+    postLogin: async(req,res)=>{
+		try{
+			
+			const userToLogin= await db.Usuarios.findAll({where: {email:req.body.email}})     
+		
+		console.log(userToLogin)
 
-        const errors = validationResult(req);
-        if (errors.isEmpty()) {
-            const userLogin = modelUser.findByField('email', email);
-            if (userLogin) {
-                const passwd = bcryptjs.compareSync(password, userLogin.password)
-                if (passwd) {
-                    req.session.userLogged = userLogin;
-                    res.send('Bienvenido' + userLogin.email);
-                } else {
-                    return res.send('credenciales inválidas')
-                }
-            }
-            res.send('mail inexistente')
-        } else {
-            res.render('users/login', {
-                'errors': errors.array(),
-                'prev': req.body
-            })
-        }
+		if(userToLogin){
 
-    }
+			const passwordIsTrue = bcryptjs.compareSync(req.body.password,userToLogin[0].password);
+			
+			
+			if(passwordIsTrue){
+				delete userToLogin.password;
+				req.session.userLogged=userToLogin;
+				
+				return res.redirect('users/profile' + req.params.id)
+			}	
+			return res.render('users/login.ejs',{
+				errors:{
+					email: {
+						msg: 'Las credenciales son invalidas'
+					}
+				}
+			})
+		}
+		return res.render('users/login.ejs',{
+			errors:{
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		})
+	}catch(error){
+		console.log(error)
+	}},
 }
 
 

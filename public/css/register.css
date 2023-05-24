@@ -7,6 +7,24 @@
   margin:0;    
 }
 
+.is-valid{
+  
+  border: solid 2px #198754;
+}
+.is-invalid{    
+  
+  border: solid 2px red;
+}
+.warning{
+  color:red;
+  background-color: #f8D7DA;
+  text-align: center;
+  border-radius: 10px;
+}
+.errors{
+  color: red;
+}
+
 .main-register{
   background-color: white;
   width: 100vw;
@@ -53,7 +71,7 @@
 .form-control[type="password"] {
   width: 100%;
   padding: 11px;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
   border: 1px solid #020200;
   border-radius: 3px;
   background-color: #f5f5f5;
@@ -72,4 +90,5 @@
 
 .text-danger{
   color: red;
+  margin-bottom: 10px;
 }

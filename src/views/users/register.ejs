@@ -1,133 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head',{css:"register", title:"Register"}) %>
+
     <body>
         <%- include('../partials/header') %>
-        <main class="main-register">
-            <div class="container-main">
-                <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
-                    <h1 class="h1-crear">Crea tu cuenta</h1>
-
-                    <label class="label-usrs"><b>Nombre</b></label>
-                    <div>
-                        <input 
-                            type="text" 
-                            name="first_name" 
-                            placeholder="Nombre"
-                            class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
-                            >
+            <main class="main-register">
+                <div class="container-main">
+                    <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
+                        <h1 class="h1-crear">Crea tu cuenta</h1>
+                        
+                        <div>
+                            <label class="label-usrs"><b>Nombre</b></label>
+                        </div>
+                        <div>
+                            <input type="text" name="first_name" placeholder="Nombre"
+                                class="form-control <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                                id="first_name">
                             <% if (locals.errors && errors.first_name) { %>
                                 <div class="text-danger">
                                     <%= errors.first_name.msg %>
                                 </div>
                             <% } %>
-                        
-                    </div>
-                    <label class="label-usrs"><b>Apellido</b></label>
-                    <div>
-                        <input 
-                            type="text" 
-                            name="last_name" 
-                            placeholder="Apellido"
-                            class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
-                            >
+                        </div>
+
+                        <div>
+                            <label class="label-usrs"><b>Apellido</b></label>
+                        </div>
+                        <div>
+                            <input type="text" name="last_name" placeholder="Apellido"
+                                class="form-control <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+                                id="last_name">
                             <% if (locals.errors && errors.last_name) { %>
                                 <div class="text-danger">
                                     <%= errors.last_name.msg %>
                                 </div>
                             <% } %>
-                    </div>
-                    <label class="label-usrs"><b>Correo Electronico</b></label>
-                    
-                        <input 
-                            type="email" 
-                            name="email" 
-                            placeholder="Email"
-                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                            >
-                            <% if (locals.errors && errors.email) { %>
-                                <div class="text-danger">
-                                    <%= errors.email.msg %>
-                                </div>
+                        </div>
+
+                        <div>
+                            <label class="label-usrs"><b>Correo Electronico</b></label>
+                        </div>
+                        <div>
+                        <input type="email" name="email" placeholder="Email"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" id="email">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-danger">
+                                <%= errors.email.msg %>
+                            </div>
                             <% } %>
-                   
-                
-                    <label class="label-usrs">Domicilio:</label>
-                    <select name="domicilio" class="lugar">
-                        <option value="">Elige una provincia</option>
-                        <option value="1">Cordoba</option>
-                        <option value="2">Mendoza</option>
-                        <option value="3">Buenos Aires</option>
-                        
-                    </select>
-                    <label class="label-usrs"><b>Calle</b></label>
-                    
-                        <input 
-                            type="text" 
-                            name="calle" 
-                            placeholder="calle"
-                            class="form-control <%= locals.errors && errors.calle ? 'is-invalid' : null %>"
-                            >
+                        </div>
+
+                        <div>
+                            <label class="label-usrs">Domicilio:</label>
+                        </div>
+                        <div>
+                            <select name="domicilio" class="lugar" id="domicilio">
+                                <option value="">Elige una provincia</option>
+                                <option value="1">Cordoba</option>
+                                <option value="2">Mendoza</option>
+                                <option value="3">Buenos Aires</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="label-usrs"><b>Calle</b></label>
+                        </div>
+                        <div>
+                            <input type="text" name="calle" placeholder="calle"
+                                class="form-control <%= locals.errors && errors.calle ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.calle) { %>
                                 <div class="text-danger">
                                     <%= errors.calle.msg %>
                                 </div>
-                            <% } %>
-                     
+                                <% } %>
+                        </div>
+                        <div>
                             <label class="label-usrs"><b>Altura</b></label>
-                    
-                            <input 
-                                type="text" 
-                                name="altura" 
-                                placeholder="altura"
-                                class="form-control <%= locals.errors && errors.altura ? 'is-invalid' : null %>"
-                                >
-                                <% if (locals.errors && errors.altura) { %>
-                                    <div class="text-danger">
-                                        <%= errors.altura.msg %>
-                                    </div>
-                                <% } %> 
-                        <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                        </div>
+                        <div>
+                            <input type="text" name="altura" placeholder="altura"
+                                class="form-control <%= locals.errors && errors.altura ? 'is-invalid' : null %>">
+                            <% if (locals.errors && errors.altura) { %>
+                                <div class="text-danger">
+                                    <%= errors.altura.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+
+                        <div>
+                            <label class="label-usrs"><b>Imagen de perfil:</b></label>
+                        </div>
                         <div class="form-group">
-                            <input type="file" name="avatar" class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+                            <input type="file" name="avatar"
+                                class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.avatar) { %>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg %>
                                 </div>
                             <% } %>
                         </div>
-                    </div>
-                    <label class="label-usrs"><b>Contraseña</b></label>
-                    <div>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Contraseña"
-                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                            >
+
+                        <div>
+                            <label class="label-usrs"><b>Contraseña</b></label>
+                        </div>
+                        <div>
+                            <input type="password" name="password" placeholder="Contraseña"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                                id="password">
                             <% if (locals.errors && errors.password) { %>
                                 <div class="text-danger">
                                     <%= errors.password.msg %>
                                 </div>
                             <% } %>
+                        </div>
 
-                    <label class="label-usrs">Confirmar Contraseña</label>
-                    <input 
-                        type="password" 
-                        name="passwordConfirm" 
-                        placeholder="Confirmar Contraseña"
-                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.password) { %>
-                            <div class="text-danger">
-                                <%= errors.password.msg %>
-                            </div>
-                        <% } %>
-                
-                    <button  type="submit" class="btn btn-primary button-usr">Registrarse</button>
-                </form>
-            </div>
-        </main>
-        <%- include ('../partials/footer')%> 
+                        <div>
+                            <label class="label-usrs">Confirmar Contraseña</label>
+                        </div>
+                        <div>
+                            <input type="password" name="passwordConfirm" placeholder="Confirmar Contraseña"
+                                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                                id="passwordConfirm">
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="text-danger">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary button-usr">Registrarse</button>
+                    </form>
+                </div>
+                <script src="/js/register.js"></script>
+            </main>
+            <%- include ('../partials/footer')%>
     </body>
+
 </html>

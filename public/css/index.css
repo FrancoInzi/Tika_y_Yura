@@ -6,6 +6,9 @@
     font-family: 'Bodoni';
     margin:0;    
 }
+
+
+
 /*Header*/
 
 .header-index{
@@ -96,6 +99,10 @@
 
 .wslinks{
     display: none;
+}
+a{
+    text-decoration:none;
+    color: #666;
 }
 
 /*Main*/

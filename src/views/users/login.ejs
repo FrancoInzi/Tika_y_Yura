@@ -17,7 +17,7 @@
     <main class="content">
         <div class="container-login">
             <div class="shadow">
-                <form class="form-login" action="/users/login" method="POST" enctype="multipart/form-data">
+                <form class="form-login" action="/users/login" method="POST">
                     <h1  class="inicio">Iniciar Sesión</h1>
                     <label class="form-usr">Correo Electronico</label>
                     <input type="email" name="email" placeholder="Email" class="input-usr <%= locals.errors && errors.email ? 'is-invalid' : null %>">
