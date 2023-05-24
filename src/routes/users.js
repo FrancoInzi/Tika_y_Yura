@@ -33,8 +33,8 @@ body('avatar').custom((value, {req }) => {
 })
 ]
 
-routerUsers.get('/users/login',controller.login);
-routerUsers.post('/users/login',  controller.postLogin );
+routerUsers.get('/users/login', controller.login);
+routerUsers.post('/users/login', controller.postLogin );
 
 routerUsers.get('/users/register', controller.register );
 routerUsers.post('/users/register', fileUpload.single('avatar'), validations, controller.processRegister );
