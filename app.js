@@ -12,7 +12,7 @@ const routerProduct = require('./src/routes/product.js');
 const routerUsers = require('./src/routes/users.js');
 const methodOverride= require('method-override');
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3030
 
 const publicFolderPath = path.join(__dirname, 'public');
 console.log(publicFolderPath);

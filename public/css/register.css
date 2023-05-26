@@ -7,22 +7,8 @@
   margin:0;    
 }
 
-.is-valid{
-  
-  border: solid 2px #198754;
-}
-.is-invalid{    
-  
-  border: solid 2px red;
-}
-.warning{
-  color:red;
-  background-color: #f8D7DA;
-  text-align: center;
-  border-radius: 10px;
-}
-.errors{
-  color: red;
+.error{
+  color: red
 }
 
 .main-register{
