@@ -10,9 +10,12 @@ const app = express();
 const routerMain = require('./src/routes/main');
 const routerProduct = require('./src/routes/product.js');
 const routerUsers = require('./src/routes/users.js');
+const routerProductAPI = require('./src/routes/productAPI.js');
+const routerUsersAPI = require('./src/routes/usersAPI.js');
 const methodOverride= require('method-override');
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3030
+const conn = require('./src/database/config/testConnection');
 
 const publicFolderPath = path.join(__dirname, 'public');
 console.log(publicFolderPath);
@@ -37,6 +40,14 @@ app.use(methodOverride('_method'));
 
 //Routes
 app.use(routerMain, routerUsers, routerProduct);
+app.use(routerProductAPI, routerUsersAPI);
 
 
-app.listen(port,()=>console.log(`servidor escuchando en puerto ${port}`));
+
+app.listen(port,()=>{
+    conn.connect((error) =>{
+        if(error)throw error;
+        console.log('Connect to database tika_y_yura_db');
+    });
+    console.log(`servidor escuchando en puerto ${port}`);
+});

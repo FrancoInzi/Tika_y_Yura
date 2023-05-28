@@ -3,21 +3,21 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
             primaryKey: true,
             autoIncrement: true
         },
 
         provincia: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         },
 
         localidad: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         },
 
         ciudad: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         }
 
     }

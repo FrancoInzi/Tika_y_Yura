@@ -1,7 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
-const db = require("../database/models/");
+const db = require("../database/models/").default;
 const User = require('../database/models/user');
 const modelUser = require('../database/Usermodel');
 const { error } = require('console');

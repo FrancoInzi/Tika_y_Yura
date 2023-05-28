@@ -1,5 +1,5 @@
 *{
-    box-sizing: border-box;   
+  box-sizing: border-box;   
 }
 
 .body-index {
@@ -7,26 +7,9 @@
   margin:0;    
 }
 
-/*validaciones front-end
-.is-valid{
-  
-  border: solid 2px #198754;
-}
-.is-invalid{    
-  
-  border: solid 2px red;
-}
-.warning{
-  color:red;
-  background-color: #f8D7DA;
-  text-align: center;
-  border-radius: 10px;
-}
-.errors{
+.error{
   color: red;
 }
-hasta aqui*/
-
 
 .main-createproduct{
   background-color: white;
@@ -38,7 +21,6 @@ hasta aqui*/
   max-width: 1200px;
   width: 90%;
   margin: auto;
-  
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;

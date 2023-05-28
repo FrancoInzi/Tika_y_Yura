@@ -11,7 +11,7 @@
                 </div>
                 <div class="form">
 
-                    <form action="/product/editproduct/<%= product.id%>" name="formulario" method="POST" enctype="multipart/formdata">
+                    <form class="editForm" action="/product/editproduct/<%= product.id%>" name="formulario" method="POST" enctype="multipart/formdata">
                         <div>
                             <label for="name">Renombrar producto:</label>
                         </div>
@@ -65,13 +65,15 @@
                             <input type="number" id="valor" name="valor" value="<%= product.price%>" min="10" max="10000000">
                         </div>
                         <input class="button-accept" type="submit" value="Aceptar" />
+                        <div class="error">
+                            <ul></ul>
+                        </div>
                     </form>
-
                 </div>
                 <form action="/product/editproduct/<%= product.id%>?_method=DELETE" name="formulario" method="POST" enctype="multipart/formdata">                   
                     <button type="submit" >Eliminar este producto</button>
                 </form>
-
+            <script src="/js/editProductForm"></script>
             </main>
         <%- include('../partials/footer') %>
     </body>

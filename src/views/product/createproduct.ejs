@@ -41,7 +41,7 @@
                             <label><b>Imagen del producto</b></label>
                         </div>
                         <div>
-                            <input type="file" name="imagenProducto"
+                            <input type="file" name="imagenProducto" id="imagenProducto"
                                 class="form-control <%= locals.errors && errors.imagenProducto ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.imagenProducto : null %>">
                             <% if (locals.errors && errors.imagenProducto) { %>
@@ -108,8 +108,9 @@
                                 </div>
                             <% } %>
                         </div>
-
-                        <ul class="errors"></ul>
+                        <div class="error">
+                            <ul></ul>
+                        </div>
                         <input class="button-accept" type="submit" value="Aceptar">
                     </form>
                 </div>

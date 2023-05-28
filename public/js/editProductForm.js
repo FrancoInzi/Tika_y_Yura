@@ -1,6 +1,6 @@
 window.addEventListener("load", function(){
         
-    let form = document.querySelector('.formulario');
+    let form = document.querySelector('.editForm');
 
     let product = document.querySelector('#name')
     let other_name = document.querySelector('#other_name')

@@ -3,25 +3,25 @@ module.exports = function (sequelize, dataTypes) {
 
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
             primaryKey: true,
             autoIncrement: true
         },
 
         calle: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         },
 
         altura: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
         },
 
         piso: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
         },
 
         departamento: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
         },
         localidad_id: {
             type: dataTypes.BIGINT(11)
