@@ -12,6 +12,10 @@
   padding: 0px;
 } */
 
+.error{
+  color: red
+}
+
 .content{
   background-color: white;
   width: 100vw;

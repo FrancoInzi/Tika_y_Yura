@@ -17,32 +17,31 @@
     <main class="content">
         <div class="container-login">
             <div class="shadow">
-
                 <form class="form-login" action="/users/login" method="POST">
                     <h1  class="inicio">Iniciar Sesión</h1>
                     <label class="form-usr">Correo Electronico</label>
-                    <input type="email" name="email" placeholder="Email" class="input-usr <%= locals.errors && errors.email ? 'is-invalid' : null %>">
+                    <input type="email" name="email" id="email-login" placeholder="Email" class="input-usr <%= locals.errors && errors.email ? 'is-invalid' : null %>">
                             <% if (locals.errors && errors.email) { %>
                                 <div class="text-danger">
                                     <%= errors.email.msg %>
                                 </div>
                             <% } %>
                     <label  class="form-usr" for="password">Contraseña:</label>
-                    <input  class="input-usr <%= locals.oldData ? oldData.password : null %> "  type="password" id="password" name="password" placeholder="Ingrese aquí su contraseña">
+                    <input  id="password-login" class="input-usr <%= locals.oldData ? oldData.password : null %> "  type="password" id="password" name="password" placeholder="Ingrese aquí su contraseña">
                     <% if (locals.errors && errors.password) { %>
-
                         <div class="text-danger">
                             <%= errors.password.msg  %>
                         </div>
                     <% } %>
+                    <div class="error">
+                        <ul></ul>
+                    </div>
                     <input  class="input-usr"  type="submit" value="Iniciar Sesión">
                 </form>
             </div>
-
-
         </div>
     </main>
-    
+    <script src="/js/login.js"></script>
     <%- include('../partials/footer') %>
 </body>
 
