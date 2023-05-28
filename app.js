@@ -11,6 +11,7 @@ const routerMain = require('./src/routes/main');
 const routerProduct = require('./src/routes/product.js');
 const routerUsers = require('./src/routes/users.js');
 const routerProductAPI = require('./src/routes/productAPI.js');
+const routerUsersAPI = require('./src/routes/usersAPI.js');
 const methodOverride= require('method-override');
 
 const port = process.env.PORT || 3030
@@ -39,7 +40,7 @@ app.use(methodOverride('_method'));
 
 //Routes
 app.use(routerMain, routerUsers, routerProduct);
-app.use(routerProductAPI);
+app.use(routerProductAPI, routerUsersAPI);
 
 
 

@@ -1,31 +1,34 @@
 const db = require('../database/models');
-//const Product = db.product;
+const {Sequelize} = require('sequelize');
+const Product = require('../database/models/product')(db.sequelize, Sequelize);
+const Maceta = require('../database/models/macetas')(db.sequelize, Sequelize);
 
+Product.belongsTo(Maceta, {foreignKey:'id'});
 
 const productControllerAPI = {
     
     listAll: (req,res) => {
-        db.product.findAll({
-            include: ['Productos']
+        Product.findAll({
+            include: Maceta
         })
-        .then(Productos => {res.status(200).json({
-            total: Productos.length,            
-            data: Productos.map(Product => {return{
-                id: Product.id,
-                nombre: Product.nombre,
-                descripcion: Product.descripcion,
-                macetas_id: Product.Productos,
-                detail: '/api/product/detail/:id'  
+        .then(products => {res.status(200).json({
+            total: products.length,            
+            data: products.map(products => {return{
+                id: products.id,
+                nombre: products.name,
+                descripcion: products.description,
+                macetas_id: products.macetas_id,
+                detail: `/api/product/detail/${products.id}`
                 }
             })
         })})
     },
     detail: (req,res)=>{
         const {id}=req.params;
-        Product.findByPk(id,{include:['Productos']})
-        .then(Product=>res.status(200).json(
+        Product.findByPk(id,{include: Maceta})
+        .then(products=>res.status(200).json(
             {
-                data: Product
+                data: products
             }
         ))
     }

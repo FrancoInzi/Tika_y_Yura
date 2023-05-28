@@ -3,27 +3,27 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
             primaryKey: true,
             autoIncrement: true
         },
 
         tipo: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         },
 
         tamaño: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
         },
 
         color: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(73)
         },
 
     }
 
     let config = {
-        tableName: "macetas",
+        tableName: "maceta",
         timestamps: false
 
     }
@@ -33,7 +33,7 @@ module.exports= function (sequelize, dataTypes){
     Macetas.associate = function(models) {
         Macetas.hasMany(models.Productos, {
             as:"Productos",
-            foreignKey:"maceta_id"
+            foreignKey:"id"
         });
     }
     

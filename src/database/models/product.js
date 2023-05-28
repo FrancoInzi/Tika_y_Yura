@@ -5,31 +5,31 @@ module.exports= function (sequelize, dataTypes){
 
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10),
+            type: dataTypes.BIGINT(11),
             primaryKey: true,
             autoIncrement: true
         },
 
         name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(73),
         },
 
         other_name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(117),
         },
 
         description: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(620),
         },
 
         features: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(630),
         },
         price: {
-            type: dataTypes.DECIMAL(3,1),
+            type: dataTypes.DECIMAL(7,2),
         },
         image:{
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(75),
         },
         maceta_id:{
             type: dataTypes.BIGINT(11),
