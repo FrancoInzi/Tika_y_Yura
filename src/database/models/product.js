@@ -1,4 +1,4 @@
-const macetas = require("./macetas");
+
 
 module.exports= function (sequelize, dataTypes){
     let alias = "Productos";
@@ -30,6 +30,9 @@ module.exports= function (sequelize, dataTypes){
         },
         image:{
             type: dataTypes.STRING(100),
+        },
+        maceta_id:{
+            type: dataTypes.BIGINT(11),
         }
     }
 
