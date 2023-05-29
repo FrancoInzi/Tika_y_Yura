@@ -22,3 +22,6 @@
 *   Franco Inzirillo: Es oriundo de Mendoza, Argentina. Tiene 30 años y es comunicador social y delivery.
 *   María Guadalupe Rodriguez Frosi: Tiene 33 años, es de Cordoba, Argentina. Es Tecnica Universitaria en Industrias Alimentarias.
 
+## Link a proyecto Dashboard con React:
+
+* https://github.com/pupefrosi/react-dashboard
