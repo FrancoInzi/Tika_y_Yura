@@ -3,6 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 const fs = require('fs');
 
 const app = express();
@@ -25,6 +26,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/src/views'));
 
 //Configuraciones
+app.use(cors());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

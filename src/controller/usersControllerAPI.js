@@ -40,19 +40,15 @@ const usersControllerAPI = {
             )
     },
 
-    findId: (req, res) => {
+    lastUser: (req, res) =>{
 
-        const { id } = req.params;
-        User.findByPk(id)
-            .then(users => {
-                res.status(200).json(
-                    {
-                        url: users.img,
-
-                    }
-                )
-            })
-
+        User.findAll({
+            limit: 1,
+            order: [ ['id', 'DESC' ]]
+        })
+        .then((lastUser) =>{
+            res.json(lastUser);
+        })
     }
 }
 module.exports = usersControllerAPI;

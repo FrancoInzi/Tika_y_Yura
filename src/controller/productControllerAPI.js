@@ -31,6 +31,17 @@ const productControllerAPI = {
                 data: products
             }
         ))
+    },
+
+    lastProduct: (req, res) =>{
+
+        Product.findAll({
+            limit: 1,
+            order: [ ['id', 'DESC' ]]
+        })
+        .then((lastProducts) =>{
+            res.json(lastProducts);
+        })
     }
  
 }

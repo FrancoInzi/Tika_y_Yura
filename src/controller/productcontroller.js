@@ -3,7 +3,10 @@ const path = require('path');
 const fs = require('fs');
 
 const { validationResult } = require('express-validator');
-const db = require("../database/models").default;
+const db = require("../database/models");
+const {Sequelize} = require('sequelize');
+const Product = require('../database/models/product')(db.sequelize, Sequelize);
+
 const json = fs.readFileSync(path.join(__dirname, '../database/products.json'), 'utf-8');
 const products = JSON.parse(json);
 
@@ -15,13 +18,13 @@ console.log(publicFolderPath);
 productController.use(express.static(publicFolderPath));
 
 const allProducts = (req, res) => {
-    db.Productos.findAll()
+    Product.findAll()
         .then(function (products) { res.render('product/allproducts.ejs', { 'allProducts': products }); })
 
 }
 
 const productDetail = async(req, res) => {
-    await db.Productos.findByPk(req.params.id)
+    await Product.findByPk(req.params.id)
         .then(function (product) { res.render('product/productdetail.ejs', { product }); })
 
 
@@ -44,7 +47,7 @@ const saveProduct = async (req, res) => {
             oldData: req.body
         });
     }
-    const product = await db.Productos.create({
+    const product = await Product.create({
         name: req.body.name,
         other_name: req.body.other_name,
         description: req.body.description,
@@ -58,7 +61,7 @@ const saveProduct = async (req, res) => {
 
 
 const editProduct = (req, res) => {
-    db.Productos.findByPk(req.params.id)
+    Product.findByPk(req.params.id)
         .then(function (product) { res.render('product/editproduct.ejs', { product }); })
 }
 
@@ -78,7 +81,7 @@ const updateProduct = async (req, res) => {
         
         obj['image'] = req.file.filename
     };
-    const product = await db.Productos.update(obj,{
+    const product = await Product.update(obj,{
 
         where: { id: req.params.id }
     });
@@ -86,7 +89,7 @@ const updateProduct = async (req, res) => {
     //return res.send('el producto ha sido editado exitosamente')
 }
 const deleteProduct = async (req, res) => {
-    db.Productos.destroy({
+    Product.destroy({
         include:[{association: 'Productos'}],
         where: {
             id: req.params.id

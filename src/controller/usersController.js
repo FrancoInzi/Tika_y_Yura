@@ -1,8 +1,10 @@
 const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
-const db = require("../database/models/").default;
-const User = require('../database/models/user');
+const db = require("../database/models/");
+const {Sequelize} = require('sequelize');
+const User = require('../database/models/user')(db.sequelize, Sequelize);
+const Domicilio = require('../database/models/domicilio')(db.sequelize, Sequelize);
 const modelUser = require('../database/Usermodel');
 const { error } = require('console');
 const { validationResult } = require('express-validator');
@@ -14,7 +16,7 @@ const publicFolderPath = path.join(__dirname, './Public');
 console.log(publicFolderPath);
 
 userController.use(express.static(publicFolderPath));
-
+User.hasOne(Domicilio, {foreignKey:'id'});
 
 const controller = {
     login: (req, res) => {
@@ -26,11 +28,10 @@ const controller = {
     },
 
     profile: (req, res) => {
-        db.Usuarios.findByPk(req.params.id, {
-            include: [{
-                association: 'Domicilio',
-                include: [{ association: 'Localidad' }]
-            }],
+        User.findByPk(req.params.id, {
+            include: Domicilio ({ 
+                include: Localidad
+            })
 
         })
             .then(function (users) { res.render('users/profile.ejs', { users }); })
@@ -38,11 +39,10 @@ const controller = {
     },
 
     edit: (req, res) => {
-        db.Usuarios.findByPk(req.params.id, {
-            include: [{
-                association: 'Domicilio',
-                include: [{ association: 'Localidad' }]
-            }],
+        User.findByPk(req.params.id, {
+            include: Domicilio ({ 
+                include: Localidad
+            }),
 
         })
             .then(function (users) {console.log(users)
@@ -71,7 +71,7 @@ const controller = {
         console.log(resultValidation)
         if (resultValidation.isEmpty()) {
             console.log('pasé')
-            const userExist = await db.Usuarios.findOne({
+            const userExist = await User.findOne({
                 where: {
                     email
                 }
@@ -79,7 +79,7 @@ const controller = {
             if (userExist) {
                 res.send('El usuario ya se encuentra registrado');
             } else {
-                const domicilio = await db.Domicilio.create({
+                const domicilio = await Domicilio.create({
                     calle: req.body.calle,
                     altura: req.body.altura,
                     localidad_id: Number(req.body.domicilio)
@@ -92,7 +92,7 @@ const controller = {
                     password: bcryptjs.hashSync(password, 10),
                     Img: req.file.filename
                 }
-                const user = await db.Usuarios.create(userToCreate);
+                const user = await User.create(userToCreate);
                 return res.redirect('/')
             }
 
@@ -111,7 +111,7 @@ const controller = {
         console.log(req.body)
         try {
 
-            const userToLogin = await db.Usuarios.findOne({ where: { email: req.body.email } })
+            const userToLogin = await User.findOne({ where: { email: req.body.email } })
 
 
             console.log(userToLogin)
@@ -127,7 +127,7 @@ const controller = {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
 
-                    return res.redirect('profile/' + userToLogin.id)
+                    return res.redirect('users/profile/' + userToLogin.id)
                 }
                 return res.render('users/login.ejs', {
                     errors: {
@@ -151,7 +151,7 @@ const controller = {
 
     editpost: async (req, res) => {
         console.log(req.body);
-        const domicilio = await db.Domicilio.update({
+        const domicilio = await Domicilio.update({
             calle: req.body.calle,
             altura: req.body.altura,
             localidad_id: Number(req.body.domicilio)
@@ -167,14 +167,14 @@ const controller = {
         if (req.file) {
             obj['Img'] = req.file.filename
         };
-        const user = await db.Usuarios.update(obj, {
+        const user = await User.update(obj, {
 
             where: { id: req.params.id }
         });
-        return res.redirect('/users/profile/' + req.params.id)
+        return res.redirect('/users/profile/' + user.id)
     },
     deleteuser: async (req, res) => {
-        db.Usuarios.destroy({
+        User.destroy({
             include: [{ association: 'Usuarios', association: 'Domicilio' }],
             where: {
                 id: req.params.id
