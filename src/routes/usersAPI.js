@@ -9,6 +9,6 @@ routerUsersAPI.get('/api/users/', usersControllerAPI.listAll);
 
 routerUsersAPI.get('/api/users/detail/:id', usersControllerAPI.detail);
 
-routerUsersAPI.get('/api/users/:id',usersControllerAPI.findId)
+routerUsersAPI.get('/api/users/lastuser', usersControllerAPI.lastUser);
 
 module.exports= routerUsersAPI;
