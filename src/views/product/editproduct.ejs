@@ -11,7 +11,7 @@
                 </div>
                 <div class="form">
 
-                    <form class="editForm" action="/product/editproduct/<%= product.id%>" name="formulario" method="POST" enctype="multipart/formdata">
+                    <form class="editForm" action="/product/editproduct/<%= product.id%>?_method=PUT" name="formulario" method="POST" enctype="multipart/formdata">
                         <div>
                             <label for="name">Renombrar producto:</label>
                         </div>

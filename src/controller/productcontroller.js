@@ -81,6 +81,7 @@ const updateProduct = async (req, res) => {
         
         obj['image'] = req.file.filename
     };
+    
     const product = await Product.update(obj,{
 
         where: { id: req.params.id }

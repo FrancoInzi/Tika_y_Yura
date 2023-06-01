@@ -256,9 +256,11 @@ iframe {
 }
 
 @media (min-width: 361px) {
-    
+    iframe {
+        display: none;
+    }
     .burger {
-    display: none;
+        display: none;
     }
 }
 
@@ -266,7 +268,9 @@ iframe {
     .container-footer{
         display: flex;
     }
-
+    iframe{
+        display: flex;
+    }
     .wslinks{
         display: flex;
     }

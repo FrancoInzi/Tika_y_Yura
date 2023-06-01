@@ -57,7 +57,7 @@ routerProduct.post('/product/createproduct', upload.single("imagenProducto"), va
 //Formulario de edición de productos
 routerProduct.get ('/product/editproduct/:id', editProduct);
 //accion de edicion
-routerProduct.post('/product/editproduct/:id', upload.single("imagenProducto"),validations, updateProduct),
+routerProduct.put('/product/editproduct/:id', upload.single("imagenProducto"),validations, updateProduct),
 
 //Acción de borrado
 routerProduct.delete('/product/editproduct/:id', deleteProduct);

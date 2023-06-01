@@ -41,7 +41,7 @@ routerUsers.post('/users/register', fileUpload.single('avatar'), validations, co
 
 routerUsers.get('/users/edituser/:id', controller.edit);
 routerUsers.post('/users/edituser/:id', controller.editpost);
-routerUsers.post('/users/edituser/:id', controller.deleteuser);
+routerUsers.delete('/users/edituser/:id', controller.deleteuser);
 
 routerUsers.get('/users/profile/:id', controller.profile);
 
