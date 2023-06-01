@@ -17,7 +17,9 @@ const productControllerAPI = {
                 id: products.id,
                 nombre: products.name,
                 descripcion: products.description,
-                macetas_id: products.macetas_id,
+                price: products.price,
+                image: products.image,
+                features: products.features,
                 detail: `/api/product/detail/${products.id}`
                 }
             })
