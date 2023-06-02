@@ -2,8 +2,7 @@ const bcryptjs = require('bcryptjs');
 const express = require('express');
 const path = require('path');
 const db = require("../database/models/");
-const User = require('../database/models/user');
-const modelUser = require('../database/Usermodel');
+
 const { error } = require('console');
 const { validationResult } = require('express-validator');
 
@@ -19,6 +18,47 @@ userController.use(express.static(publicFolderPath));
 const controller = {
     login: (req, res) => {
         res.render('users/login');
+    },
+
+    postLogin: async (req, res) => {
+        console.log(req.body)
+        try {
+
+            const userToLogin = await db.Usuarios.findOne({ where: { email: req.body.email } })
+
+
+            console.log(userToLogin)
+
+            if (userToLogin) {
+
+                const passwordIsTrue = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                console.log(userToLogin.password)
+                console.log(req.body.password)
+
+                if (passwordIsTrue) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
+
+                    return res.redirect('profile/' + userToLogin.id)
+                }
+                return res.render('users/login.ejs', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales son invalidas'
+                        }
+                    }
+                })
+            }
+            return res.render('users/login.ejs', {
+                errors: {
+                    email: {
+                        msg: 'No se encuentra este email en nuestra base de datos'
+                    }
+                }
+            })
+        } catch (error) {
+            console.log(error)
+        }
     },
 
     register: (req, res) => {
@@ -93,7 +133,7 @@ const controller = {
                     Img: req.file.filename
                 }
                 const user = await db.Usuarios.create(userToCreate);
-                return res.redirect('/')
+                return res.render('/', {user})
             }
 
         } else {
@@ -107,46 +147,7 @@ const controller = {
 
     },
 
-    postLogin: async (req, res) => {
-        console.log(req.body)
-        try {
-
-            const userToLogin = await db.Usuarios.findOne({ where: { email: req.body.email } })
-
-
-            console.log(userToLogin)
-
-            if (userToLogin) {
-
-                const passwordIsTrue = bcryptjs.compareSync(req.body.password, userToLogin.password);
-                console.log(userToLogin.password)
-                console.log(req.body.password)
-
-                if (passwordIsTrue) {
-                    delete userToLogin.password;
-                    req.session.userLogged = userToLogin;
-
-                    return res.redirect('profile/' + userToLogin.id)
-                }
-                return res.render('users/login.ejs', {
-                    errors: {
-                        email: {
-                            msg: 'Las credenciales son invalidas'
-                        }
-                    }
-                })
-            }
-            return res.render('users/login.ejs', {
-                errors: {
-                    email: {
-                        msg: 'No se encuentra este email en nuestra base de datos'
-                    }
-                }
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    },
+    
 
     editpost: async (req, res) => {
         console.log(req.body);
@@ -155,24 +156,34 @@ const controller = {
             calle: req.body.calle,
             altura: req.body.altura,
             localidad_id: Number(req.body.domicilio)
-        })
+        },{
+            where: { id: req.params.id }
+        });
+        const image= req.file? req.file.filename : '';
+		let newImage;	
+		
+		if(image.length >0){
+			newImage = `/img/users/${image}`;
+		}
+
         let obj = {
-            first_name,
-            last_name,
-            email,
-            domicilio_id: domicilio.id,
-            Img: req.file.filename
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+            domicilio: domicilio,
+            Img: newImage
 
         }
         if (req.file) {
             obj['Img'] = req.file.filename
         };
-        const user = await db.Usuarios.update(obj, {
+        const users = await db.Usuarios.update(obj, {
 
             where: { id: req.params.id }
         });
-        return res.redirect('/users/profile/' + user.id)
+        return res.redirect('/users/profile/' + req.params.id)
     },
+    
     deleteuser: async (req, res) => {
         db.Usuarios.destroy({
             include: [{ association: 'Usuarios', association: 'Domicilio' }],
