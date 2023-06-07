@@ -3,30 +3,29 @@
     
     <%- include('../partials/head',{css:"allproduct", title:"Productos"}) %>
 
-    <body class="all">
+    <body>
         <%- include('../partials/header') %>
-            <main class="corp">
-                <h3 class="title">Nuestros productos</h3>
-                <div class="bigbox">
-                    <% for(let i=0; i< allProducts.length; i++){%>
-                    <div class="smallbox">
-                        <a href="/product/productdetail/<%= allProducts[i].id %>">
-                            <img class="img" src="/img/products/<%= allProducts[i].image %>">
-                        </a>
-                        <div class="data">
-                            <p class="name"> <%= allProducts[i].name %></p>
-                            <p class="value">Precio: <%= allProducts[i].price %></p>
-                            <p>Nombre científico: <%= allProducts[i].other_name %></p>                            
-                        </div>
-                    </div> 
-                    <%}%>                  
-                </div>
-                <div>
-                    <article><a href="/product/createproduct">Crear producto</a></article>
-                </div>
-            </main>
-            <%- include('../partials/footer') %>
-
+        <main class="corp">
+            <h3 class="title">Nuestros productos</h3>
+            <div class="bigbox">
+                <% for(let i=0; i< allProducts.length; i++){%>
+                <div class="smallbox">
+                    <a href="/product/productdetail/<%= allProducts[i].id %>">
+                        <img class="img" src="/img/products/<%= allProducts[i].image %>">
+                    </a>
+                    <div class="data">
+                        <p class="name"> <%= allProducts[i].name %></p>
+                        <p class="value">Precio: <%= allProducts[i].price %></p>
+                        <p>Nombre científico: <%= allProducts[i].other_name %></p>                            
+                    </div>
+                </div> 
+                <%}%>                  
+            </div>
+            <div class="button">
+                <button class="createproduct-button"><a href="/product/createproduct">Crear producto</a></button>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
     </body>
 
 </html>

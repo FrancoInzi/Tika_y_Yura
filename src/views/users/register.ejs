@@ -5,7 +5,7 @@
     <body>
         <%- include('../partials/header') %>
             <main class="main-register">
-                <div class="container-main">
+                <div class="container-register">
                     <form class="form-register" action="/users/register" method="POST" enctype="multipart/form-data">
                         <h1 class="h1-crear">Crea tu cuenta</h1>
                         
@@ -51,7 +51,7 @@
                         </div>
 
                         <div>
-                            <label class="label-usrs">Domicilio:</label>
+                            <label class="label-usrs"><b>Domicilio:</b></label>
                         </div>
                         <div>
                             <select name="domicilio" class="lugar" id="domicilio">
@@ -115,7 +115,7 @@
                         </div>
 
                         <div>
-                            <label class="label-usrs">Confirmar Contraseña</label>
+                            <label class="label-usrs"><b>Confirmar Contraseña</b></label>
                         </div>
                         <div>
                             <input type="password" name="passwordConfirm" placeholder="Confirmar Contraseña"
@@ -130,7 +130,9 @@
                         <div class="error">
                             <ul></ul>
                         </div>
-                        <button type="submit" class="btn btn-primary button-usr">Registrarse</button>
+                        <div class="button">
+                            <button type="submit" class="button-usr">Registrarse</button>
+                        </div>
                     </form>
                 </div>
                 <script src="/js/register.js"></script>

@@ -1,14 +1,16 @@
 *{
     box-sizing: border-box;   
 }
-.all{
-    margin: 0px;
-    padding: 0px;
-    
+
+.body-index {
+    font-family: 'Bodoni';
+    margin:0;    
 }
+
 .corp{
     max-width: 1200px;
 }
+
 .bigbox{
     display: flex;
     flex-wrap: wrap;
@@ -16,6 +18,7 @@
     padding: 1%;
     
 }
+
 .smallbox{
     width: 160px;
     padding: 10px;
@@ -25,40 +28,67 @@
     padding: 10px 10px 10px 10px; 
     
 }
+
 .data{
     font-size: 15px;
 }
+
 .img{
     width: 140px;
     height: 160px;
     
     
 }
+
 .title{
+    height: 50px;
     display: block;
-    flex-wrap: nowrap;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     padding: 0%;
     margin: 0%;
     background-color: #91795B;
     color: white;
-    border: solid black 1px;
 }
+
 .name{
     font-size: large;
 }
+
 .value{
     color: green;
 }
+
+.button{
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    margin-bottom: 30px;
+}
+
+.createproduct-button{
+    background-color: #91795B;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #010000;
+    border-radius: 3px;
+    vertical-align: middle;
+    padding: 0.8em 1.2em;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.06);
+    /*background-image: linear-gradient(180deg, #91795B 50%, #f8f9fc 100%);*/
+}
+.createproduct-button a{
+    color: white;
+    font-family: 'Bodoni';
+}
+
 @media (min-width: 361px){    
      .data {
         font-weight: bold;
      }
 }
-@media (min-width: 769px){
 
-}
 @media (min-width: 1280px){
     .smallbox{
         margin-left: 100px;

@@ -15,66 +15,71 @@
   background-color: white;
   margin: auto;
   width: 100vw;
+  
 }
 
 .container-createproduct {
   max-width: 1200px;
-  width: 90%;
   margin: auto;
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 70px;
+  display: block;
+  background-image: url('/img/backgrounds/pexels-photo-10776937.jpeg');
 }
 
-.div1{
-  background-color: #91795B;
-  height: 50px;
-  text-align: center;
-  color: white;
-}
-.title{
-  padding-bottom: 10px;
-}
+
 .form{
   max-width: 1200px;
+  margin: auto;
   padding: 40px;
   border: 1px solid #030000;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #fdffff;
   box-shadow: 17px 17px 30px rgb(2, 2, 2);
 }
-.form label{
-  font-weight: bold;
-}
-.form input{
-  width: 200px;
-  height: auto;
-  margin-left: 25px;
-  text-align: center;
-  padding: 10px;
-}
-.form form div{
-  margin-top: 10px;
-}
-.form .form-control {
-  width: 80px;
-}
-.form input{
-  width: 200px;
-}
-.form .button-accept{
-  align-items: center;
-  width: max-content;
-  margin-left: 40%;
-}
-.button-accept{
-  margin: 0 auto;
-  text-align: center;
-  font-size: 18px;
-  background-color: green;
+
+.form-control[type="text"],
+.form-control[type="file"],
+.form-control[type="number"] {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 10px;
+  border: 1px solid #020200;
+  border-radius: 3px;
+  background-color: #f5f5f5;
 }
 
+.maceta{
+  background-color: #f5f5f5;
+  margin-bottom: 15px;
+}
+
+.h1-crear{
+  text-align: center;
+  background-color: #ffffff;
+  padding: 11px;
+}
+
+.label-product{
+  display: block;
+  margin-bottom: 9px;
+  background-color: #feffff;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.button-accept[type="submit"] {
+  padding: 10px;
+  background-color: #91795B;
+  color: #ffffff;
+  border: 1px solid #010000;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 200px;
+}
 .delete{
   margin-top: 50px;
 }
@@ -85,59 +90,4 @@
 .text-danger{
   color: red;
 }
-@media (min-width: 769px) {
-      
-  .div1{
-    width: 100%;
-  }
-  .form{
-    
-    width: 600px;
-  }
-  .form form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  
-  .form #name {
-    height: auto;
-    width: 350px;
-  }
 
-  .form #other_name {
-    height: auto;
-    width: 350px;
-  }
-  .form .form-control{
-    width: 500px;
-    height: auto;
-  }
-  .value{
-    width: 800px;
-  }
-  .form #valor{
-   width: 200px;
-   height: auto;
-  }
-  .form .button-accept{
-    width: 150px;
-    height: auto;
-  }
-  .delete{
-    margin-left: 60px;
-  }
-  
-}
-
-@media (min-width: 1280px) { 
-  .main{
-    margin-left: 6%;
-    width: 1280px;
-  }
-  
-  .delete{
-    margin-left: 80%;
-    margin-bottom: 25px;
-  }
-}

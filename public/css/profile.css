@@ -1,25 +1,36 @@
 *{
     box-sizing: border-box;
 }
-.main{
-    display: block;
-    border-radius: solid 2px black;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: 'Bodoni';
+.main-profile{
+    background-color: white;
+    width: 100vw;
+    margin: auto;
 }
-.section{
-    border: solid 1px rgb(0, 0, 0);
-    margin: 0 auto;
-    padding: 0;
+
+.container-profile{
+    max-width: 1200px;
+    margin: auto;
+    padding: 125px 0px;
+    display: block;
+    background-image: url('/img/backgrounds/pexels-photo-1903969.jpeg');
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: auto;
+    border: 15px solid #91795B;
+    border-radius: 10px;
+    background-color: #91795B;
+
 }
 .name{
-    font-size: 25px;
+    font-size: 20px;
     background-color: #91795B;
     color: aliceblue;
     height: 50px;
-    width: 100%;
+    padding: 10px;
     text-align: center;
 }
 .img {
@@ -28,6 +39,19 @@
     max-height: 250px;
     max-width: 200px;
     justify-content: center;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.button-profile{
+    color:aliceblue;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 3px;
+    border: 1px solid #91795B;
 }
 
 @media (min-width: 769px){
@@ -44,13 +68,11 @@
     display: flex;
     border: none;
    }
-   .product{
-    width: 1200px;
-   }
+   
    .info {
     width: 400px;
-    padding-top: 120px;
    }
+
    .name{
     display: block;
    }

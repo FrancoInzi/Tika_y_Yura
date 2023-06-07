@@ -17,12 +17,13 @@
   margin: auto;
 }
 
-.container-main {
+.container-register {
   max-width: 1200px;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  padding: 50px;
+  padding: 70px;
   display: block;
+  background-image: url('/img/backgrounds/pexels-photo-4099199.jpeg');
 }
 
 .form-register{
@@ -30,7 +31,7 @@
   margin: auto;
   padding: 40px;
   border: 1px solid #030000;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #fdffff;
   box-shadow: 17px 17px 30px rgb(2, 2, 2);
 }
@@ -62,15 +63,21 @@
   border-radius: 3px;
   background-color: #f5f5f5;
 }
+
+.button{
+  display: flex;
+  justify-content: center;
   
+}
+
 .button-usr[type="submit"] {
-  width: 100%;
-  padding: 13px;
+  padding: 10px;
   background-color: #91795B;
   color: #ffffff;
   border: 1px solid #010000;
   border-radius: 3px;
   cursor: pointer;
+  width: 200px;
   
 }
 

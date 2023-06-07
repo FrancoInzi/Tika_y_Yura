@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head',{css:"profile", title:"Perfil"}) %>
-<body>
-    <%- include('../partials/header') %>
-    <main class="main" >
-        <section class="section">
-            <div class="">
+    <body>
+        <%- include('../partials/header') %>
+        <main class="main-profile" >
+            <div class="container-profile">
+                <div class="profile">
+                    <h2 class="name"> <%= users.first_name%> <%= users.last_name%></h2>
+                    <img class="img" src="/img/users/<%= users.Img%>">
 
-
-                <h2 class="name"> <%= users.first_name%> <%= users.last_name%></h2>
-                <img class="img" src="/img/users/<%= users.Img%>">
-
-
-                <h4 class="info">Email: <%= users.email%>
-                </h4>
-                <h5><a href="/users/edituser/<%=users.id%>">Editar usuario</a></h5>
-            </div>   
-                
-        </section>
-               
-    </main>
-    <%- include('../partials/footer') %>
-</body>
+                    <h4 class="info">Email: <%= users.email%></h4>
+                    <div class="button">
+                        <button class="button-profile">
+                            <a href="/users/edituser/<%=users.id%>">Editar usuario</a>
+                        </button>
+                    </div>
+                </div>   
+                    
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
 </html>

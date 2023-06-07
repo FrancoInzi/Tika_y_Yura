@@ -108,6 +108,7 @@ a{
 }
 
 /*Main*/
+
 main{
     background-color: white;
     width: 100vw;
@@ -168,13 +169,20 @@ article {
 
 /*Footer*/
 footer{
-    background-color:#91795B;
-    max-width: 1200px;
+    background-color: white;
+    width: 100vw;
     margin:auto;
+
 }
 
 .container-footer{
     display: flex;
+    max-width: 1200px;
+    background-color:#91795B;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 10px;
 }
 
 .info-footer {
@@ -237,11 +245,9 @@ footer{
 }
 
 .copyright {
-    display: block;
-    align-items: flex-end;
-    text-align: left;
-    margin-left: 25px;
     color:white;
+    padding-top: 30px;
+    font-size: small;
 }
 
 .mediosPago{

@@ -5,14 +5,11 @@
         <%- include('../partials/header') %>
         <main class="main-createproduct">
             <div class="container-createproduct">
-                <div class="div1">
-                    <h2 class="title">Crear nuevo producto</h2>
-                </div>
                 <div class="form">
                     <form name="formulario" id ="form" method="POST" action="/product/createproduct" enctype="multipart/form-data">
-                        
+                        <h1 class="h1-crear">Crear un producto</h1>
                         <div>
-                            <label for="name">Nombre del producto (4 to 60 characters):</label>
+                            <label class="label-product" for="name"><b>Nombre del producto (4 to 60 characters):</b></label>
                         </div>
                         <div>
                             <input type="text" id="name" name="name" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
@@ -25,7 +22,7 @@
                         </div>
 
                         <div>
-                            <label for="other_name"><b>Nombre científico:</b></label>
+                            <label class="label-product" for="other_name"><b>Nombre científico:</b></label>
                         </div>
                         <div>
                             <input type="text" id="other_name" name="other_name" class="form-control <%= locals.errors && errors.review ? 'is-invalid' : null %>"
@@ -38,7 +35,7 @@
                         </div>
 
                         <div >
-                            <label><b>Imagen del producto</b></label>
+                            <label class="label-product"><b>Imagen del producto</b></label>
                         </div>
                         <div>
                             <input type="file" name="imagenProducto" id="imagenProducto"
@@ -52,7 +49,7 @@
                         </div>
 
                         <div>
-                            <label for="review">Reseña del producto (4 to 150 characters):</label>
+                            <label class="label-product" for="review"><b>Reseña del producto (4 to 150 characters):</b></label>
                         </div>
                         <div>
                             <input type="text" id="review" name="review"
@@ -66,7 +63,7 @@
                         </div>
                         
                         <div>
-                            <label for="description">Descripción del producto (4 to 600 characters):</label>
+                            <label class="label-product" for="description"><b>Descripción del producto (4 to 600 characters):</b></label>
                         </div>
                         <div>
                             <input type="text" id="description" name="description" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
@@ -79,10 +76,10 @@
                             
                         </div>
                         <div>
-                            <label>Maceta</label>
+                            <label class="label-product"><b>Maceta</b></label>
                         </div>
                         <div>
-                            <select name="maceta" id="tipo" class="form-control <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
+                            <select name="maceta" id="tipo" class="maceta <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.maceta : null %>">
                             <% if (locals.errors && errors.maceta) { %>
                                 <div class="text-danger">
@@ -96,7 +93,7 @@
                         </div>
 
                         <div>
-                            <label for="valor">Valor $</label>
+                            <label class="label-product" for="valor"><b>Valor $</b></label>
                         </div>
                         <div>
                             <input type="number" id="valor" name="valor" min="10" max="10000000"
@@ -111,7 +108,9 @@
                         <div class="error">
                             <ul></ul>
                         </div>
-                        <input class="button-accept" type="submit" value="Aceptar">
+                        <div class="button">
+                            <input class="button-accept" type="submit" value="Aceptar">
+                        </div>
                     </form>
                 </div>
                 <script src="/js/createProductForm.js" ></script>                

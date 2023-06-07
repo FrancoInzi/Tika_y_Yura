@@ -28,6 +28,32 @@
     justify-content: center;
 }
 
+.button{
+    display: flex;
+    justify-content: left;
+    padding-right: 30px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    
+}
+
+.editproduct-button{
+    background-color: #91795B;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #010000;
+    border-radius: 3px;
+    vertical-align: middle;
+    padding: 0.8em 1.2em;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.06);
+    /*background-image: linear-gradient(180deg, #91795B 50%, #f8f9fc 100%);*/
+}
+.editproduct-button a{
+    color: white;
+    font-family: 'Bodoni';
+}
+
 @media (min-width: 769px){
   .img{
     max-width: 500px;
