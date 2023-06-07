@@ -26,8 +26,9 @@
   max-width: 1200px;
   width: 90%;
   margin: auto;
-  padding: 50px;
+  padding: 70px;
   display: block;
+  background-image: url('/img/backgrounds/pexels-photo-9952084.jpeg');
 }
 
 
@@ -64,16 +65,23 @@ h1{
   background-color: #ffffff;
   
 }
+.button{
+  display: flex;
+  justify-content: center;
   
-input[type="submit"] {
-  width: 100%;
+}
+
+.button-usr[type="submit"] {
   padding: 10px;
-  background-color: #91795B ;
+  background-color: #91795B;
   color: #ffffff;
-  border: 1px solid #0f0000;
+  border: 1px solid #010000;
   border-radius: 3px;
   cursor: pointer;
+  width: 200px;
+  
 }
+
 
 .text-danger{
   color: red;

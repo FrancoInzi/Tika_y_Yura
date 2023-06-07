@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+.body-index {
+    font-family: 'Bodoni';
+    margin: 0;
+}
+
+.error {
+    color: red
+}
+
+.main-editprofile {
+    background-color: white;
+    width: 100vw;
+    margin: auto;
+}
+
+.container-editprofile {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 70px;
+    display: block;
+    background-image: url('/img/backgrounds/pexels-photo-10776937.jpeg');
+}
+
+.form-editprofile {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #030000;
+    border-radius: 20px;
+    background-color: #fdffff;
+    box-shadow: 17px 17px 30px rgb(2, 2, 2);
+}
+
+.lugar {
+    background-color: #fdffff;
+    margin-bottom: 15px;
+}
+
+.h1-crear {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 11px;
+}
+
+.label-usrs {
+    display: block;
+    margin-bottom: 9px;
+    background-color: #feffff;
+}
+
+.form-control[type="text"],
+.form-control[type="email"],
+.form-control[type="file"] {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border: 1px solid #020200;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.button-usr[type="submit"] {
+    padding: 10px;
+    background-color: #91795B;
+    color: #ffffff;
+    border: 1px solid #010000;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 200px;
+
+}
+.form-delete{
+    display: flex;
+    justify-content: right;
+  }
+
+.text-danger {
+    color: red;
+    margin-bottom: 10px;
+}

@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head',{css:"editproduct", title:"Editar Producto"}) %>
-
     <body>
         <%- include('../partials/header') %>
-
-            <main class="main">
-                <div class="div1">
-                    <h2 class="title">Editar nuevo producto</h2>
-                </div>
-                <div class="form">
-
-                    <form class="editForm" action="/product/editproduct/<%= product.id%>?_method=PUT" name="formulario" method="POST" enctype="multipart/formdata">
-                        <div>
-                            <label for="name">Renombrar producto:</label>
-                        </div>
-                        <div>
-                            <input type="text" id="name" name="name" value="<%= product.name%>" required >
-                        </div>
-                        <div>
-                            <label for="other_name">Nombre científico:</label>
-                        </div>
-                        <div>
-                            <input type="text" id="other_name" name="other_name" value="<%= product.other_name%>" required >
-                        </div>
-                        <div>
-                            <label for="imagenProducto">Subir una imagen</label>
-                        </div>
-                        <div>
-                            <input type="file" id="imagenProducto" name="imagenProducto" />
-                        </div>
-                        <div>
-                            <label for="review">Reseña del producto:</label>
-                        </div>
-                        <div>
-                            <input type="text" id="review" name="review" value="<%= product.features %>" required minlength="4" maxlength="150" size="10">
-                        </div>
-                        <div>
-                            <label for="description">Descripción del producto:</label>
-                        </div>
-                        <div>
-                            <input type="text" id="description" name="description" value="<%= product.description%>" required minlength="4" maxlength="600" size="10">
-                        </div>
-                        <div>
-                            <label>Maceta</label>
-                        </div>
-                        <div>
-                            <select name="maceta" id="tipo" class="form-control <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
-                                value="<%= locals.oldData ? oldData.maceta : null %>">
-                                <% if (locals.errors && errors.maceta) { %>
-                                    <div class="text-danger">
-                                        <%= errors.maceta.msg %>
-                                    </div>
-                                    <% } %>
-                                <option value="1">Cerámica</option>
-                                <option value="2">Plastico</option>
-                                <option value="3">Plastico blando</option>
-                            </select>
-                        </div>
-                        <div class="value">
-                            <label for="valor">Valor</label>
-                        </div>
-                        <div>
-                            <input type="number" id="valor" name="valor" value="<%= product.price%>" min="10" max="10000000">
-                        </div>
-                        <input class="button-accept" type="submit" value="Aceptar" />
-                        <div class="error">
-                            <ul></ul>
-                        </div>
+            <main class="main-editproduct">
+                <div class="container-editproduct">
+                    <div class="form">
+                        <form name="formulario" action="/product/editproduct/<%= product.id%>?_method=PUT" name="formulario" method="POST" enctype="multipart/formdata">
+                            <h1 class="h1-crear">Editar nuevo producto</h1>
+                            <div>
+                                <label class="label-edit" for="name">Renombrar producto:</label>
+                            </div>
+                            <div>
+                                <input type="text" id="name" name="name" class="form-control" value="<%= product.name%>" required >
+                            </div>
+                            <div>
+                                <label class="label-edit" for="other_name">Nombre científico:</label>
+                            </div>
+                            <div>
+                                <input type="text" id="other_name" name="other_name" class="form-control" value="<%= product.other_name%>" required >
+                            </div>
+                            <div>
+                                <label class="label-edit" for="imagenProducto">Subir una imagen</label>
+                            </div>
+                            <div>
+                                <input  type="file" id="imagenProducto" name="imagenProducto" class="form-control"/>
+                            </div>
+                            <div>
+                                <label class="label-edit" for="review">Reseña del producto:</label>
+                            </div>
+                            <div>
+                                <input type="text" id="review" name="review" class="form-control" value="<%= product.features %>" required minlength="4" maxlength="150" size="10">
+                            </div>
+                            <div>
+                                <label class="label-edit" for="description">Descripción del producto:</label>
+                            </div>
+                            <div>
+                                <input type="text" id="description" name="description" class="form-control" value="<%= product.description%>" required minlength="4" maxlength="600" size="10">
+                            </div>
+                            <div>
+                                <label class="label-edit">Maceta</label>
+                            </div>
+                            <div>
+                                <select name="maceta" id="tipo" class="form-control <%= locals.errors && errors.maceta ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.maceta : null %>">
+                                    <% if (locals.errors && errors.maceta) { %>
+                                        <div class="text-danger">
+                                            <%= errors.maceta.msg %>
+                                        </div>
+                                        <% } %>
+                                    <option value="1">Cerámica</option>
+                                    <option value="2">Plastico</option>
+                                    <option value="3">Plastico blando</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="label-edit" for="valor">Valor</label>
+                            </div>
+                            <div>
+                                <input type="number" id="valor" name="valor" class="form-control" value="<%= product.price%>" min="10" max="10000000">
+                            </div>
+                            <div class="button">
+                                <input class="button-accept" type="submit" value="Aceptar" />
+                            </div>
+                            <div class="error">
+                                <ul></ul>
+                            </div>
+                        </form>
+                    </div>
+                    <form class="form-delete" action="/product/editproduct/<%= product.id%>?_method=DELETE" name="formulario" method="POST" enctype="multipart/formdata">                   
+                        <button class="button-accept" type="submit" >Eliminar este producto</button>
                     </form>
-                </div>
-                <form action="/product/editproduct/<%= product.id%>?_method=DELETE" name="formulario" method="POST" enctype="multipart/formdata">                   
-                    <button type="submit" >Eliminar este producto</button>
-                </form>
-            <script src="/js/editProductForm"></script>
+                <script src="/js/editProductForm"></script>
             </main>
         <%- include('../partials/footer') %>
     </body>

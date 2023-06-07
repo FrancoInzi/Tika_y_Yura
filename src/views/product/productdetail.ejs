@@ -42,20 +42,21 @@
                         <h5 class="discount">Pagando en efectivo 10% de descuento</h4>
                             <p class="freeship">Envío grátis a partir de 10 unidades</p>
                             <h5>También podes llevarlo en cuotas</h4>
-                                <form action="#">
-                                    <label for="cuotas">Cuotas</label>
-                                    <select name="cuotas" id="cuotas">
-                                        <option value="3">3 cuotas de $700</option>
-                                        <option value="6">6 cuotas de $400</option>
-                                        <option value="12">12 cuotas de $220</option>
+                        <form action="#">
+                            <label for="cuotas">Cuotas</label>
+                            <select name="cuotas" id="cuotas">
+                                <option value="3">3 cuotas de $700</option>
+                                <option value="6">6 cuotas de $400</option>
+                                <option value="12">12 cuotas de $220</option>
 
-                                    </select>
-                                    <input type="submit" value="Comprar" />
-                                </form>
-                                <h5><a href="/product/editproduct/<%=product.id%>">Editar Producto</a></h5>
-
+                            </select>
+                            <input type="submit" value="Comprar" />
+                        </form>      
                     </div>                    
                 </section>
+                <div class="button">
+                    <button class="editproduct-button"><a href="/product/editproduct/<%=product.id%>">Editar Producto</a></button>
+                </div>
             </main>
             <%- include('../partials/footer') %>
     </body>
